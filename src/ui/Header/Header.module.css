@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  height: 45px;
+  margin-top: 18px;
+  width: 100%;
+}
+
+.logo {
+  height: 44px;
+  width: 44px;
+  background-color: #8baa36;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

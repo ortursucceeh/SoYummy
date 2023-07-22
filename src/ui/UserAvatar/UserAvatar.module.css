@@ -1,0 +1,19 @@
+.user {
+  display: flex;
+  gap: 0 14px;
+  text-align: center;
+  margin-left: 228px;
+  align-items: center;
+}
+
+.user img {
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+}
+
+.user span {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 170%; /* 23.8px */
+}

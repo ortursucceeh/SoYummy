@@ -1,0 +1,14 @@
+.nav {
+  display: flex;
+  align-items: center;
+
+  gap: 0 30px;
+  margin-left: 187px;
+}
+
+.nav li {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22.4px; /* 160% */
+  cursor: pointer;
+}
