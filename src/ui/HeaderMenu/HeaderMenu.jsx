@@ -1,5 +1,5 @@
-import styles from './HeaderMenu.module.css';
-import SearchIcon from './SearchIcon';
+import styles from './HeaderMenu.module.scss';
+import { LuSearch } from 'react-icons/lu';
 
 function HeaderMenu() {
   return (
@@ -9,7 +9,7 @@ function HeaderMenu() {
       <li>My recipes</li>
       <li>Favorites</li>
       <li>Shopping list</li>
-      <SearchIcon />
+      <LuSearch />
     </ul>
   );
 }

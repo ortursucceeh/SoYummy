@@ -1,5 +1,5 @@
-import styles from './UserAvatar.module.css';
-import avatar from './avatar.png';
+import styles from './UserAvatar.module.scss';
+import avatar from './../../assets/avatar.png';
 function UserAvatar() {
   return (
     <div className={styles.user}>

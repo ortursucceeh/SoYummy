@@ -1,8 +1,10 @@
 .header {
   display: flex;
-  height: 45px;
-  margin-top: 18px;
+  height: 64px;
+  padding-top: 18px;
+  margin-bottom: 18px;
   width: 100%;
+  align-items: center;
 }
 
 .logo {
@@ -14,4 +16,10 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  & svg {
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+  }
 }

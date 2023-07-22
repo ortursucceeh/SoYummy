@@ -1,0 +1,37 @@
+.form {
+  margin-left: 235px;
+  width: 340px;
+
+  & span {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  & p {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  & input {
+    margin-top: 28px;
+    padding: 18px 70px 18px 16px;
+    border: 1px solid #4c4f55;
+    background-color: transparent;
+    border-radius: 5px;
+  }
+
+  & button {
+    margin-top: 16px;
+    padding: 21px 130px;
+    background: #8baa36;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 5px;
+    border: none;
+  }
+}

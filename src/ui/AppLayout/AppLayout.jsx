@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router-dom';
-import styles from './AppLayout.module.css';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Container from '../Container/Container';
 
 function AppLayout() {
   return (
-    <div className={styles.container}>
+    <Container>
       <Header />
-    </div>
+      <Outlet />
+      <Footer />
+    </Container>
   );
 }
 

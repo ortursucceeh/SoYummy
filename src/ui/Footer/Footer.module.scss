@@ -1,0 +1,21 @@
+.footer {
+  height: 528px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.main {
+  height: 414px;
+  background-color: #22252a;
+  padding: 54px 100px 50px;
+  color: #fafafa;
+}
+
+.decor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
