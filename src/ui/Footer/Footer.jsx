@@ -2,7 +2,6 @@ import styles from './Footer.module.scss';
 import Container from '../Container/Container';
 import FooterCopyright from './FooterCopyright/FooterCopyright';
 import FooterContent from './FooterContent/FooterContent';
-import footerDecor from './../../assets/footer-decoration.png';
 
 function Footer() {
   return (
@@ -12,7 +11,6 @@ function Footer() {
           <FooterContent />
         </Container>
       </main>
-      <img className={styles.decor} src={footerDecor} alt="decor" />
       <FooterCopyright />
     </footer>
   );

@@ -1,0 +1,31 @@
+.logo {
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  & svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.header {
+  background-color: #8baa36;
+
+  & svg {
+    fill: #fafafa;
+  }
+}
+
+.footer {
+  background-color: #ebf3d4;
+
+  & svg {
+    fill: #8baa36;
+  }
+}

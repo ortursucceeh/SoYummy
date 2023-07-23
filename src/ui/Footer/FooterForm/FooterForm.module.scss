@@ -18,19 +18,67 @@
   & input {
     margin-top: 28px;
     padding: 18px 70px 18px 16px;
-    border: 1px solid #4c4f55;
+    border: 1px solid var(--color-grey-0);
     background-color: transparent;
     border-radius: 5px;
+    width: 338px;
   }
 
   & button {
     margin-top: 16px;
     padding: 21px 130px;
-    background: #8baa36;
+    background: var(--color-green-0);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     border-radius: 5px;
     border: none;
+  }
+
+  @media (max-width: 1440px) {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 0 12px;
+    align-items: center;
+    margin-top: 72px;
+
+    & span,
+    & p {
+      display: none;
+    }
+
+    & input {
+      margin: 0;
+      height: 50px;
+    }
+
+    & button {
+      margin: 0;
+      padding: 12px 50px;
+      text-align: center;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 644px) {
+    flex-direction: column;
+    gap: 8px 0;
+    margin-top: 0;
+
+    & input {
+      margin: 0;
+      height: 50px;
+      width: 244px;
+      font-size: 12px;
+    }
+
+    & button {
+      margin: 0;
+      padding: 12px 83px;
+      text-align: center;
+      height: 50px;
+    }
   }
 }

@@ -5,4 +5,10 @@
   margin-bottom: 18px;
   width: 100%;
   align-items: center;
+  z-index: 100;
+  width: 100%;
+
+  @media (max-width: 1440px) {
+    display: none;
+  }
 }

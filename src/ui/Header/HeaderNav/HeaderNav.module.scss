@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0 30px;
+  margin-left: 187px;
+
+  & li {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px; /* 160% */
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-green-0);
+    }
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}

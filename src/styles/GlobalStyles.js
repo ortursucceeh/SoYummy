@@ -17,6 +17,28 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --color-white-0: #fff;
+  --color-white-100: #f0f0f0;
+  --color-white-200: #fafafa;
+
+  --color-grey-0: #bdbdbd;
+  --color-grey-100: #f3f4f6;
+
+  --color-green-0: #8BAA36;
+  --color-green-100: #3CBC81;
+
+  --color-dark-0:  #22252A;
+  --color-dark-100:  #23262A;
+  --color-dark-200:  #22252A;
+  --color-dark-300:  #1E1F28;
+  --color-dark-400:  #001833;
+  --color-dark-500:  #000000;
+
+  --color-orange-0: #E74A3B;
+
+}
+
 body {
   font-family: "Poppins", sans-serif;
   color: #22252A;
@@ -25,6 +47,7 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
+  position: relative;
   
 }
 

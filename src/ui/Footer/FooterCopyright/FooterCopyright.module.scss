@@ -4,13 +4,37 @@
   justify-content: center;
   align-items: center;
   gap: 0 40px;
+
+  @media (max-width: 1440px) {
+    height: 78px;
+  }
+
+  & span {
+    color: var(--color-dark-0);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.14px;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 644px) {
+    height: 66px;
+    & span {
+      font-size: 10px;
+    }
+  }
 }
 
-.copyright span {
-  color: #22252a;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: -0.14px;
-  opacity: 0.5;
+.decor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  flex-shrink: 0;
+  filter: blur(2px);
+
+  @media (max-width: 644px) {
+    width: 160px;
+  }
 }
