@@ -4,28 +4,42 @@
   gap: 0 30px;
   // margin-left: 187px;
 
-  & li {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 22.4px; /* 160% */
+  svg:hover {
+    transition: all 0.3s;
+    stroke: var(--color-green-0);
     cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  li {
+    font-size: 14px;
     transition: color 0.2s;
+    font-weight: 500;
+    line-height: 22.4px;
+    cursor: pointer;
 
     &:hover {
       color: var(--color-green-0);
     }
   }
 
-  & svg {
+  svg {
     width: 24px;
     height: 24px;
   }
-
-  @media (max-width: 930px) {
+}
+@media (max-width: 930px) {
+  .nav {
     gap: 0 15px;
   }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .nav {
     display: none;
+    
+    li {
+      font-size: 20px;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import UserAvatar from './UserAvatar/UserAvatar';
+import UserLogo from './UserLogo/UserLogo';
 import styles from './Header.module.scss';
 import HeaderNav from './HeaderNav/HeaderNav';
 import Logo from '../Logo/Logo';
@@ -19,7 +19,7 @@ function Header() {
           <BurgerMenu isopen={menuIsOpen} closeMenu={() => setMenuIsOpen(false)} />
 
           <span className={styles.items}>
-            <UserAvatar />
+            <UserLogo />
             <span className={styles.burger}>
               <HiOutlineMenuAlt2 onClick={() => setMenuIsOpen(!menuIsOpen)} />
             </span>

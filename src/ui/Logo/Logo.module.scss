@@ -7,25 +7,30 @@
   align-items: center;
   cursor: pointer;
   flex-shrink: 0;
+  transition: transform 0.3s;
 
-  & svg {
+  svg {
     width: 30px;
     height: 30px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
 
 .header {
-  background-color: #8baa36;
+  background-color: var(--color-green-0);
 
-  & svg {
-    fill: #fafafa;
+  svg {
+    fill: var(--color-white-200);
   }
 }
 
 .footer {
-  background-color: #ebf3d4;
+  background-color: var(--color-lightgreen-0);
 
-  & svg {
-    fill: #8baa36;
+  svg {
+    fill: var(--color-green-0);
   }
 }
