@@ -1,18 +1,6 @@
 .content {
   display: flex;
   justify-content: space-between;
-
-  @media (max-width: 1440px) {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  @media (max-width: 644px) {
-    flex-direction: column;
-    gap: 32px;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .header {
@@ -20,15 +8,11 @@
   gap: 0 12px;
   align-items: center;
 
-  & span {
+  span {
     font-size: 28px;
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 0.42px;
-
-    @media (max-width: 644px) {
-      font-size: 18px;
-    }
   }
 }
 
@@ -41,20 +25,12 @@
   padding-left: 20px;
   list-style: disc;
 
-  @media (max-width: 644px) {
-    display: none;
-  }
-
-  & li {
+  li {
     color: var(--color-white-200);
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: -0.36px;
-
-    @media (max-width: 1440px) {
-      font-size: 14px;
-    }
   }
 }
 
@@ -64,11 +40,7 @@
   gap: 24px 0;
   width: 160px;
 
-  @media (max-width: 644px) {
-    gap: 14px;
-  }
-
-  & li {
+  li {
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -80,10 +52,6 @@
     &:hover {
       color: var(--color-green-0);
     }
-
-    @media (max-width: 644px) {
-      text-align: center;
-    }
   }
 }
 
@@ -93,15 +61,56 @@
   gap: 18px;
   margin-top: 40px;
 
-  & svg {
+  li {
     width: 20px;
     height: 20px;
-    fill: var(--color-green-0);
-    transition: fill 0.3s;
-    cursor: pointer;
 
-    &:hover {
-      fill: var(--color-white-200);
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--color-green-0);
+      transition: fill 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        fill: var(--color-white-200);
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .content {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .infoList li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 644px) {
+  .content {
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header span {
+    font-size: 18px;
+  }
+
+  .infoList {
+    display: none;
+  }
+
+  .pages {
+    gap: 14px;
+
+    li {
+      text-align: center;
     }
   }
 }

@@ -2,18 +2,23 @@
   max-width: 1440px;
   padding: 0 100px;
   margin: 0 auto;
+}
 
-  @media (max-width: 1440px) {
+@media (max-width: 1440px) {
+  .container {
     max-width: 1240px;
     padding: 0 74px;
   }
+}
 
-  @media (max-width: 778px) {
-    // max-width: 1240px;
+@media (max-width: 930px) {
+  .container {
     padding: 0 32px;
   }
+}
 
-  @media (max-width: 644px) {
+@media (max-width: 644px) {
+  .container {
     max-width: 644px;
     padding: 0 16px;
   }

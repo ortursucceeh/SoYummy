@@ -1,5 +1,5 @@
 .footer {
-  min-height: 528px;
+  min-height: 492px;
   width: 100%;
   position: absolute;
   left: 0;
@@ -11,15 +11,18 @@
   padding: 54px 0 50px;
   color: var(--color-white-200);
   background: var(--color-dark-0) center center/cover no-repeat;
+}
 
-  @media (max-width: 1440px) {
+@media (max-width: 1440px) {
+  .main {
     min-height: 424px;
     padding-top: 50px;
   }
+}
 
-  @media (max-width: 644px) {
+@media (max-width: 644px) {
+  .main {
     min-height: 424px;
     padding: 28px 0 18px;
   }
 }
-

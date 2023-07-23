@@ -1,21 +1,21 @@
 .form {
   width: 340px;
 
-  & span {
+  span {
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
 
-  & p {
+  p {
     margin-top: 14px;
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
   }
 
-  & input {
+  input {
     margin-top: 28px;
     padding: 18px 70px 18px 16px;
     border: 1px solid var(--color-grey-0);
@@ -24,7 +24,7 @@
     width: 338px;
   }
 
-  & button {
+  button {
     margin-top: 16px;
     padding: 21px 130px;
     background: var(--color-green-0);
@@ -33,9 +33,15 @@
     font-weight: 400;
     border-radius: 5px;
     border: none;
-  }
 
-  @media (max-width: 1440px) {
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .form {
     width: 100%;
     display: flex;
     margin: 0 auto;
@@ -44,37 +50,39 @@
     align-items: center;
     margin-top: 72px;
 
-    & span,
-    & p {
+    span,
+    p {
       display: none;
     }
 
-    & input {
+    input {
       margin: 0;
       height: 50px;
     }
 
-    & button {
+    button {
       margin: 0;
       padding: 12px 50px;
       text-align: center;
       height: 50px;
     }
   }
+}
 
-  @media (max-width: 644px) {
+@media (max-width: 644px) {
+  .form {
     flex-direction: column;
-    gap: 8px 0;
+    gap: 10px 0;
     margin-top: 0;
 
-    & input {
+    input {
       margin: 0;
       height: 50px;
       width: 244px;
       font-size: 12px;
     }
 
-    & button {
+    button {
       margin: 0;
       padding: 12px 83px;
       text-align: center;

@@ -1,28 +1,17 @@
 .copyright {
-  height: 114px;
+  height: 74px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0 40px;
 
-  @media (max-width: 1440px) {
-    height: 78px;
-  }
-
-  & span {
+  span {
     color: var(--color-dark-0);
     font-size: 14px;
     font-weight: 400;
     line-height: 14px;
     letter-spacing: -0.14px;
     opacity: 0.5;
-  }
-
-  @media (max-width: 644px) {
-    height: 66px;
-    & span {
-      font-size: 10px;
-    }
   }
 }
 
@@ -31,10 +20,19 @@
   right: 0;
   bottom: 0;
   z-index: -1;
-  flex-shrink: 0;
   filter: blur(2px);
+}
 
-  @media (max-width: 644px) {
+@media (max-width: 644px) {
+  .copyright {
+    height: 66px;
+
+    span {
+      font-size: 10px;
+    }
+  }
+
+  .decor {
     width: 160px;
   }
 }
