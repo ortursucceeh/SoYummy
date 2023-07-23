@@ -1,5 +1,6 @@
 .content {
   display: flex;
+  justify-content: space-between;
 }
 
 .header {
@@ -12,23 +13,6 @@
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 0.42px;
-  }
-}
-
-.logo {
-  height: 44px;
-  width: 44px;
-  background-color: #ebf3d4;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  & svg {
-    fill: #8baa36;
-    width: 30px;
-    height: 30px;
   }
 }
 
@@ -51,7 +35,6 @@
 }
 
 .pages {
-  margin-left: 195px;
   display: flex;
   flex-direction: column;
   gap: 24px 0;
@@ -74,9 +57,9 @@
 
 .social {
   display: flex;
+  justify-content: center;
   gap: 18px;
-  margin-top: 95px;
-  margin-left: 170px;
+  margin-top: 40px;
 
   & svg {
     width: 20px;

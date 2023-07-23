@@ -6,20 +6,3 @@
   width: 100%;
   align-items: center;
 }
-
-.logo {
-  height: 44px;
-  width: 44px;
-  background-color: #8baa36;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  & svg {
-    fill: #fff;
-    width: 30px;
-    height: 30px;
-  }
-}
