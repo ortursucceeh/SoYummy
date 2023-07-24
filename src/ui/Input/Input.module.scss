@@ -1,0 +1,41 @@
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.leftIcon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.rightIcon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

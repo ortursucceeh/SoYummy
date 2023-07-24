@@ -1,0 +1,58 @@
+.logoutModal {
+  min-width: 500px;
+  position: absolute;
+  min-height: 215px;
+  top: 60px;
+  left: -228px;
+  padding: 50px;
+  background-color: #e2dfdf;
+  border-radius: 10px;
+
+  span {
+    display: block;
+    margin-top: 2px;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.buttons {
+  margin-top: 32px;
+  display: flex;
+  gap: 0 16px;
+}
+.logoutBtn {
+  color: var(--color-white-200);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 21px 50px;
+  border: none;
+  background-color: var(--color-green-0);
+  border-radius: 6px;
+  width: 192px;
+}
+
+.closeBtn {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 21px 50px;
+  border: none;
+  background-color: var(--color-grey-100);
+  border-radius: 6px;
+  width: 192px;
+}

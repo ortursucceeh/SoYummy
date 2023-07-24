@@ -1,0 +1,25 @@
+.user {
+  position: relative;
+  display: flex;
+  gap: 0 14px;
+  text-align: center;
+  align-items: center;
+
+  img {
+    width: 44px;
+    height: 44px;
+    border-radius: 44px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 170%;
+  }
+}

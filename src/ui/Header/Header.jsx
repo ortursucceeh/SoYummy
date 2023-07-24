@@ -1,4 +1,4 @@
-import UserLogo from './UserLogo/UserLogo';
+import UserLogo from '../../features/Authentication/UserLogo/UserLogo';
 import styles from './Header.module.scss';
 import HeaderNav from './HeaderNav/HeaderNav';
 import Logo from '../Logo/Logo';
