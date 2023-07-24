@@ -1,11 +1,11 @@
 import styles from './Input.module.scss';
 
-function Input({ placeholder = '', leftIcon = '', rightIcon = '' }) {
+function Input({ leftIcon, rightIcon, ...props }) {
   return (
-    <div className={styles.inputContainer}>
-      <div className={styles.leftIcon}>{leftIcon}</div>
-      <input placeholder={placeholder} type="text" className={styles.input} />
-      <div className={styles.rightIcon}>{rightIcon}</div>
+    <div className={styles.container}>
+      {leftIcon && <span className={styles.leftIcon}>{leftIcon}</span>}
+      <input {...props} className={styles.input} />
+      {rightIcon && <span className={styles.rightIcon}>{rightIcon}</span>}
     </div>
   );
 }

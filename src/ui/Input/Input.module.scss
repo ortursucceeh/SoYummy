@@ -1,16 +1,17 @@
-.inputContainer {
+.container {
   position: relative;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   width: 100%;
 }
 
 .input {
+  border-radius: 4px;
   border: none;
   outline: none;
   background: transparent;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
 }
 
 .leftIcon {
@@ -20,6 +21,7 @@
   top: 50%;
   left: 18px;
   transform: translateY(-50%);
+
   svg {
     width: 24px;
     height: 24px;

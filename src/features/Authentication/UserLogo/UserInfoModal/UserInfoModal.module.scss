@@ -4,7 +4,6 @@
   position: absolute;
   top: 60px;
   left: -228px;
-
   background-color: #f0f0f0; /*var(--color-white-200);*/
   border-radius: 30px;
   display: flex;
@@ -26,7 +25,15 @@
 
   button {
     margin-top: 32px;
-    padding: 21px 143px;
+    padding: 21px 142px;
+  }
+
+  input[type='text'] {
+    color: var(--color-dark-100);
+    padding: 16px 50px;
+    border: 1px solid var(--color-grey-0);
+    opacity: 0.8;
+    line-height: normal;
   }
 }
 
@@ -39,6 +46,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-bottom: 52px;
 
   svg {
     width: 48px;
@@ -47,20 +55,5 @@
   }
   input {
     display: none;
-  }
-}
-
-.nameInput {
-  margin-top: 52px;
-
-  input {
-    color: var(--color-dark-100);
-    font-size: 18px;
-    font-weight: 400;
-    width: 400px;
-    height: 60px;
-    border: none;
-    border-radius: 10px;
-    padding: 18px 50px;
   }
 }

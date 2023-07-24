@@ -1,7 +1,7 @@
 .logoutModal {
   min-width: 500px;
   position: absolute;
-  min-height: 215px;
+  max-height: 215px;
   top: 60px;
   left: -228px;
   padding: 50px;
@@ -35,6 +35,6 @@
   gap: 0 16px;
 
   button {
-    padding: 20px 66px;
+    padding: 16px 65px;
   }
 }

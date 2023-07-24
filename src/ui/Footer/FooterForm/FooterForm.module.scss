@@ -8,19 +8,16 @@
 
   p {
     margin-top: 14px;
+    margin-bottom: 28px;
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
   }
 
-  input {
-    margin-top: 28px;
-    padding: 18px 70px 18px 16px;
+  input[type='text'] {
+    padding: 17px 52px 17px;
     border: 1px solid var(--color-grey-0);
-    background-color: transparent;
-    border-radius: 5px;
-    outline: none;
-    width: 338px;
+    // width: 100%;
   }
 
   button {

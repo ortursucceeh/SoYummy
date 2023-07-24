@@ -15,9 +15,7 @@ function UserInfoModal({ onClose }) {
         <FiUser />
         <input type="file" id="uploadBtn" />
       </label>
-      <div className={styles.nameInput}>
-        <Input leftIcon={<FiUser />} rightIcon={<RxPencil1 />} />
-      </div>
+      <Input leftIcon={<FiUser />} rightIcon={<RxPencil1 />} type="text" />
       <Button type="rect" color="green">
         Save changes
       </Button>
