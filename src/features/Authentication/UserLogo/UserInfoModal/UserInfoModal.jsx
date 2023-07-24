@@ -3,6 +3,7 @@ import styles from './UserInfoModal.module.scss';
 import { VscClose } from 'react-icons/vsc';
 import { FiUser } from 'react-icons/fi';
 import { RxPencil1 } from 'react-icons/rx';
+import Button from '../../../../ui/Button/Button';
 
 function UserInfoModal({ onClose }) {
   return (
@@ -17,7 +18,9 @@ function UserInfoModal({ onClose }) {
       <div className={styles.nameInput}>
         <Input leftIcon={<FiUser />} rightIcon={<RxPencil1 />} />
       </div>
-      <button>Save changes</button>
+      <Button type="rect" color="green">
+        Save changes
+      </Button>
     </form>
   );
 }

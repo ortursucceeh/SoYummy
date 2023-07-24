@@ -1,3 +1,4 @@
+import Button from '../../../../ui/Button/Button';
 import styles from './LogoutModal.module.scss';
 import { VscClose } from 'react-icons/vsc';
 
@@ -9,10 +10,12 @@ function LogoutModal({ onClose }) {
       </span>
       <span>Are you sure you want to log out?</span>
       <div className={styles.buttons}>
-        <button className={styles.logoutBtn}>Log out</button>
-        <button className={styles.closeBtn} onClick={onClose}>
+        <Button type="rect" color="green">
+          Log out
+        </Button>
+        <Button type="rect" color="grey" onClick={onClose}>
           Cancel
-        </button>
+        </Button>
       </div>
     </form>
   );

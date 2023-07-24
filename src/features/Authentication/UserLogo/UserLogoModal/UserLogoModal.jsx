@@ -4,6 +4,7 @@ import { LuArrowRight } from 'react-icons/lu';
 import { useState } from 'react';
 import UserInfoModal from '../UserInfoModal/UserInfoModal';
 import LogoutModal from '../LogoutModal/LogoutModal';
+import Button from '../../../../ui/Button/Button';
 
 function UserLogoModal() {
   const [isShowInfoModal, setIsShowInfoModal] = useState(false);
@@ -18,9 +19,9 @@ function UserLogoModal() {
         <span>Edit profile</span>
         <RxPencil1 onClick={() => setIsShowInfoModal(!isShowInfoModal)} />
       </div>
-      <button onClick={() => setIsShowLogoutModal(!isShowLogoutModal)}>
+      <Button type="curv" color="green" onClick={() => setIsShowLogoutModal(!isShowLogoutModal)}>
         Log out <LuArrowRight />
-      </button>
+      </Button>
     </div>
   );
 }

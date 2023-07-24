@@ -1,6 +1,6 @@
 import MainContent from '../features/MainContent';
 
-function Home() {
+function HomePage() {
   return (
     <div>
       <MainContent />
@@ -8,4 +8,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

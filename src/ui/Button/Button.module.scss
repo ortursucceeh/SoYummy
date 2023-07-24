@@ -1,0 +1,54 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  border: solid 1px transparent;
+  outline: none;
+  color: var(--color-white-200);
+}
+
+.curv {
+  border-radius: 24px 44px;
+}
+
+.rect {
+  border-radius: 6px;
+}
+
+.dark {
+  background-color: var(--color-dark-0);
+  &:hover {
+    background-color: var(--color-green-0);
+  }
+}
+
+.green {
+  background-color: var(--color-green-0);
+  &:hover {
+    background-color: var(--color-dark-0);
+  }
+}
+
+.grey {
+  background-color: var(--color-grey-200);
+  color: var(--color-dark-100);
+  &:hover {
+    border: 1px solid var(--color-dark-100);
+    background-color: transparent;
+  }
+}
+
+.trans {
+  background-color: transparent;
+  outline: 1px solid var(--color-green-0);
+  color: var(--color-green-0);
+
+  &:hover {
+    outline: none;
+    background-color: var(--color-green-0);
+    color: var(--color-white-200);
+  }
+}
