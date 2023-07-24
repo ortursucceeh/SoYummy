@@ -4,6 +4,7 @@ import { VscClose } from 'react-icons/vsc';
 import { FiUser } from 'react-icons/fi';
 import { RxPencil1 } from 'react-icons/rx';
 import Button from '../../../../ui/Button/Button';
+import { AiFillPlusCircle } from 'react-icons/ai';
 
 function UserInfoModal({ onClose }) {
   return (
@@ -14,6 +15,7 @@ function UserInfoModal({ onClose }) {
       <label htmlFor="uploadBtn" className={styles.fileInput}>
         <FiUser />
         <input type="file" id="uploadBtn" />
+        <AiFillPlusCircle id="plus" />
       </label>
       <Input leftIcon={<FiUser />} rightIcon={<RxPencil1 />} type="text" />
       <Button type="rect" color="green">

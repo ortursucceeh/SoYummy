@@ -33,11 +33,12 @@
     padding: 16px 50px;
     border: 1px solid var(--color-grey-0);
     opacity: 0.8;
-    line-height: normal;
+    width: 400px;
   }
 }
 
 .fileInput {
+  position: relative;
   height: 103px;
   width: 103px;
   border-radius: 100px;
@@ -53,6 +54,17 @@
     height: 48px;
     stroke: #c4c4c4;
   }
+
+  svg[id='plus'] {
+    bottom: -2px;
+    right: 10px;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    fill: var(--color-green-0);
+    stroke: var(--color-white-200);
+  }
+
   input {
     display: none;
   }

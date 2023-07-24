@@ -15,9 +15,8 @@
   }
 
   input[type='text'] {
-    padding: 17px 52px 17px;
+    padding: 17px 54px 17px;
     border: 1px solid var(--color-grey-0);
-    // width: 100%;
   }
 
   button {
@@ -36,19 +35,20 @@
     align-items: center;
     margin-top: 72px;
 
-    span,
-    p {
+    & > span,
+    & > p {
       display: none;
     }
 
-    input {
+    input[type='text'] {
       margin: 0;
-      height: 50px;
+      padding: 14px 54px;
+      font-size: 14px;
     }
 
     button {
       margin: 0;
-      padding: 12px 50px;
+      padding: 12px 54px;
     }
   }
 }
@@ -59,16 +59,23 @@
     gap: 10px 0;
     margin-top: 0;
 
-    input {
+    span,
+    svg {
+      width: 16px;
+      left: 12px;
+    }
+
+    input[type='text'] {
       margin: 0;
-      height: 50px;
-      width: 244px;
-      font-size: 12px;
+      width: 200px;
+      padding: 10px 36px;
+      font-size: 10px;
     }
 
     button {
       margin: 0;
-      padding: 12px 83px;
+      width: 200px;
+      padding: 7px 75px;
     }
   }
 }
