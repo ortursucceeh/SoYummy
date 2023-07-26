@@ -1,16 +1,14 @@
 .infoModal {
-  min-width: 500px;
-  min-height: 425px;
-  position: absolute;
-  top: 60px;
-  left: -228px;
-  background-color: #f0f0f0; /*var(--color-white-200);*/
-  border-radius: 30px;
+  width: 500px;
+  height: 425px;
+  background-color: var(--color-white-200);
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 60px 50px;
   z-index: 100;
+  box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
 
   .closeBtn {
     position: absolute;
@@ -31,7 +29,6 @@
   input[type='text'] {
     color: var(--color-dark-100);
     border: 1px solid var(--color-grey-0);
-    opacity: 0.8;
     width: 400px;
     &:focus {
       border-color: var(--color-dark-100);
@@ -69,5 +66,44 @@
 
   input {
     display: none;
+  }
+}
+
+@media (max-width: 644px) {
+  .infoModal {
+    width: 330px;
+    height: 330px;
+    padding: 34px 22px;
+
+    input[type='text'] {
+      width: 282px;
+    }
+
+    button {
+      margin-top: 24px;
+      padding: 0px;
+      width: 282px;
+      height: 50px;
+    }
+  }
+
+  .closeBtn {
+    top: 18px;
+    right: 18px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .fileInput {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 54px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 }

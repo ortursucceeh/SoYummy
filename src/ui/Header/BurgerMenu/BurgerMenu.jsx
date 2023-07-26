@@ -4,17 +4,19 @@ import styles from './BurgerMenu.module.scss';
 import { VscClose } from 'react-icons/vsc';
 import BurgerDecor from './../../../assets/burger-decoration.png';
 
-function BurgerMenu({ isopen, closeMenu }) {
+function BurgerMenu({ isOpen, onClose }) {
+  document.body.style.overflowY = isOpen ? 'hidden' : 'auto';
+
   return (
-    <div className={`${styles.menu} ${isopen ? styles.open : ''}`}>
+    <div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
       <div className={styles.icons}>
         <Logo type="header" />
-        <VscClose onClick={closeMenu} />
+        <VscClose onClick={onClose} />
       </div>
       <div className={styles.pages}>
         <HeaderNav />
       </div>
-      <img src={BurgerDecor} alt="flowers" />
+      <img src={BurgerDecor} alt="leaves" />
     </div>
   );
 }

@@ -5,18 +5,22 @@ import { useState } from 'react';
 import UserInfoModal from '../UserInfoModal/UserInfoModal';
 import LogoutModal from '../LogoutModal/LogoutModal';
 import Button from '../../../../ui/Button/Button';
+import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 
-function UserLogoModal() {
+function UserLogoModal({ onClose }) {
   const [isShowInfoModal, setIsShowInfoModal] = useState(false);
   const [isShowLogoutModal, setIsShowLogoutModal] = useState(false);
+  const ref = useOutsideClick(onClose, true, isShowInfoModal || isShowLogoutModal);
 
-  if (isShowInfoModal) return <UserInfoModal onClose={() => setIsShowInfoModal(false)} />;
-  if (isShowLogoutModal) return <LogoutModal onClose={() => setIsShowLogoutModal(false)} />;
+  if (isShowInfoModal)
+    return <UserInfoModal isOpen={isShowInfoModal} onClose={() => setIsShowInfoModal(false)} />;
+  if (isShowLogoutModal)
+    return <LogoutModal isOpen={isShowLogoutModal} onClose={() => setIsShowLogoutModal(false)} />;
 
   return (
-    <div className={styles.userModal}>
+    <div className={styles.userModal} ref={ref}>
       <div>
-        <span>Edit profile</span>
+        <span onClick={() => setIsShowInfoModal(!isShowInfoModal)}>Edit profile</span>
         <RxPencil1 onClick={() => setIsShowInfoModal(!isShowInfoModal)} />
       </div>
       <Button type="curv" color="green" onClick={() => setIsShowLogoutModal(!isShowLogoutModal)}>

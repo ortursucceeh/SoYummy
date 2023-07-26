@@ -9,7 +9,7 @@ function UserLogo() {
   return (
     <div className={styles.user}>
       <img src={avatar} alt="User avatar" onClick={() => setIsShowUserModal(!isShowUserModal)} />
-      {isShowUserModal && <UserLogoModal />}
+      {isShowUserModal && <UserLogoModal onClose={() => setIsShowUserModal(false)} />}
       <span>Olena</span>
     </div>
   );

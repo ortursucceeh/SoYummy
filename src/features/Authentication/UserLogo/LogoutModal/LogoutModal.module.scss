@@ -1,14 +1,11 @@
 .logoutModal {
-  min-width: 500px;
-  position: absolute;
-  max-height: 215px;
-  top: 60px;
-  left: -228px;
+  width: 500px;
+  height: 215px;
   padding: 50px;
-  background-color: #e2dfdf;
-  border-radius: 10px;
+  background-color: var(--color-white-200);
+  border-radius: 30px;
 
-  span {
+  .title {
     display: block;
     margin-top: 2px;
     text-align: center;
@@ -16,25 +13,59 @@
     font-style: normal;
     font-weight: 400;
   }
-}
 
-.close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  cursor: pointer;
-  svg {
-    width: 30px;
-    height: 30px;
+  .close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .buttons {
+    margin-top: 32px;
+    display: flex;
+    gap: 0 16px;
+
+    button {
+      width: 192px;
+      height: 60px;
+    }
   }
 }
 
-.buttons {
-  margin-top: 32px;
-  display: flex;
-  gap: 0 16px;
+@media (max-width: 644px) {
+  .logoutModal {
+    width: 330px;
+    height: 180px;
+    padding: 40px 44px;
 
-  button {
-    padding: 16px 65px;
+    .title {
+      display: block;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    .close {
+      top: 18px;
+      right: 18px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .buttons {
+      margin-top: 24px;
+      gap: 0 8px;
+
+      button {
+        width: 138px;
+        height: 50px;
+        font-size: 14px;
+      }
+    }
   }
 }

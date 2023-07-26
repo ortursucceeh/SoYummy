@@ -16,7 +16,7 @@ function Header() {
         <div className={styles.header}>
           <Logo type="header" />
           <HeaderNav />
-          <BurgerMenu isopen={menuIsOpen} closeMenu={() => setMenuIsOpen(false)} />
+          <BurgerMenu isOpen={menuIsOpen} onClose={() => setMenuIsOpen(false)} />
 
           <span className={styles.items}>
             <UserLogo />
