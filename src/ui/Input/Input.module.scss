@@ -11,6 +11,8 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  padding: 15px 50px;
+  width: 100%;
 }
 
 .leftIcon {
@@ -38,5 +40,27 @@
   svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media (max-width: 644px) {
+  .input {
+    padding: 10px 36px;
+  }
+
+  .leftIcon {
+    left: 14px;
+    span,
+    svg {
+      width: 16px;
+    }
+  }
+
+  .rightIcon {
+    right: 14px;
+    span,
+    svg {
+      width: 16px;
+    }
   }
 }

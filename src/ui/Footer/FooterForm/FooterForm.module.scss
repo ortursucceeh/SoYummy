@@ -15,10 +15,9 @@
   }
 
   input[type='text'] {
-    padding: 17px 54px 17px;
-    border: 1px solid var(--color-grey-0);
+    border: 1px solid var(--color-grey-300);
 
-    &:hover {
+    &:focus {
       border: 1px solid var(--color-white-200);
     }
   }

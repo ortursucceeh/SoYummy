@@ -1,9 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import AppLayout from './ui/AppLayout/AppLayout';
 import MainPage from './pages/MainPage';
-import RegisterPage from './pages/RegisterPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
-import SigninPage from './pages/SigninPage';
+import SigninPage from './pages/SigninPage/SigninPage';
 import './styles/global.scss';
 import PageNotFound from './pages/PageNotFound';
 

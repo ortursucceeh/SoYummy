@@ -11,5 +11,4 @@ function Button({ type, color, children, onClick, ...props }) {
     </button>
   );
 }
-
 export default Button;
