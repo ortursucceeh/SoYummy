@@ -5,7 +5,7 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SigninPage from './pages/SigninPage/SigninPage';
 import './styles/global.scss';
-import PageNotFound from './pages/PageNotFound';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route element={<Navigate replace to="home" />} />
           <Route path="home" element={<MainPage />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
         <Route path="/" element={<WelcomePage />} />
         <Route path="signin" element={<SigninPage />} />

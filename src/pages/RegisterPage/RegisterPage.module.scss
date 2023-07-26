@@ -63,13 +63,17 @@
 @media (max-width: 1200px) {
   .layout {
     flex-direction: column;
-    ali .img {
+    .img {
       width: 400px;
       height: 359px;
     }
 
     .bgImg {
       display: none;
+    }
+
+    a {
+      color: var(--color-dark-100);
     }
   }
 }
