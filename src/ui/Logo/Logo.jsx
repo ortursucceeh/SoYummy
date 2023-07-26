@@ -3,9 +3,9 @@ import styles from './Logo.module.scss';
 
 function Logo({ type }) {
   return (
-    <div className={`${styles.logo} ${styles[type]}`}>
+    <i className={`${styles.logo} ${styles[type]}`}>
       <PiForkKnifeBold />
-    </div>
+    </i>
   );
 }
 

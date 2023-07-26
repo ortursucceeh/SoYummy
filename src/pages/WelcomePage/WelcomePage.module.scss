@@ -1,0 +1,73 @@
+.layout {
+  height: 100vh;
+  background: url('./../../assets/welcome-bg.png') center center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 30px;
+  color: var(--color-white-200);
+
+  i {
+    margin: 0 auto;
+    margin-bottom: 44px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 28px; /* 100% */
+    letter-spacing: -0.56px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: -0.36px;
+    // width: 540px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    button {
+      width: 184px;
+      height: 68px;
+    }
+
+    button[id='signin'] {
+      border-color: var(--color-white-200);
+      color: var(--color-white-200);
+
+      &:hover {
+        background-color: var(--color-white-200);
+        color: var(--color-dark-0);
+      }
+    }
+  }
+}
+
+@media (max-width: 644px) {
+  .layout {
+    i {
+      margin-bottom: 22px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
