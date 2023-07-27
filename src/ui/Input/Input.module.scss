@@ -30,7 +30,7 @@
 }
 
 .input[aria-invalid='true'] {
-  border: 1px solid red;
+  border-color: var(--color-red-0);
 }
 
 .input:-webkit-autofill {
@@ -54,12 +54,11 @@
 
 .error {
   position: absolute;
-  z-index: 100;
-  text-align: center;
-  color: red;
+  color: var(--color-red-0);
   left: 0;
   bottom: -20px;
   font-size: 12px;
+  font-weight: 400;
 }
 
 @media (max-width: 644px) {
@@ -81,5 +80,10 @@
     svg {
       width: 16px;
     }
+  }
+
+  .error {
+    bottom: -16px;
+    font-size: 10px;
   }
 }

@@ -4,8 +4,11 @@ import Input from '../../../ui/Input/Input';
 import styles from './SigninForm.module.scss';
 import { FiLock } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
+import { useLogin } from './useLogin';
+import LoaderMini from '../../../ui/Loaders/LoaderMini';
 
 function SigninForm() {
+  const { login, isLoading } = useLogin();
   const {
     register,
     formState: { errors },
@@ -14,10 +17,9 @@ function SigninForm() {
     reset,
   } = useForm();
 
-  function onSubmit(data) {
-    console.log(data);
-    console.log('submit');
-    reset();
+  function onSubmit({ email, password }) {
+    console.log('login');
+    login({ email, password }, { onSettled: () => reset() });
   }
 
   return (
@@ -39,6 +41,7 @@ function SigninForm() {
           }}
           errors={errors}
           aria-invalid={errors.email ? 'true' : 'false'}
+          disabled={isLoading}
         />
         <Input
           leftIcon={<FiLock />}
@@ -56,10 +59,11 @@ function SigninForm() {
           }}
           errors={errors}
           aria-invalid={errors.password ? 'true' : 'false'}
+          disabled={isLoading}
         />
       </div>
-      <Button type="rect" color="green">
-        Sign in
+      <Button type="rect" color="green" disabled={isLoading}>
+        {isLoading ? <LoaderMini /> : 'Sign in'}
       </Button>
     </form>
   );

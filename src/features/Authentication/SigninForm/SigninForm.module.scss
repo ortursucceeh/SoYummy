@@ -4,3 +4,9 @@
   gap: 24px 0;
   width: 100%;
 }
+
+@media (max-width: 644px) {
+  .inputs {
+    gap: 18px 0;
+  }
+}
