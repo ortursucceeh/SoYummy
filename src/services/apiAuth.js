@@ -1,3 +1,5 @@
+import { getAccessToken, getRefreshToken, updateTokens } from '../utils/auth';
+
 const API_URL = 'https://so-yumi.p.goit.global/api';
 
 export async function signup({ name, email, password }) {
@@ -28,11 +30,25 @@ export async function login({ email, password }) {
   return res.json();
 }
 
-export async function getCurrentUser({ token }) {
+export async function getCurrentUser() {
+  const refreshToken = getRefreshToken();
+
+  await fetch(`${API_URL}/users/refresh`, {
+    method: 'POST',
+    body: JSON.stringify({ refreshToken: refreshToken }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(data => data.json())
+    .then(({ refreshToken, accessToken }) => updateTokens(accessToken, refreshToken));
+
+  const newAccessToken = getAccessToken();
+
   const res = await fetch(`${API_URL}/users/current`, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${newAccessToken}`,
     },
   });
 
@@ -42,8 +58,6 @@ export async function getCurrentUser({ token }) {
 }
 
 export async function logout({ token }) {
-  console.log('token  from apiauth:>> ', token);
-  console.log(`Bearer ${token}`);
   const res = await fetch(`${API_URL}/users/logout`, {
     method: 'POST',
     headers: {
