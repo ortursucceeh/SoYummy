@@ -25,6 +25,9 @@
   button {
     margin-top: 16px;
     padding: 20px 128px;
+    &:hover {
+      border-color: 1px solid var(--color-white-200);
+    }
   }
 }
 

@@ -25,7 +25,6 @@ export function useOutsideClick(handler, listenCapturing = true, isOpen = true) 
         ? (document.body.style.overflowY = 'hidden')
         : (document.body.style.overflowY = 'auto');
 
-      console.log('click');
       return () => {
         document.removeEventListener('click', handleClick, listenCapturing);
         window.removeEventListener('keydown', handleESCclick, listenCapturing);

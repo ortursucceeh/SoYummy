@@ -8,7 +8,6 @@
   align-items: center;
   padding: 60px 50px;
   z-index: 100;
-  box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
 
   .closeBtn {
     position: absolute;
@@ -38,8 +37,8 @@
 
 .fileInput {
   position: relative;
-  height: 103px;
-  width: 103px;
+  min-height: 103px;
+  min-width: 103px;
   border-radius: 100px;
   background-color: #d9d9d9;
   display: flex;
@@ -97,8 +96,8 @@
   }
 
   .fileInput {
-    width: 88px;
-    height: 88px;
+    min-width: 88px;
+    min-height: 88px;
     margin-bottom: 54px;
 
     svg {

@@ -29,6 +29,15 @@
   }
 }
 
+.input[aria-invalid='true'] {
+  border: 1px solid red;
+}
+
+.input:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-white-200) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .rightIcon {
   position: absolute;
   width: 20px;
@@ -41,6 +50,16 @@
     width: 20px;
     height: 20px;
   }
+}
+
+.error {
+  position: absolute;
+  z-index: 100;
+  text-align: center;
+  color: red;
+  left: 0;
+  bottom: -20px;
+  font-size: 12px;
 }
 
 @media (max-width: 644px) {
