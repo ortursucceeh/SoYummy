@@ -37,6 +37,12 @@ function App() {
           >
             <Route element={<Navigate replace to="home" />} />
             <Route path="home" element={<MainPage />} />
+            <Route path="categories" element={<MainPage />} />
+            <Route path="categories/:categoryName" element={<MainPage />} />
+            <Route path="add" element={<MainPage />} />
+            <Route path="my" element={<MainPage />} />
+            <Route path="favorite" element={<MainPage />} />
+            <Route path="search" element={<MainPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
 

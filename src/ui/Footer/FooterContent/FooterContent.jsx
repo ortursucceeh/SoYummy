@@ -2,6 +2,7 @@ import styles from './FooterContent.module.scss';
 import FooterForm from '../FooterForm/FooterForm';
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Logo from '../../Logo/Logo';
+import { Link } from 'react-router-dom';
 
 function FooterContent() {
   return (
@@ -22,10 +23,10 @@ function FooterContent() {
         </div>
 
         <ul className={styles.pages}>
-          <li>Ingredients</li>
-          <li>Add recipes</li>
-          <li>My recipes</li>
-          <li>Favorite</li>
+          <Link to="search">Ingredients</Link>
+          <Link to="add">Add recipes</Link>
+          <Link to="my">My recipes</Link>
+          <Link to="favorite">Favorite</Link>
         </ul>
 
         <FooterForm />

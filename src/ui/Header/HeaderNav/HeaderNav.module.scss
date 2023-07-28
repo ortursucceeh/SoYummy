@@ -11,7 +11,7 @@
     transform: scale(1.1);
   }
 
-  li {
+  a {
     font-size: 14px;
     transition: color 0.2s;
     font-weight: 500;
@@ -21,6 +21,10 @@
     &:hover {
       color: var(--color-green-0);
     }
+  }
+
+  .active {
+    color: var(--color-green-0);
   }
 
   svg {
@@ -37,7 +41,7 @@
 @media (max-width: 768px) {
   .nav {
     display: none;
-    
+
     li {
       font-size: 20px;
     }
