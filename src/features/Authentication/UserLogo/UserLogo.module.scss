@@ -12,6 +12,7 @@
     cursor: pointer;
     transition: transform 0.3s;
     overflow: hidden;
+    flex-shrink: 0;
 
     &:hover {
       transform: scale(1.05);
@@ -22,5 +23,7 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 170%;
+    max-width: 150px;
+    overflow: hidden;
   }
 }

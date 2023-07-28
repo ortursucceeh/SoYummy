@@ -16,7 +16,7 @@
     bottom: 0;
     z-index: -1;
     filter: blur(2px);
-    width: 80%;
+    width: 50%;
   }
 }
 
@@ -46,9 +46,9 @@
     flex-direction: column;
     gap: 40px;
 
-    li {
+    a {
       text-align: center;
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 }
