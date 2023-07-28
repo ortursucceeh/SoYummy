@@ -18,7 +18,6 @@ function SigninForm() {
   } = useForm();
 
   function onSubmit({ email, password }) {
-    console.log('login');
     login({ email, password }, { onSettled: () => reset() });
   }
 

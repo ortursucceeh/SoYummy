@@ -18,7 +18,7 @@ function ProtectedRoute({ type, children }) {
   if (isLoading)
     return (
       <div className={styles.fullpage}>
-        <Loader />;
+        <Loader />
       </div>
     );
 

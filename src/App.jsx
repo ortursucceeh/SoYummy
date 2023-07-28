@@ -13,7 +13,13 @@ import SigninPage from './pages/SigninPage/SigninPage';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import ProtectedRoute from './ui/ProtectedRoute/ProtectedRoute';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
+});
 
 function App() {
   return (

@@ -10,6 +10,7 @@ export function getRefreshToken() {
 
 export function updateTokens(accessToken, refreshToken) {
   const data = JSON.parse(localStorage.getItem(userLocaleStorageKey));
+
   localStorage.setItem(
     userLocaleStorageKey,
     JSON.stringify({ ...data, accessToken: accessToken, refreshToken: refreshToken })

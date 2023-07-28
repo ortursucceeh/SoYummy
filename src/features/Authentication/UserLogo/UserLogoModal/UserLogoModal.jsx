@@ -7,13 +7,19 @@ import LogoutModal from '../LogoutModal/LogoutModal';
 import Button from '../../../../ui/Button/Button';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 
-function UserLogoModal({ onClose }) {
+function UserLogoModal({ onClose, name }) {
   const [isShowInfoModal, setIsShowInfoModal] = useState(false);
   const [isShowLogoutModal, setIsShowLogoutModal] = useState(false);
   const ref = useOutsideClick(onClose, true, isShowInfoModal || isShowLogoutModal);
 
   if (isShowInfoModal)
-    return <UserInfoModal isOpen={isShowInfoModal} onClose={() => setIsShowInfoModal(false)} />;
+    return (
+      <UserInfoModal
+        name={name}
+        isOpen={isShowInfoModal}
+        onClose={() => setIsShowInfoModal(false)}
+      />
+    );
   if (isShowLogoutModal)
     return <LogoutModal isOpen={isShowLogoutModal} onClose={() => setIsShowLogoutModal(false)} />;
 

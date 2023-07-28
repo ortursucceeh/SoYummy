@@ -7,7 +7,7 @@ import Button from '../../../../ui/Button/Button';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import Modal from '../../../../ui/Modal/Modal';
 
-function UserInfoModal({ isOpen, onClose }) {
+function UserInfoModal({ isOpen, onClose, name }) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <form className={styles.infoModal}>
@@ -19,7 +19,7 @@ function UserInfoModal({ isOpen, onClose }) {
           <input type="file" id="uploadBtn" />
           <AiFillPlusCircle id="plus" />
         </label>
-        <Input leftIcon={<FiUser />} rightIcon={<RxPencil1 />} type="text" />
+        <Input leftIcon={<FiUser />} rightIcon={<RxPencil1 />} type="text" defaultValue={name} />
         <Button type="rect" color="green">
           Save changes
         </Button>

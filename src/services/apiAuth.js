@@ -30,31 +30,48 @@ export async function login({ email, password }) {
   return res.json();
 }
 
-export async function getCurrentUser() {
+export async function refreshTokens() {
   const refreshToken = getRefreshToken();
+  let isRefreshed;
+  if (refreshToken) {
+    isRefreshed = await fetch(`${API_URL}/users/refresh`, {
+      method: 'POST',
+      body: JSON.stringify({ refreshToken: refreshToken }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(data => data.json())
+      .then(({ refreshToken, accessToken }) => {
+        updateTokens(accessToken, refreshToken);
+        return true;
+      })
+      .catch(() => false);
+  }
 
-  await fetch(`${API_URL}/users/refresh`, {
-    method: 'POST',
-    body: JSON.stringify({ refreshToken: refreshToken }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then(data => data.json())
-    .then(({ refreshToken, accessToken }) => updateTokens(accessToken, refreshToken));
+  return isRefreshed;
+}
 
-  const newAccessToken = getAccessToken();
+export async function getCurrentUser() {
+  const isRefreshed = await refreshTokens();
+  console.log('isRefreshed :>> ', isRefreshed);
+  if (isRefreshed) {
+    const newAccessToken = getAccessToken();
+    const res = await fetch(`${API_URL}/users/current`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${newAccessToken}`,
+      },
+    });
 
-  const res = await fetch(`${API_URL}/users/current`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${newAccessToken}`,
-    },
-  });
+    if (!res.ok) throw new Error('Failed to get current user🔥');
 
-  if (!res.ok) throw new Error('Failed to get current user🔥');
-
-  return res.json();
+    return res
+      .json()
+      .then(data => data)
+      .catch(() => null);
+  }
+  return null;
 }
 
 export async function logout({ token }) {

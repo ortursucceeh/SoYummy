@@ -12,9 +12,9 @@ export function useLogin() {
     onSuccess: data => {
       toast.success('You are successfully logged in!');
       queryClient.setQueryData(['user'], data.user);
+      console.log('data for storage', data);
       localStorage.setItem('soyummy-user', JSON.stringify(data));
       navigate('/home');
-      console.log(data);
     },
     onError: err => {
       toast.error('Invalid credentials!');

@@ -1,21 +1,25 @@
-import { useQueryClient, useMutation } from '@tanstack/react-query';
-import { getCurrentUser as getCurrentUserApi } from '../../services/apiAuth';
+// import { useQueryClient, useMutation } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
+import { getCurrentUser } from '../../services/apiAuth';
+// import { getAccessToken } from '../../utils/auth';
 
 export function useUser() {
-  const queryClient = useQueryClient();
-  const token = JSON.parse(localStorage.getItem('soyummy-user'))?.accessToken;
+  // const queryClient = useQueryClient();
 
-  const { mutate: getCurrentUser, isLoading } = useMutation({
-    mutationFn: () => getCurrentUserApi({ token }),
-    onSuccess: user => {
-      queryClient.setQueryData(['user'], user);
-      localStorage.setItem('soyummy-user', JSON.stringify(user));
-      console.log(user);
-    },
-    onError: err => {
-      console.log(err.message);
-    },
+  // const { mutate: getCurrentUser, isLoading } = useMutation({
+  //   mutationFn: getCurrentUserApi,
+  //   onSuccess: user => {
+  //     queryClient.setQueryData(['user'], user);
+  //   },
+  //   onError: err => {
+  //     console.log(err.message);
+  //   },
+  // });
+
+  const { isLoading, data: user } = useQuery({
+    queryKey: ['user'],
+    queryFn: getCurrentUser,
   });
 
-  return { getCurrentUser, isLoading, isAuthenticated: token };
+  return { user, isLoading, isAuthenticated: user };
 }
