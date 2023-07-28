@@ -11,6 +11,7 @@
     border-radius: 44px;
     cursor: pointer;
     transition: transform 0.3s;
+    overflow: hidden;
 
     &:hover {
       transform: scale(1.05);

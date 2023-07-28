@@ -30,6 +30,20 @@ export async function login({ email, password }) {
   return res.json();
 }
 
+export async function logout({ token }) {
+  const res = await fetch(`${API_URL}/users/logout`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  });
+
+  if (!res.ok) throw new Error('Failed to logout🔥');
+
+  return res.json();
+}
+
 export async function refreshTokens() {
   const refreshToken = getRefreshToken();
   let isRefreshed;
@@ -74,16 +88,20 @@ export async function getCurrentUser() {
   return null;
 }
 
-export async function logout({ token }) {
-  const res = await fetch(`${API_URL}/users/logout`, {
+export async function updateUser(formData) {
+  const token = getAccessToken();
+  console.log(formData);
+
+  const res = await fetch(`${API_URL}/user-info/set-user-info`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: token,
+      // 'Content-Type': 'multipart/form-data',
+      Authorization: `Bearer ${token}`,
     },
+    body: formData,
   });
 
-  if (!res.ok) throw new Error('Failed to logout🔥');
+  if (!res.ok) throw new Error('Failed to updateUser😐');
 
   return res.json();
 }
