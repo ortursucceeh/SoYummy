@@ -8,7 +8,6 @@ function HeaderNav() {
       <li>Add recipes</li>
       <li>My recipes</li>
       <li>Favorites</li>
-      <li>Shopping list</li>
       <LuSearch />
     </ul>
   );

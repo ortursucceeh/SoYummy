@@ -4,7 +4,7 @@ function LoaderMini() {
   return (
     <ColorRing
       visible={true}
-      height="80%"
+      height="30%"
       ariaLabel="blocks-loading"
       wrapperStyle={{}}
       wrapperClass="blocks-wrapper"

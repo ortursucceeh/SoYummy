@@ -14,7 +14,7 @@
     line-height: 18px;
   }
 
-  input[type='text'] {
+  input[type='email'] {
     border: 1px solid var(--color-grey-300);
 
     &:focus {
@@ -46,7 +46,7 @@
       display: none;
     }
 
-    input[type='text'] {
+    input {
       margin: 0;
       padding: 14px 54px;
       font-size: 14px;
@@ -71,7 +71,7 @@
       left: 12px;
     }
 
-    input[type='text'] {
+    input {
       margin: 0;
       width: 200px;
       padding: 10px 36px;

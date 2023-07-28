@@ -26,7 +26,6 @@ function FooterContent() {
           <li>Add recipes</li>
           <li>My recipes</li>
           <li>Favorite</li>
-          <li>Shopping list</li>
         </ul>
 
         <FooterForm />

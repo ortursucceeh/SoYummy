@@ -10,10 +10,9 @@ export function useUpdateUser() {
     onSuccess: data => {
       toast.success('Your account profile was successfully updated!');
       queryClient.setQueryData(['user'], data);
-      // localStorage.setItem('soyummy-user', JSON.stringify(data));
     },
     onError: err => {
-      toast.error('Invalid profile update!');
+      toast.error('Update user server error');
       console.log(err.message);
     },
   });

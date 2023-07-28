@@ -101,7 +101,7 @@ export async function updateUser(formData) {
     body: formData,
   });
 
-  if (!res.ok) throw new Error('Failed to updateUser😐');
+  if (!res.ok) throw new Error('Failed to update user😐');
 
   return res.json();
 }
