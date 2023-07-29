@@ -12,7 +12,7 @@ function ProtectedRoute({ type, children }) {
   if (type === 'private' && !isAuthenticated && !isLoading)
     return <Navigate to="/" state={location} />;
   if (type === 'public' && isAuthenticated && !isLoading)
-    return <Navigate to="/home" state={location} />;
+    return <Navigate to="/main" state={location} />;
 
   // 3. show spinner
   if (isLoading)

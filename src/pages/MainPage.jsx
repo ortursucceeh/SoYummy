@@ -1,4 +1,4 @@
-import MainContent from '../features/MainContent';
+import MainContent from '../features/MainContent/MainContent';
 
 function MainPage() {
   return (

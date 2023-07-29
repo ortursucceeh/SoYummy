@@ -20,12 +20,12 @@ function Header() {
           <HeaderNav />
           <BurgerMenu isOpen={menuIsOpen} onClose={() => setMenuIsOpen(false)} />
 
-          <span className={styles.items}>
+          <div className={styles.items}>
             <UserLogo user={user} />
             <span className={styles.burger}>
               <HiOutlineMenuAlt2 onClick={() => setMenuIsOpen(!menuIsOpen)} />
             </span>
-          </span>
+          </div>
         </div>
       </Container>
     </header>

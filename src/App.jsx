@@ -35,8 +35,8 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route element={<Navigate replace to="home" />} />
-            <Route path="home" element={<MainPage />} />
+            <Route element={<Navigate replace to="main" />} />
+            <Route path="main" element={<MainPage />} />
             <Route path="categories" element={<MainPage />} />
             <Route path="categories/:categoryName" element={<MainPage />} />
             <Route path="add" element={<MainPage />} />

@@ -2,6 +2,7 @@ import Button from '../../ui/Button/Button';
 import Logo from '../../ui/Logo/Logo';
 import styles from './WelcomePage.module.scss';
 import { Link } from 'react-router-dom';
+
 function WelcomePage() {
   return (
     <section className={styles.layout}>

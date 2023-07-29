@@ -1,0 +1,59 @@
+.container {
+  min-height: 1000px;
+  margin-top: -64px;
+  position: relative;
+
+  .decor1 {
+    position: absolute;
+    left: -120px;
+  }
+
+  .main {
+    display: flex;
+    padding: 118px 0;
+    gap: 0 73px;
+
+    .content {
+      margin-top: 124px;
+
+      .title {
+        font-size: 100px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100px;
+
+        span {
+          color: var(--color-green-0);
+        }
+      }
+
+      .text {
+        margin-top: 14px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
+
+    .mainBg {
+      position: absolute;
+      right: -150px;
+      top: 0;
+      z-index: -9;
+    }
+
+    .dishLeaves {
+      position: absolute;
+      right: -150px;
+      top: 0;
+      z-index: -8;
+    }
+
+    .arrow {
+      position: absolute;
+      right: 75px;
+      top: 530px;
+    }
+  }
+}

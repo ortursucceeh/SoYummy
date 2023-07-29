@@ -14,7 +14,7 @@ export function useLogin() {
       queryClient.setQueryData(['user'], data.user);
       console.log('data for storage', data);
       localStorage.setItem('soyummy-user', JSON.stringify(data));
-      navigate('/home');
+      navigate('/main');
     },
     onError: err => {
       toast.error('Invalid credentials!');

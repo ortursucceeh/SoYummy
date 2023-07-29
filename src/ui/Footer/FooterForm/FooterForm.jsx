@@ -10,8 +10,13 @@ function FooterForm() {
 
   function handleSubscribe(e) {
     e.preventDefault();
-    setInputValue('');
-    toast.success('You have been successfully subscribed to SoYummy news!');
+    const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (inputValue.match(emailPattern)) {
+      toast.success('You have been successfully subscribed to SoYummy news!');
+      setInputValue('');
+    } else {
+      toast.error('Please enter a valid email address!');
+    }
   }
 
   return (
