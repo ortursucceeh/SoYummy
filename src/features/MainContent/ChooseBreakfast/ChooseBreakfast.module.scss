@@ -40,3 +40,63 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .container {
+    right: 30px;
+    top: 350px;
+  }
+
+  .arrow {
+    width: 170px;
+  }
+}
+
+@media (max-width: 932px) {
+  .container {
+    width: 260px;
+    height: 100px;
+    padding: 12px;
+    right: 30px;
+    top: 325px;
+  }
+
+  .btn {
+    a {
+      font-size: 12px;
+      width: 92px;
+      height: 18px;
+      cursor: pointer;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+@media (max-width: 932px) {
+  .container {
+    top: 250px;
+  }
+  .arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 644px) {
+  .container {
+    width: 225px;
+    height: 100px;
+    padding: 8px;
+
+    top: 400px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  .btn {
+    margin-top: 8px;
+  }
+}

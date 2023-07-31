@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 0 30px;
+
   svg:hover {
     transition: all 0.3s;
     stroke: var(--color-green-0);
@@ -30,6 +31,7 @@
     height: 24px;
   }
 }
+
 @media (max-width: 930px) {
   .nav {
     gap: 0 15px;

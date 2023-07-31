@@ -1,4 +1,5 @@
 import MainContent from '../features/MainContent/MainContent';
+// import styles from './MainPage.module.scss';
 
 function MainPage() {
   return (

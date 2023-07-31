@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './ChooseBreakfast.module.scss';
 import { LuArrowRight } from 'react-icons/lu';
+import mainArrow from './../../../assets/main-hero-arrow.svg';
 function ChooseBreakfast() {
   return (
     <div className={styles.container}>
@@ -13,6 +14,7 @@ function ChooseBreakfast() {
           <span>See recipes</span> <LuArrowRight />
         </Link>
       </span>
+      <img src={mainArrow} alt="arrow" className={styles.arrow} />
     </div>
   );
 }

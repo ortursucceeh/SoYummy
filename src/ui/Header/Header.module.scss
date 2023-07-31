@@ -7,20 +7,19 @@
   align-items: center;
   justify-content: space-between;
   z-index: 100;
+}
+.items {
+  gap: 24px;
+  align-items: center;
+  display: flex;
+}
 
-  .items {
-    gap: 24px;
-    align-items: center;
-    display: flex;
-  }
+.burger {
+  display: none;
 
-  .burger {
-    display: none;
-
-    & svg {
-      width: 30px;
-      height: 30px;
-    }
+  & svg {
+    width: 30px;
+    height: 30px;
   }
 }
 

@@ -3,11 +3,12 @@ import HeaderNav from '../HeaderNav/HeaderNav';
 import styles from './BurgerMenu.module.scss';
 import { VscClose } from 'react-icons/vsc';
 import BurgerDecor from './../../../assets/burger-decoration.png';
+import { createPortal } from 'react-dom';
 
 function BurgerMenu({ isOpen, onClose }) {
   document.body.style.overflowY = isOpen ? 'hidden' : 'auto';
 
-  return (
+  return createPortal(
     <div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
       <div className={styles.icons}>
         <Logo type="header" />
@@ -17,7 +18,8 @@ function BurgerMenu({ isOpen, onClose }) {
         <HeaderNav />
       </div>
       <img src={BurgerDecor} alt="leaves" />
-    </div>
+    </div>,
+    document.body
   );
 }
 
