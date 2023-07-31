@@ -6,6 +6,8 @@ import leavesDishDecor from './../../assets/123.png';
 import mainDish from './../../assets/main-hero-dish.png';
 import Search from './Search/Search';
 import ChooseBreakfast from './ChooseBreakfast/ChooseBreakfast';
+import PreviewCategories from './PreviewCategories/PreviewCategories';
+import RecipeItem from '../Recipies/RecipeItem/RecipeItem';
 
 function MainContent() {
   return (
@@ -22,12 +24,29 @@ function MainContent() {
           </p>
           <Search />
         </div>
-        <div className={styles.bg}>
+        <div>
           <img src={leavesDishDecor} alt="leaves" className={styles.dishLeaves} />
           <img src={mainDish} alt="dish" className={styles.dish} />
           <ChooseBreakfast />
         </div>
       </main>
+
+      <PreviewCategories />
+      {/* <RecipeItem
+        recipe={{
+          _id: '640cd5ac2d9fecf12e8898a8',
+          title: 'Smoked Haddock Kedgeree',
+          category: 'Breakfast',
+          description:
+            "A traditional Anglo-Indian dish with smoked haddock, rice, hard-boiled eggs, and fragrant spices. A flavorful and satisfying meal that's easy to make.",
+          preview:
+            'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678561362/zajgrwsrjx6jsdq5gnkz.jpg',
+          time: '25',
+          popularity: 6,
+          like: false,
+          favorite: false,
+        }}
+      /> */}
     </div>
   );
 }

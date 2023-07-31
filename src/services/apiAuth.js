@@ -90,7 +90,7 @@ export async function getCurrentUser() {
 
 export async function updateUser(formData) {
   const token = getAccessToken();
-  console.log(formData);
+  // console.log(formData);
 
   const res = await fetch(`${API_URL}/user-info/set-user-info`, {
     method: 'POST',

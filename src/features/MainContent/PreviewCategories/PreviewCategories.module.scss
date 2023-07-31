@@ -1,0 +1,36 @@
+.categoriesWrapper {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 100px 0;
+}
+
+.category {
+  // margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px 0;
+}
+
+.categoryName {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.categoryButton {
+  width: 94px;
+  height: 38px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-green-0);
+  color: var(--color-white-200);
+  align-self: flex-end;
+}
+
+.otherBtn {
+  margin: 14px auto 0;
+  width: 240px;
+  height: 60px;
+  color: var(--color-dark-0);
+}

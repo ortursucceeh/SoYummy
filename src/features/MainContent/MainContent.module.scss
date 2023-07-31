@@ -16,7 +16,7 @@
   display: flex;
   padding: 118px 0;
   gap: 0 73px;
-  overflow: hidden;
+  height: 800px;
 }
 
 .content {
@@ -46,8 +46,7 @@
 
 .dishLeaves {
   position: absolute;
-  height: 60%;
-  width: 60%;
+  height: 600px;
   right: -74px;
   top: 200px;
   filter: blur(2px);
@@ -72,7 +71,7 @@
   }
 
   .dishLeaves {
-    height: 50%;
+    height: 550px;
     top: 150px;
   }
 }
@@ -90,7 +89,7 @@
   }
 
   .dishLeaves {
-    height: 50%;
+    height: 500px;
     top: 100px;
   }
 }
@@ -108,8 +107,8 @@
   }
 
   .dishLeaves {
-    height: 40%;
-    top: 75px;
+    top: 200px;
+    height: 400px;
     right: -32px;
   }
 }
@@ -134,7 +133,7 @@
   }
 
   .dishLeaves {
-    display: none;
+    height: 300px;
   }
 }
 
@@ -159,5 +158,11 @@
 
   .dish {
     width: 350px;
+  }
+
+  .dishLeaves {
+    top: 375px;
+    right: 80px;
+    height: 60vw;
   }
 }
