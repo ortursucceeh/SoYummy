@@ -35,6 +35,13 @@
   color: var(--color-dark-0);
 }
 
+.error {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1000px) {
   .categoriesWrapper {
     padding-top: 0px;

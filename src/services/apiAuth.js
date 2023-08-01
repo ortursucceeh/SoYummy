@@ -1,6 +1,5 @@
 import { getAccessToken, getRefreshToken, updateTokens } from '../utils/auth';
-
-const API_URL = 'https://so-yumi.p.goit.global/api';
+import { API_URL } from '../utils/constants';
 
 export async function signup({ name, email, password }) {
   const res = await fetch(`${API_URL}/users/signup`, {
