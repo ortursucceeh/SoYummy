@@ -1,4 +1,11 @@
 .recipesList {
   display: flex;
   gap: 0 14px;
+  justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .recipesList {
+    gap: 0 30px;
+  }
 }

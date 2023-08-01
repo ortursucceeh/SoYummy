@@ -223,7 +223,7 @@ const categories = {
 
 function PreviewCategories() {
   const recipesCount = useRecipesCountFromScreenSize();
-  console.log('rerender');
+
   return (
     <div className={styles.categoriesWrapper}>
       {Object.entries(categories).map(([categoryName, recipes]) => {

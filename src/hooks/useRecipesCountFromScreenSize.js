@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 const recipesFromScreenSize = {
-  578: 1,
-  768: 2,
-  1200: 3,
+  768: 1,
+  1100: 2,
+  1440: 3,
 };
 
 function getRecipiesFromScreenSize() {
