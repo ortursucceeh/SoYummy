@@ -30,7 +30,7 @@ function FooterForm() {
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}
       />
-      <Button type="rect" color="green" onClick={handleSubscribe}>
+      <Button shape="rect" color="green" onClick={handleSubscribe}>
         Subscribe
       </Button>
     </form>

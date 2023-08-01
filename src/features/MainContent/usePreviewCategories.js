@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { previewCategories } from '../../../services/apiRecipes';
+import { previewCategories } from '../../services/apiRecipes';
 
 export function usePreviewCategories() {
   // const queryClient = useQueryClient();

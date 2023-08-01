@@ -1,11 +1,11 @@
 import leavesDecor1 from './../../assets/main-hero-decor-leaves.png';
 import leavesDishDecor from './../../assets/123.png';
 import mainDish from './../../assets/main-hero-dish.png';
-import Search from '../../features/Search/Search';
 import ChooseBreakfast from '../../features/MainContent/ChooseBreakfast/ChooseBreakfast';
 import PreviewCategories from '../../features/MainContent/PreviewCategories/PreviewCategories';
 
 import styles from './MainPage.module.scss';
+import SearchBar from '../../features/Search/SearchBar/SearchBar';
 
 function MainPage() {
   return (
@@ -20,7 +20,7 @@ function MainPage() {
             "What to cook?" is not only a recipe app, it is, in fact, your cookbook. You can add
             your own recipes to save them for the future.
           </p>
-          <Search btnColor="dark" />
+          <SearchBar btnColor="dark" />
         </div>
         <div>
           <img src={leavesDishDecor} alt="leaves" className={styles.dishLeaves} />

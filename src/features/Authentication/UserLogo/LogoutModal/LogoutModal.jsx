@@ -20,10 +20,10 @@ function LogoutModal({ isOpen, onClose }) {
         </span>
         <span className={styles.title}>Are you sure you want to log out?</span>
         <div className={styles.buttons}>
-          <Button type="rect" color="green" disabled={isLoading} onClick={handleLogout}>
+          <Button shape="rect" color="green" disabled={isLoading} onClick={handleLogout}>
             Log out
           </Button>
-          <Button type="rect" color="grey" onClick={onClose} disabled={isLoading}>
+          <Button shape="rect" color="grey" onClick={onClose} disabled={isLoading}>
             Cancel
           </Button>
         </div>

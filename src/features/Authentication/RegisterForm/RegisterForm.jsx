@@ -89,7 +89,7 @@ function RegisterForm() {
           disabled={isLoadingSignup || isLoadingLogin}
         />
       </div>
-      <Button type="rect" color="green" disabled={isLoadingSignup || isLoadingLogin}>
+      <Button shape="rect" color="green" disabled={isLoadingSignup || isLoadingLogin}>
         {isLoadingSignup || isLoadingLogin ? <LoaderMini /> : 'Sign up'}
       </Button>
     </form>

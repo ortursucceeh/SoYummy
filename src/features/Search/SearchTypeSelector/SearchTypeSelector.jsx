@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import styles from './SearchTypeSelector.module.scss';
 import { RiArrowDownSLine } from 'react-icons/ri';
+import { useOutsideClick } from '../../../hooks/useOutsideClick';
 
-function SearchTypeSelector() {
+function SearchTypeSelector({ searchType, setSearchType }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [value, setValue] = useState('title');
+
+  const ref = useOutsideClick(() => setIsOpen(false));
 
   return (
     <div className={styles.wrapper}>
@@ -18,21 +20,23 @@ function SearchTypeSelector() {
         className={styles.select}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={styles.value}>{value.slice(0, 1).toUpperCase() + value.slice(1)}</span>
+        <span className={styles.value}>
+          {searchType.slice(0, 1).toUpperCase() + searchType.slice(1)}
+        </span>
         <RiArrowDownSLine />
         {isOpen && (
-          <div className={styles.optionList}>
+          <div className={styles.optionList} ref={ref}>
             <span
               value="title"
               className={styles.option}
-              onClick={e => setValue(e.target.innerText)}
+              onClick={e => setSearchType(e.target.innerText)}
             >
               Title
             </span>
             <span
               value="ingredients"
               className={styles.option}
-              onClick={e => setValue(e.target.innerText)}
+              onClick={e => setSearchType(e.target.innerText)}
             >
               Ingredients
             </span>

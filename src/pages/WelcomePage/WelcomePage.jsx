@@ -15,12 +15,12 @@ function WelcomePage() {
       </p>
       <div className={styles.buttons}>
         <Link to="register">
-          <Button type="curv" color="green" id="register">
+          <Button shape="curv" color="green" id="register">
             Registration
           </Button>
         </Link>
         <Link to="signin">
-          <Button type="curv" color="trans" id="signin">
+          <Button shape="curv" color="trans" id="signin">
             Sign in
           </Button>
         </Link>

@@ -3,7 +3,7 @@ import styles from './PreviewCategories.module.scss';
 import Button from '../../../ui/Button/Button';
 import RecipeList from '../../Recipies/RecipeList/RecipeList';
 import { useRecipesCountFromScreenSize } from '../../../hooks/useRecipesCountFromScreenSize';
-import { usePreviewCategories } from './usePreviewCategories';
+import { usePreviewCategories } from '../usePreviewCategories';
 import Loader from '../../../ui/Loaders/Loader';
 
 function PreviewCategories() {
@@ -32,7 +32,7 @@ function PreviewCategories() {
         );
       })}
 
-      <Button type="curv" color="trans" className={styles.otherBtn}>
+      <Button shape="curv" color="trans" className={styles.otherBtn}>
         <Link to="/categories">Other categories</Link>
       </Button>
     </div>

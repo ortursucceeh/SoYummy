@@ -23,7 +23,7 @@ function UserLogoModal({ onClose }) {
         <span onClick={() => setIsShowInfoModal(!isShowInfoModal)}>Edit profile</span>
         <RxPencil1 onClick={() => setIsShowInfoModal(!isShowInfoModal)} />
       </div>
-      <Button type="curv" color="green" onClick={() => setIsShowLogoutModal(!isShowLogoutModal)}>
+      <Button shape="curv" color="green" onClick={() => setIsShowLogoutModal(!isShowLogoutModal)}>
         Log out <LuArrowRight />
       </Button>
     </div>
