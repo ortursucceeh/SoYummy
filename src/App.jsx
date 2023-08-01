@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import './styles/global.scss';
 import AppLayout from './ui/AppLayout/AppLayout';
 
-import MainPage from './pages/MainPage';
+import MainPage from './pages/MainPage/MainPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SigninPage from './pages/SigninPage/SigninPage';

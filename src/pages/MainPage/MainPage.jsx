@@ -1,15 +1,13 @@
-import styles from './MainContent.module.scss';
 import leavesDecor1 from './../../assets/main-hero-decor-leaves.png';
 import leavesDishDecor from './../../assets/123.png';
-// import mainBg from './../../assets/main-hero-bg.svg';
-
 import mainDish from './../../assets/main-hero-dish.png';
-import Search from './Search/Search';
-import ChooseBreakfast from './ChooseBreakfast/ChooseBreakfast';
-import PreviewCategories from './PreviewCategories/PreviewCategories';
-import RecipeItem from '../Recipies/RecipeItem/RecipeItem';
+import Search from '../../features/MainContent/Search/Search';
+import ChooseBreakfast from '../../features/MainContent/ChooseBreakfast/ChooseBreakfast';
+import PreviewCategories from '../../features/MainContent/PreviewCategories/PreviewCategories';
 
-function MainContent() {
+import styles from './MainPage.module.scss';
+
+function MainPage() {
   return (
     <div className={styles.container}>
       <img src={leavesDecor1} alt="leaves" className={styles.decor1} />
@@ -32,23 +30,8 @@ function MainContent() {
       </main>
 
       <PreviewCategories />
-      {/* <RecipeItem
-        recipe={{
-          _id: '640cd5ac2d9fecf12e8898a8',
-          title: 'Smoked Haddock Kedgeree',
-          category: 'Breakfast',
-          description:
-            "A traditional Anglo-Indian dish with smoked haddock, rice, hard-boiled eggs, and fragrant spices. A flavorful and satisfying meal that's easy to make.",
-          preview:
-            'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678561362/zajgrwsrjx6jsdq5gnkz.jpg',
-          time: '25',
-          popularity: 6,
-          like: false,
-          favorite: false,
-        }}
-      /> */}
     </div>
   );
 }
 
-export default MainContent;
+export default MainPage;

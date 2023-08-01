@@ -3,12 +3,14 @@
   height: 323px;
   position: relative;
   flex-shrink: 0;
+  border-radius: 8px;
 }
 
 .recipeImg {
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
 }
 
 .recipeName {
@@ -36,5 +38,11 @@
 @media (max-width: 768px) {
   .recipeItem {
     width: 336px;
+  }
+}
+
+@media (max-width: 375px) {
+  .recipeItem {
+    width: 100%;
   }
 }
