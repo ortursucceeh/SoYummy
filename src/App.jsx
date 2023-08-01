@@ -12,6 +12,7 @@ import WelcomePage from './pages/WelcomePage/WelcomePage';
 import SigninPage from './pages/SigninPage/SigninPage';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import ProtectedRoute from './ui/ProtectedRoute/ProtectedRoute';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,7 +43,7 @@ function App() {
             <Route path="add" element={<MainPage />} />
             <Route path="my" element={<MainPage />} />
             <Route path="favorite" element={<MainPage />} />
-            <Route path="search" element={<MainPage />} />
+            <Route path="search" element={<SearchPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
 

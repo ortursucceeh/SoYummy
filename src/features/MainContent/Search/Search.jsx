@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../../ui/Button/Button';
 import styles from './Search.module.scss';
 
@@ -6,7 +7,7 @@ function Search() {
     <div className={styles.searchWrapper}>
       <input type="text" className={styles.input} />
       <Button type="curv" color="dark">
-        Search
+        <Link to="/search">Search</Link>
       </Button>
     </div>
   );
