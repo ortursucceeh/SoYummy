@@ -30,20 +30,21 @@
   left: 16px;
 }
 
-@media (max-width: 1000px) {
-  .recipeItem {
-    width: 336px;
-  }
-}
+// @media (max-width: 1000px) {
+//   .recipeItem {
+//     width: 336px;
+//   }
+// }
 
 @media (max-width: 768px) {
-  .recipeItem {
-    width: 336px;
+  .recipeName {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 375px) {
   .recipeItem {
-    width: 100%;
+    max-width: 240px;
+    max-height: 245px;
   }
 }

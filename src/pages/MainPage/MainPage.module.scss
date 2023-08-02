@@ -41,6 +41,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  color: var(--color-grey-400);
 }
 
 .dishLeaves {
@@ -163,5 +164,27 @@
     top: 375px;
     right: 80px;
     height: 60vw;
+  }
+}
+
+@media (max-width: 375px) {
+  .content {
+    max-width: 260px;
+  }
+
+  .main {
+    padding-bottom: 75px;
+  }
+
+  .text {
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: -0.28px;
+  }
+
+  .dishLeaves {
+    height: 95vw;
+    right: 10px;
   }
 }

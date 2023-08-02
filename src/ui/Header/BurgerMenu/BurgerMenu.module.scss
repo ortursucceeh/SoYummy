@@ -8,7 +8,7 @@
   height: 100vh;
   padding: 18px 32px;
   z-index: 100;
-  transition: transform 0.4s;
+  transition: all 0.4s;
 
   img {
     position: absolute;
@@ -58,6 +58,16 @@
     padding: 22px 16px;
   }
 
+  .pages {
+    ul {
+      gap: 24px 0;
+
+      a {
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  }
   .pages ul li {
     font-size: 20px;
   }

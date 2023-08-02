@@ -1,9 +1,9 @@
 .wrapper {
-  width: 310px;
   height: 50px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 0 18px;
   align-items: center;
   margin-top: 30px;
 }
@@ -56,8 +56,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-white-200);
   padding: 14px;
   gap: 8px 0;
+  z-index: 5;
 }
 
 .option {
@@ -68,4 +70,10 @@
   font-weight: 400;
   letter-spacing: -0.28px;
   opacity: 0.5;
+}
+
+@media (max-width: 375px) {
+  .label {
+    display: none;
+  }
 }

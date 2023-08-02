@@ -3,7 +3,7 @@
 }
 
 .search {
-  width: 510px;
+  max-width: 510px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -12,5 +12,11 @@
   input[type='text'] {
     background-color: var(--color-white-0);
     color: var(--color-dark-0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 580px;
   }
 }

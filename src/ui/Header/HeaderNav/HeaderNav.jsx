@@ -9,19 +9,19 @@ function HeaderNav() {
 
   return (
     <ul className={styles.nav}>
-      <NavLink className={isActive} to="categories">
+      <NavLink className={isActive} to="/categories">
         Categories
       </NavLink>
-      <NavLink className={isActive} to="add">
+      <NavLink className={isActive} to="/add">
         Add recipes
       </NavLink>
-      <NavLink className={isActive} to="my">
+      <NavLink className={isActive} to="/my">
         My recipes
       </NavLink>
-      <NavLink className={isActive} to="favorite">
+      <NavLink className={isActive} to="/favorite">
         Favorites
       </NavLink>
-      <NavLink className={isActive} to="search">
+      <NavLink className={isActive} to="/search">
         <LuSearch />
       </NavLink>
     </ul>

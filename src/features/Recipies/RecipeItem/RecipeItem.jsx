@@ -15,7 +15,7 @@ function RecipeItem({ recipe: { title, _id, preview } }) {
         />
       </Link>
       <span className={styles.recipeName}>
-        {title?.length >= 50 ? title.slice(0, 50) + '...' : title}
+        {title?.length >= 45 ? title.slice(0, 45) + '...' : title}
       </span>
     </div>
   );
