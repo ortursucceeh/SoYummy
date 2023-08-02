@@ -6,12 +6,12 @@ import { useSearchParams } from 'react-router-dom';
 
 function SearchForm() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchType, setSearchType] = useState('Title');
-  const [searchText, setSearchText] = useState('');
+  const [searchType, setSearchType] = useState('title');
+  const [searchText, setSearchText] = useState(searchParams.get('query') ?? '');
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSearchParams({ searchText: searchText, searchType: searchType });
+    setSearchParams({ query: searchText, queryType: searchType });
   }
 
   return (

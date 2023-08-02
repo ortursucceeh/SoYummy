@@ -1,7 +1,13 @@
 .recipesList {
   display: flex;
-  gap: 0 14px;
-  justify-content: center;
+  gap: 100px 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1440px) {
+  .recipesList {
+    justify-content: space-evenly;
+  }
 }
 
 @media (max-width: 1000px) {

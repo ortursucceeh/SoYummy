@@ -29,14 +29,16 @@ function SearchTypeSelector({ searchType, setSearchType }) {
             <span
               value="title"
               className={styles.option}
-              onClick={e => setSearchType(e.target.innerText)}
+              data-value="title"
+              onClick={e => setSearchType(e.target.dataset.value)}
             >
               Title
             </span>
             <span
               value="ingredients"
               className={styles.option}
-              onClick={e => setSearchType(e.target.innerText)}
+              data-value="ingredients"
+              onClick={e => setSearchType(e.target.dataset.value)}
             >
               Ingredients
             </span>

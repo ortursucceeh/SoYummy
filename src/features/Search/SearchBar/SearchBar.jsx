@@ -1,50 +1,21 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import Button from '../../../ui/Button/Button';
 import styles from './SearchBar.module.scss';
 import { useState } from 'react';
 
-// function SearchBar({ btnColor, searchValue = null, setSearchValue = null, handleSubmit }) {
-//   const [inputValue, setInputValue] = useState();
-
-//   return (
-//     <div className={styles.searchWrapper}>
-//       {searchValue ? (
-//         <input
-//           type="text"
-//           className={styles.input}
-//           value={searchValue}
-//           onChange={e => setSearchValue(e.target.value)}
-//         />
-//       ) : (
-//         <input
-//           type="text"
-//           className={styles.input}
-//           value={inputValue}
-//           onChange={e => setInputValue(e.target.value)}
-//         />
-//       )}
-
-//       <Link to="/search">
-//         <Button shape="curv" color={btnColor} type="submit" onClick={handleSubmit}>
-//           Search
-//         </Button>
-//       </Link>
-//     </div>
-//   );
-// }
-
 function SearchBar({ btnColor, handleSubmit, searchText = null, setSearchText = null }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [inputValue, setInputValue] = useState(searchParams.get('searchText') ?? '');
+  const [inputValue, setInputValue] = useState('');
+  const navigate = useNavigate();
+
+  function handleRedirect(e) {
+    e.preventDefault();
+    if (inputValue) navigate(`/search?query=${inputValue}&queryType=title`);
+  }
 
   function handleSearch(e) {
     e.preventDefault();
-    console.log('inputValue :>> ', inputValue);
-    console.log('searchText :>> ', searchText);
-    handleSubmit(e);
-    // console.log(searchParams);
-    // setSearchParams({ searchType: searchParams.get('searchType'), searchText: inputValue });
-    // console.log('handleSearch');
+    handleSubmit?.(e);
   }
 
   return (
@@ -65,11 +36,14 @@ function SearchBar({ btnColor, handleSubmit, searchText = null, setSearchText = 
         />
       )}
 
-      <Link to="/search">
-        <Button shape="curv" color={btnColor} type="submit" onClick={handleSearch}>
-          Search
-        </Button>
-      </Link>
+      <Button
+        shape="curv"
+        color={btnColor}
+        type="submit"
+        onClick={handleSubmit ? handleSearch : handleRedirect}
+      >
+        Search
+      </Button>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 // import Search from '../../features/Search/Search';
 import SearchForm from '../../features/Search/SearchForm/SearchForm';
+import SearchedRecipeList from '../../features/Search/SearchedRecipeList/SearchedRecipeList';
 import PageTitle from '../../ui/PageTitle/PageTitle';
 import styles from './SearchPage.module.scss';
 
@@ -10,6 +11,8 @@ function SearchPage() {
       <div className={styles.search}>
         <SearchForm />
       </div>
+
+      <SearchedRecipeList />
     </div>
   );
 }

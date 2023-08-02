@@ -12,7 +12,6 @@ function SigninForm() {
   const {
     register,
     formState: { errors },
-    // getValues,
     handleSubmit,
     reset,
   } = useForm();

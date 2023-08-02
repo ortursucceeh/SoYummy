@@ -16,3 +16,22 @@ export async function previewCategories() {
 
   return res.json();
 }
+
+export async function searchRecipes({ query, queryType }) {
+  const accessToken = getAccessToken();
+
+  const res = await fetch(
+    `${API_URL}/recipes/${queryType === 'title' ? 'title' : 'ingredient'}/${query}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
+
+  if (!res.ok) throw new Error('Failed to search recipes🎇');
+
+  return res.json();
+}

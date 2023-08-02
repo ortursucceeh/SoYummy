@@ -3,20 +3,20 @@ import RecipeNotFound from './../../../assets/recipePreviewNotFound.png';
 import { Link } from 'react-router-dom';
 import Image from '../../../ui/Image/Image';
 
-// src={RecipeNotFound}
-function RecipeItem({ recipe }) {
+function RecipeItem({ recipe: { title, _id, preview } }) {
   return (
     <div className={styles.recipeItem}>
-      <Link to={`/recipes/${recipe._id}`}>
+      <Link to={`/recipes/${_id}`}>
         <Image
-          // src={recipe.preview}
-          alt={`${recipe.title} img`}
+          alt={`${title} img`}
           className={styles.recipeImg}
-          imageUrl={recipe.preview}
+          imageUrl={preview}
           defaultImage={RecipeNotFound}
         />
       </Link>
-      <span className={styles.recipeName}>{recipe.title}</span>
+      <span className={styles.recipeName}>
+        {title?.length >= 50 ? title.slice(0, 50) + '...' : title}
+      </span>
     </div>
   );
 }

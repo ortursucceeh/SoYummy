@@ -1,5 +1,4 @@
 import styles from './UserLogo.module.scss';
-// import avatar from './../../../assets/avatar.png';
 import UserLogoModal from './UserLogoModal/UserLogoModal';
 import { useState } from 'react';
 import React from 'react';

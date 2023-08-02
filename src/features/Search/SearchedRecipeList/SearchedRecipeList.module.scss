@@ -1,0 +1,21 @@
+.wrapper {
+  padding: 90px 0 200px;
+  display: flex;
+  justify-content: start;
+}
+
+.notFoundWrapper {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  margin-top: 14px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  opacity: 0.5;
+}
