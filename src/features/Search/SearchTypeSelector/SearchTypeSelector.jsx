@@ -14,38 +14,21 @@ function SearchTypeSelector({ searchType, setSearchType }) {
     setSearchType(e.target.dataset.value);
     setSearchParams({ query: searchParams.get('query'), queryType: e.target.dataset.value });
   }
+
   return (
     <div className={styles.wrapper}>
-      <label htmlFor="searchType" className={styles.label}>
-        Search by:
-      </label>
-
-      <div
-        name="searchType"
-        id="searchType"
-        className={styles.select}
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <span className={styles.label}>Search by:</span>
+      <div name="searchType" className={styles.select} onClick={() => setIsOpen(!isOpen)}>
         <span className={styles.value}>
           {searchType.slice(0, 1).toUpperCase() + searchType.slice(1)}
         </span>
         <RiArrowDownSLine />
         {isOpen && (
           <div className={styles.optionList} ref={ref}>
-            <span
-              value="title"
-              className={styles.option}
-              data-value="title"
-              onClick={handleChangeType}
-            >
+            <span className={styles.option} data-value="title" onClick={handleChangeType}>
               Title
             </span>
-            <span
-              value="ingredients"
-              className={styles.option}
-              data-value="ingredients"
-              onClick={handleChangeType}
-            >
+            <span className={styles.option} data-value="ingredients" onClick={handleChangeType}>
               Ingredients
             </span>
           </div>

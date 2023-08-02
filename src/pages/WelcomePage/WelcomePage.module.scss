@@ -33,26 +33,26 @@
     text-align: center;
     margin-bottom: 40px;
   }
+}
 
-  .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
 
-    button {
-      width: 184px;
-      height: 68px;
-    }
+  button {
+    width: 184px;
+    height: 68px;
+  }
 
-    button[id='signin'] {
-      border-color: var(--color-white-200);
-      color: var(--color-white-200);
+  button[id='signin'] {
+    border-color: var(--color-white-200);
+    color: var(--color-white-200);
 
-      &:hover {
-        background-color: var(--color-white-200);
-        color: var(--color-dark-0);
-      }
+    &:hover {
+      background-color: var(--color-white-200);
+      color: var(--color-dark-0);
     }
   }
 }

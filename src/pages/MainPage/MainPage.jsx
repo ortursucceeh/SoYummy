@@ -9,7 +9,7 @@ import SearchBar from '../../features/Search/SearchBar/SearchBar';
 
 function MainPage() {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <img src={leavesDecor1} alt="leaves" className={styles.decor1} />
       <main className={styles.main}>
         <div className={styles.content}>
@@ -30,7 +30,7 @@ function MainPage() {
       </main>
 
       <PreviewCategories />
-    </div>
+    </section>
   );
 }
 

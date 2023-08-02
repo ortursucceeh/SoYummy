@@ -1,19 +1,20 @@
 import styles from './RecipeItem.module.scss';
 import RecipeNotFound from './../../../assets/recipePreviewNotFound.png';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Image from '../../../ui/Image/Image';
 
 function RecipeItem({ recipe: { title, _id, preview } }) {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.recipeItem}>
-      <Link to={`/recipes/${_id}`}>
-        <Image
-          alt={`${title} img`}
-          className={styles.recipeImg}
-          imageUrl={preview}
-          defaultImage={RecipeNotFound}
-        />
-      </Link>
+      <Image
+        alt={`${title} img`}
+        className={styles.recipeImg}
+        imageUrl={preview}
+        defaultImage={RecipeNotFound}
+        onClick={() => navigate(`/recipes/${_id}`)}
+      />
       <span className={styles.recipeName}>
         {title?.length >= 45 ? title.slice(0, 45) + '...' : title}
       </span>

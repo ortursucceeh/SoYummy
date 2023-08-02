@@ -61,58 +61,58 @@
 @media (max-width: 1200px) {
   .layout {
     flex-direction: column;
+  }
 
-    .img {
-      width: 400px;
-      height: 359px;
-    }
+  .img {
+    width: 400px;
+    height: 359px;
+  }
 
-    .bgImg {
-      display: none;
-    }
+  .bgImg {
+    display: none;
+  }
 
-    a {
-      color: var(--color-dark-100);
-    }
+  a {
+    color: var(--color-dark-100);
   }
 }
 
 @media (max-width: 644px) {
   .layout {
     flex-direction: column;
+  }
 
-    .img {
-      width: 285px;
-      height: 250px;
+  .img {
+    width: 285px;
+    height: 250px;
+  }
+
+  .form {
+    width: 334px;
+    height: 315px;
+    padding: 28px 32px;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 18px;
     }
 
-    .form {
-      width: 334px;
-      height: 315px;
-      padding: 28px 32px;
+    input {
+      height: 45px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 28px;
+      width: 270px;
+      height: 45px;
+    }
 
-      h2 {
-        font-size: 24px;
-        margin-bottom: 18px;
-      }
-
-      input {
-        height: 45px;
-        font-size: 14px;
-      }
-      button {
-        margin-top: 28px;
-        width: 270px;
-        height: 45px;
-      }
-
-      a {
-        bottom: -38px;
-        left: 167px;
-        transform: translateX(-50%);
-        text-decoration: underline;
-        color: var(--color-dark-100);
-      }
+    a {
+      bottom: -38px;
+      left: 167px;
+      transform: translateX(-50%);
+      text-decoration: underline;
+      color: var(--color-dark-100);
     }
   }
 }

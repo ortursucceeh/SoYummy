@@ -1,23 +1,47 @@
 .layout {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
   text-align: center;
-  height: 768px;
-  padding: 140px;
+  min-height: 768px;
+}
+
+.img {
+  max-width: 498px;
+}
+
+.text {
+  margin-top: 32px;
+  font-size: 18px;
+
+  b {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 375px) {
+  .layout {
+    min-height: 450px;
+  }
 
   .img {
-    width: 498px;
-    height: 331px;
+    max-width: 260px;
   }
 
   .text {
-    margin-top: 32px;
-    font-size: 18px;
+    margin-top: 16px;
+    font-size: 14px;
 
     b {
-      font-size: 24px;
+      font-size: 18px;
     }
   }
 }

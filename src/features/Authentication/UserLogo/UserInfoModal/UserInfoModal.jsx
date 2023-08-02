@@ -15,7 +15,7 @@ function UserInfoModal({ isOpen, onClose }) {
     user: { name, avatarURL },
   } = useUser();
   const { updateUser, isLoading } = useUpdateUser();
-  const [selectedFile, setSelectedFile] = useState();
+  const [selectedFile, setSelectedFile] = useState(null);
   const [inputName, setInputName] = useState(name);
 
   function handleSaveChanges(e) {
@@ -47,7 +47,14 @@ function UserInfoModal({ isOpen, onClose }) {
             accept="images/*,.png,.jpg,.jpeg"
           />
         </label>
-        {selectedFile && <span className={styles.fileName}>New: {selectedFile.name}</span>}
+        {selectedFile && (
+          <span className={styles.fileName}>
+            New:{' '}
+            {selectedFile.name.length >= 30
+              ? selectedFile.name.slice(0, 30) + '...'
+              : selectedFile.name}
+          </span>
+        )}
         <Input
           leftIcon={<FiUser />}
           rightIcon={<RxPencil1 />}

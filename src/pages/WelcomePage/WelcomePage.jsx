@@ -1,9 +1,11 @@
 import Button from '../../ui/Button/Button';
 import Logo from '../../ui/Logo/Logo';
 import styles from './WelcomePage.module.scss';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function WelcomePage() {
+  const navigate = useNavigate();
+
   return (
     <section className={styles.layout}>
       <Logo type="header" />
@@ -14,16 +16,13 @@ function WelcomePage() {
         save and retrieve your own recipes at any time.
       </p>
       <div className={styles.buttons}>
-        <Link to="register">
-          <Button shape="curv" color="green" id="register">
-            Registration
-          </Button>
-        </Link>
-        <Link to="signin">
-          <Button shape="curv" color="trans" id="signin">
-            Sign in
-          </Button>
-        </Link>
+        <Button shape="curv" color="green" id="register" onClick={() => navigate('register')}>
+          Registration
+        </Button>
+
+        <Button shape="curv" color="trans" id="signin" onClick={() => navigate('register')}>
+          Sign in
+        </Button>
       </div>
     </section>
   );
