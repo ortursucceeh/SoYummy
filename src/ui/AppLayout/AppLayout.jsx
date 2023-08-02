@@ -6,8 +6,8 @@ import Container from '../Container/Container';
 function AppLayout() {
   return (
     <>
-      <Header />
       <Container>
+        <Header />
         <Outlet />
       </Container>
       <Footer />

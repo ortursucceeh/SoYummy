@@ -20,6 +20,8 @@ export async function previewCategories() {
 export async function searchRecipes({ query, queryType }) {
   const accessToken = getAccessToken();
 
+  if (!query || !queryType) return [];
+
   const res = await fetch(
     `${API_URL}/recipes/${queryType === 'title' ? 'title' : 'ingredient'}/${query}`,
     {

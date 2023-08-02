@@ -1,10 +1,9 @@
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../../ui/Button/Button';
 import styles from './SearchBar.module.scss';
 import { useState } from 'react';
 
-function SearchBar({ btnColor, handleSubmit, searchText = null, setSearchText = null }) {
-  const [searchParams, setSearchParams] = useSearchParams();
+function SearchBar({ btnColor, handleSubmit = null, searchText = null, setSearchText = null }) {
   const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
 
