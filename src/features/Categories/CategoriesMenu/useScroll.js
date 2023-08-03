@@ -44,11 +44,9 @@ export function useScroll() {
   }
 
   function onMouseDown(e) {
-    console.log(e.target);
     if (!element?.contains(e.target)) {
       return;
     }
-    console.log('e :>> ', e);
 
     e.preventDefault();
 

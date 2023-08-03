@@ -40,7 +40,7 @@ function App() {
             <Route element={<Navigate replace to="main" />} />
             <Route path="main" element={<MainPage />} />
             <Route path="categories" element={<CategoriesPage />} />
-            <Route path="categories/:categoryName" element={<MainPage />} />
+            <Route path="categories/:categoryName" element={<CategoriesPage />} />
             <Route path="add" element={<MainPage />} />
             <Route path="my" element={<MainPage />} />
             <Route path="favorite" element={<MainPage />} />

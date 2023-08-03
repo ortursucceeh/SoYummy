@@ -1,3 +1,9 @@
 .container {
   min-height: 1300px;
 }
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 700px;
+  }
+}

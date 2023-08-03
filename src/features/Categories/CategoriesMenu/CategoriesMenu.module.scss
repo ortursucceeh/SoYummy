@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px 0;
-  width: 105%;
+  width: 100%;
   padding-left: 20px;
   position: relative;
   overflow: hidden;
@@ -28,9 +28,10 @@
 
 .underline {
   position: absolute;
+  left: -5%;
   bottom: 0px;
   height: 1px;
-  width: 94%;
+  width: 105%;
   background-color: var(--color-grey-500);
   z-index: -10;
 }
@@ -63,15 +64,33 @@
 
   &:hover {
     color: var(--color-green-0);
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: -10%;
-      bottom: 0;
-      height: 1px;
-      width: 120%;
-      background-color: var(--color-green-0);
-    }
   }
+}
+
+@media (max-width: 1024px) {
+  .menu {
+    width: 100%;
+  }
+
+  .categoriesList {
+    margin-top: 0;
+  }
+
+  .underline {
+    width: 105%;
+  }
+}
+
+@media (max-width: 576px) {
+  .categoriesList {
+    gap: 0 28px;
+  }
+
+  .categoryName {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+@media (max-width: 375px) {
 }

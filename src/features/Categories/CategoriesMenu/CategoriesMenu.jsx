@@ -3,10 +3,16 @@ import { CATEGORIES_LIST } from '../../../utils/categories';
 // import Scrollable from './Scrollable';
 import { useState } from 'react';
 import { useScroll } from './useScroll';
+import { useNavigate } from 'react-router-dom';
 
 function CategoriesMenu() {
   const [activeTab, setActiveTab] = useState(0);
   const [ref, scrollListeners] = useScroll();
+  const navigate = useNavigate();
+
+  function handleChangeCategory(e) {
+    navigate(`/categories/${e.target.innerText}`);
+  }
 
   return (
     <div className={styles.menu}>
@@ -15,7 +21,10 @@ function CategoriesMenu() {
           <span
             className={`${styles.categoryName} ${activeTab === indx ? styles.active : ''}`}
             key={category}
-            onClick={() => setActiveTab(indx)}
+            onClick={e => {
+              handleChangeCategory(e);
+              setActiveTab(indx);
+            }}
           >
             {category}
           </span>
@@ -27,5 +36,3 @@ function CategoriesMenu() {
 }
 
 export default CategoriesMenu;
-
-// <Scrollable className={styles.categoriesList}></Scrollable>

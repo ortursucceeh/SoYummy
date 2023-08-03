@@ -37,3 +37,21 @@ export async function searchRecipes({ query, queryType }) {
 
   return res.json();
 }
+
+export async function getRecipesByCategory(categoryName) {
+  const accessToken = getAccessToken();
+
+  // if (!category) category = 'Beef';
+
+  const res = await fetch(`${API_URL}/recipes/category/${categoryName}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+
+  if (!res.ok) throw new Error('Failed to get recipes by category🎇');
+
+  return res.json();
+}
