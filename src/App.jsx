@@ -13,6 +13,7 @@ import SigninPage from './pages/SigninPage/SigninPage';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import ProtectedRoute from './ui/ProtectedRoute/ProtectedRoute';
 import SearchPage from './pages/SearchPage/SearchPage';
+import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,7 +39,7 @@ function App() {
           >
             <Route element={<Navigate replace to="main" />} />
             <Route path="main" element={<MainPage />} />
-            <Route path="categories" element={<MainPage />} />
+            <Route path="categories" element={<CategoriesPage />} />
             <Route path="categories/:categoryName" element={<MainPage />} />
             <Route path="add" element={<MainPage />} />
             <Route path="my" element={<MainPage />} />

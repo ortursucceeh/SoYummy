@@ -9,6 +9,8 @@ import Modal from '../../../../ui/Modal/Modal';
 import { useUpdateUser } from '../../useUpdateUser';
 import { useState } from 'react';
 import { useUser } from '../../useUser';
+import Image from '../../../../ui/Image/Image';
+import defaultImage from './../../../../assets/recipePreviewNotFound.png';
 
 function UserInfoModal({ isOpen, onClose }) {
   const {
@@ -37,7 +39,11 @@ function UserInfoModal({ isOpen, onClose }) {
           <VscClose />
         </span>
         <label htmlFor="uploadBtn" className={styles.fileInput}>
-          {avatarURL ? <img src={avatarURL} alt="avatar" /> : <FiUser />}
+          {avatarURL ? (
+            <Image imageUrl={avatarURL} defaultImage={defaultImage} alt="User avatar" />
+          ) : (
+            <FiUser />
+          )}
           <AiFillPlusCircle id="plus" />
           <input
             type="file"
