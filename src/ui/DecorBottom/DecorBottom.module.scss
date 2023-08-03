@@ -1,0 +1,12 @@
+.decor {
+  position: absolute;
+  bottom: -300px;
+  left: 0;
+  z-index: -10;
+}
+
+@media (max-width: 768px) {
+  .decor {
+    bottom: -200px;
+  }
+}

@@ -30,7 +30,7 @@
 }
 
 .otherBtn {
-  margin: 14px auto 0;
+  margin: -80px auto 0;
   width: 240px;
   height: 60px;
   color: var(--color-dark-0);
@@ -66,5 +66,8 @@
   .categoryName {
     font-size: 28px;
     line-height: 28px;
+  }
+  .otherBtn {
+    margin-top: 0px;
   }
 }

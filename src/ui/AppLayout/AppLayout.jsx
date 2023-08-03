@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Container from '../Container/Container';
+import DecorBottom from '../DecorBottom/DecorBottom';
 
 function AppLayout() {
   return (
@@ -9,6 +10,7 @@ function AppLayout() {
       <Container>
         <Header />
         <Outlet />
+        <DecorBottom />
       </Container>
       <Footer />
     </>
