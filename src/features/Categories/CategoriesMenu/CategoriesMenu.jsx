@@ -1,13 +1,12 @@
 import styles from './CategoriesMenu.module.scss';
 import { CATEGORIES_LIST } from '../../../utils/categories';
-// import Scrollable from './Scrollable';
 import { useState } from 'react';
-import { useScroll } from './useScroll';
+import { useScrollable } from './useScrollable';
 import { useNavigate } from 'react-router-dom';
 
 function CategoriesMenu() {
   const [activeTab, setActiveTab] = useState(0);
-  const [ref, scrollListeners] = useScroll();
+  const [ref, scrollListeners] = useScrollable();
   const navigate = useNavigate();
 
   function handleChangeCategory(e) {

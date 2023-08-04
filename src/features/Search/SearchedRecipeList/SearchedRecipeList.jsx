@@ -1,6 +1,6 @@
 import styles from './SearchedRecipeList.module.scss';
 import { useSearchRecipes } from '../useSearchRecipes';
-import RecipeList from '../../Recipies/RecipeList/RecipeList';
+import RecipeList from '../../Recipes/RecipeList/RecipeList';
 import Loader from '../../../ui/Loaders/Loader';
 
 import { useSearchParams } from 'react-router-dom';

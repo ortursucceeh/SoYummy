@@ -55,7 +55,7 @@ function UserInfoModal({ isOpen, onClose }) {
         </label>
         {selectedFile && (
           <span className={styles.fileName}>
-            New:{' '}
+            New:
             {selectedFile.name.length >= 30
               ? selectedFile.name.slice(0, 30) + '...'
               : selectedFile.name}

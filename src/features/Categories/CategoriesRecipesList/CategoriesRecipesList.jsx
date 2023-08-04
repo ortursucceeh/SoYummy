@@ -1,6 +1,6 @@
 import Loader from '../../../ui/Loaders/Loader';
 import RecipesNotFound from '../../../ui/RecipesNotFound/RecipesNotFound';
-import RecipeList from '../../Recipies/RecipeList/RecipeList';
+import RecipeList from '../../Recipes/RecipeList/RecipeList';
 import styles from './CategoriesRecipesList.module.scss';
 import { useCategoryRecipes } from './useCategoryRecipes';
 

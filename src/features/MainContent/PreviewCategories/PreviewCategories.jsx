@@ -1,7 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './PreviewCategories.module.scss';
 import Button from '../../../ui/Button/Button';
-import RecipeList from '../../Recipies/RecipeList/RecipeList';
+import RecipeList from '../../Recipes/RecipeList/RecipeList';
 import { useRecipesCountFromScreenSize } from '../../../hooks/useRecipesCountFromScreenSize';
 import { usePreviewCategories } from '../usePreviewCategories';
 import Loader from '../../../ui/Loaders/Loader';

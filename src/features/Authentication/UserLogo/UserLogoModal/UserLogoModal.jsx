@@ -10,7 +10,10 @@ import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 function UserLogoModal({ onClose }) {
   const [isShowInfoModal, setIsShowInfoModal] = useState(false);
   const [isShowLogoutModal, setIsShowLogoutModal] = useState(false);
-  const ref = useOutsideClick(onClose, true, isShowInfoModal || isShowLogoutModal);
+
+  document.body.style.overflowY = isShowInfoModal || isShowLogoutModal ? 'hidden' : 'auto';
+
+  const ref = useOutsideClick(onClose);
 
   if (isShowInfoModal)
     return <UserInfoModal isOpen={isShowInfoModal} onClose={() => setIsShowInfoModal(false)} />;

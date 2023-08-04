@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export function useOutsideClick(handler, listenCapturing = true, isOpen = false) {
+export function useOutsideClick(handler, listenCapturing = true) {
   const ref = useRef();
 
   useEffect(
@@ -21,16 +21,12 @@ export function useOutsideClick(handler, listenCapturing = true, isOpen = false)
       document.addEventListener('click', handleClick, listenCapturing);
       window.addEventListener('keydown', handleESCclick, listenCapturing);
 
-      isOpen
-        ? (document.body.style.overflowY = 'hidden')
-        : (document.body.style.overflowY = 'auto');
       return () => {
         document.removeEventListener('click', handleClick, listenCapturing);
         window.removeEventListener('keydown', handleESCclick, listenCapturing);
-        document.body.style.overflowY = 'auto';
       };
     },
-    [handler, listenCapturing, isOpen]
+    [handler, listenCapturing]
   );
 
   return ref;

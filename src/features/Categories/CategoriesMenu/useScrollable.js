@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-export function useScroll() {
+export function useScrollable() {
   const [scrollData, setScrollData] = useState({
     isScrolling: false,
     clientX: 0,
