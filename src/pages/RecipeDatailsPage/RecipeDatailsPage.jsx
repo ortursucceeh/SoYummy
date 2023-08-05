@@ -3,7 +3,7 @@ import RecipePreparation from '../../features/Recipes/RecipePreparation/RecipePr
 import RecipePageHero from './../../features/Recipes/RecipePageHero/RecipePageHero';
 import styles from './RecipeDatailsPage.module.scss';
 
-const img = {
+const recipe = {
   _id: '640cd5ac2d9fecf12e889849',
   title: 'Beef Dumpling Stew',
   category: 'Beef',
@@ -161,7 +161,7 @@ const img = {
   popularity: 5,
   favorite: false,
   like: false,
-  previewImg:
+  previewrecipe:
     'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560620/ktg9sptrbga8hd31n1yd.jpg',
   area: 'British',
   tags: ['Stew', 'Baking'],
@@ -172,13 +172,13 @@ function RecipeDatailsPage() {
   return (
     <div className={styles.container}>
       <RecipePageHero
-        title={img.title}
-        description={img.description}
-        favorite={img.favorite}
-        time={img.time}
-        fullImage={img.fullImage}
+        title={recipe.title}
+        description={recipe.description}
+        favorite={recipe.favorite}
+        time={recipe.time}
+        fullImage={recipe.fullImage}
       />
-      <RecipeIngredientsList />
+      <RecipeIngredientsList ingredients={recipe.ingredients} />
       <RecipePreparation />
     </div>
   );

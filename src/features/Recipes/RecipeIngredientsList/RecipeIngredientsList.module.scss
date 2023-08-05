@@ -1,0 +1,70 @@
+.wrapper {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.listHeader {
+  width: 100%;
+  height: 60px;
+  padding: 0 40px;
+  background-color: var(--color-green-0);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    color: var(--color-white-200);
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.ingredientList {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px 0;
+}
+
+.ingredient {
+  width: 100%;
+  height: 182px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 70px;
+  background-color: var(--color-lightgreen-0);
+  border-radius: 8px;
+}
+
+.ingDetail {
+  display: flex;
+  gap: 0 70px;
+  align-items: center;
+}
+.ingImg {
+  width: 128px;
+  height: 128px;
+}
+
+.ingTitle {
+  color: var(--color-grey-400);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+}
+
+.ingMeasure {
+  min-width: 68px;
+  padding: 4px 8px;
+  background-color: var(--color-green-0);
+  border-radius: 8px;
+  color: var(--color-white-200);
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
