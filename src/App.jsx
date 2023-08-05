@@ -15,6 +15,7 @@ import ProtectedRoute from './ui/ProtectedRoute/ProtectedRoute';
 import SearchPage from './pages/SearchPage/SearchPage';
 import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
 import { useEffect } from 'react';
+import RecipeDatailsPage from './pages/RecipeDatailsPage/RecipeDatailsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,14 +24,14 @@ const queryClient = new QueryClient({
     },
   },
 });
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [pathname]);
+// const ScrollToTop = () => {
+//   const { pathname } = useLocation();
+//   useEffect(() => {
+//     window.scrollTo({ top: 0, behavior: 'smooth' });
+//   }, [pathname]);
 
-  return null;
-};
+//   return null;
+// };
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
       <ReactQueryDevtools initialIsOpen={false} />
 
       <BrowserRouter>
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         <Routes>
           <Route
             element={
@@ -51,6 +52,7 @@ function App() {
             <Route path="main" element={<MainPage />} />
             <Route path="categories" element={<CategoriesPage />} />
             <Route path="categories/:categoryName" element={<CategoriesPage />} />
+            <Route path="recipes/:recipeId" element={<RecipeDatailsPage />} />
             <Route path="add" element={<MainPage />} />
             <Route path="my" element={<MainPage />} />
             <Route path="favorite" element={<MainPage />} />
