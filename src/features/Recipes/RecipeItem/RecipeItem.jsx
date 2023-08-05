@@ -11,7 +11,7 @@ function RecipeItem({ recipe: { title, _id, preview } }) {
       <Image
         alt={`${title} img`}
         className={styles.recipeImg}
-        imageUrl={preview}
+        src={preview}
         defaultImage={RecipeNotFound}
         onClick={() => navigate(`/recipes/${_id}`)}
       />

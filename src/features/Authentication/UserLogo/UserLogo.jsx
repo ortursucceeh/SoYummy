@@ -11,7 +11,7 @@ function UserLogo({ user: { name, avatarURL } }) {
   return (
     <div className={styles.user}>
       <Image
-        imageUrl={avatarURL}
+        src={avatarURL}
         defaultImage={defaultImage}
         alt="User avatar"
         onClick={() => setIsShowUserModal(!isShowUserModal)}

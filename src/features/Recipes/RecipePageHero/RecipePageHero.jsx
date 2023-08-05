@@ -8,7 +8,7 @@ function RecipePageHero({ title, description, favorite, time, fullImage }) {
   return (
     <div className={styles.wrapper}>
       <Image
-        imageUrl={fullImage}
+        src={fullImage}
         alt="recipeImage"
         defaultImage={RecipeBgNotFound}
         className={styles.img}

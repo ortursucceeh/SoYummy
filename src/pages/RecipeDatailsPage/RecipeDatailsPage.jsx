@@ -179,7 +179,7 @@ function RecipeDatailsPage() {
         fullImage={recipe.fullImage}
       />
       <RecipeIngredientsList ingredients={recipe.ingredients} />
-      <RecipePreparation />
+      <RecipePreparation preparation={recipe.instructions} preview={recipe.previewImg} />
     </div>
   );
 }

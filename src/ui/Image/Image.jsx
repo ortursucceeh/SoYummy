@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-function Image({ imageUrl, alt, defaultImage, ...props }) {
+function Image({ src, alt, defaultImage, ...props }) {
   const [imageError, setImageError] = useState(false);
 
   return (
     <img
-      src={imageError || !imageUrl ? defaultImage : imageUrl}
+      src={imageError || !src ? defaultImage : src}
       alt={alt}
       onError={() => setImageError(true)}
       {...props}

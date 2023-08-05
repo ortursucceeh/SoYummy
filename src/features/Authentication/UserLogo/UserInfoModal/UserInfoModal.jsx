@@ -40,7 +40,7 @@ function UserInfoModal({ isOpen, onClose }) {
         </span>
         <label htmlFor="uploadBtn" className={styles.fileInput}>
           {avatarURL ? (
-            <Image imageUrl={avatarURL} defaultImage={defaultImage} alt="User avatar" />
+            <Image src={avatarURL} defaultImage={defaultImage} alt="User avatar" />
           ) : (
             <FiUser />
           )}
