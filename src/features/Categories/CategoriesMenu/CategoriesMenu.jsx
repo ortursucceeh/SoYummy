@@ -2,10 +2,14 @@ import styles from './CategoriesMenu.module.scss';
 import { CATEGORIES_LIST } from '../../../utils/categories';
 import { useState } from 'react';
 import { useScrollable } from './useScrollable';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function CategoriesMenu() {
-  const [activeTab, setActiveTab] = useState(0);
+  const { categoryName } = useParams();
+  const activeTabIndex = categoryName
+    ? CATEGORIES_LIST.findIndex(el => el.toLowerCase() === categoryName.toLowerCase())
+    : null;
+  const [activeTab, setActiveTab] = useState(activeTabIndex ?? 0);
   const [ref, scrollListeners] = useScrollable();
   const navigate = useNavigate();
 

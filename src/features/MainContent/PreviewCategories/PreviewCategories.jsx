@@ -13,8 +13,7 @@ function PreviewCategories() {
 
   if (isLoading) return <Loader />;
 
-  if (!categories)
-    return <span className={styles.error}>Error occured loading categories....</span>;
+  if (!categories) return <span className={styles.error}>Error occured loading categories...</span>;
 
   return (
     <section className={styles.categoriesWrapper}>

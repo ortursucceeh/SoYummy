@@ -3,7 +3,7 @@ import styles from './Loader.module.scss';
 
 function LoaderMini() {
   return (
-    <span className={styles.loader}>
+    <div className={styles.loader}>
       <ColorRing
         visible={true}
         height="30%"
@@ -12,7 +12,7 @@ function LoaderMini() {
         wrapperClass="blocks-wrapper"
         colors={['white', 'white', 'white', 'white', 'white', 'white']}
       />
-    </span>
+    </div>
   );
 }
 

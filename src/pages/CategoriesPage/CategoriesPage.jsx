@@ -7,10 +7,7 @@ function CategoriesPage() {
   return (
     <div className={styles.container}>
       <PageTitle>Categories</PageTitle>
-      <div className={styles.categoriesMenu}>
-        <CategoriesMenu />
-      </div>
-
+      <CategoriesMenu />
       <CategoriesRecipesList />
     </div>
   );

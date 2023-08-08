@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
@@ -14,8 +14,8 @@ import PageNotFound from './pages/PageNotFound/PageNotFound';
 import ProtectedRoute from './ui/ProtectedRoute/ProtectedRoute';
 import SearchPage from './pages/SearchPage/SearchPage';
 import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
-import { useEffect } from 'react';
 import RecipeDatailsPage from './pages/RecipeDatailsPage/RecipeDatailsPage';
+import ScrollToTop from './ui/ScrollToTop/ScrollToTop';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,14 +24,6 @@ const queryClient = new QueryClient({
     },
   },
 });
-// const ScrollToTop = () => {
-//   const { pathname } = useLocation();
-//   useEffect(() => {
-//     window.scrollTo({ top: 0, behavior: 'smooth' });
-//   }, [pathname]);
-
-//   return null;
-// };
 
 function App() {
   return (
@@ -39,7 +31,7 @@ function App() {
       <ReactQueryDevtools initialIsOpen={false} />
 
       <BrowserRouter>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <Routes>
           <Route
             element={

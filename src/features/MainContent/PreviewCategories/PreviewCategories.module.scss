@@ -27,6 +27,10 @@
   background-color: var(--color-green-0);
   color: var(--color-white-200);
   align-self: flex-end;
+
+  &:hover {
+    background-color: var(--color-dark-100);
+  }
 }
 
 .otherBtn {
