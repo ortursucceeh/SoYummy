@@ -34,3 +34,16 @@
     fill: var(--color-green-0);
   }
 }
+
+@media (max-width: 768px) {
+  .logo {
+    height: 34px;
+    width: 34px;
+    border-radius: 8px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

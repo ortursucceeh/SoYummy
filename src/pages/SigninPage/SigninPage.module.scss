@@ -41,7 +41,7 @@
     }
   }
 
-  a {
+  & > a {
     position: absolute;
     bottom: -38px;
     left: 250px;
@@ -72,8 +72,10 @@
     display: none;
   }
 
-  a {
-    color: var(--color-dark-100);
+  .form {
+    a {
+      color: var(--color-dark-100);
+    }
   }
 }
 
@@ -112,7 +114,6 @@
       left: 167px;
       transform: translateX(-50%);
       text-decoration: underline;
-      color: var(--color-dark-100);
     }
   }
 }

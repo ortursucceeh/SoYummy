@@ -17,6 +17,8 @@ import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
 import RecipeDatailsPage from './pages/RecipeDatailsPage/RecipeDatailsPage';
 import ScrollToTop from './ui/ScrollToTop/ScrollToTop';
 import AddRecipePage from './pages/AddRecipePage/AddRecipePage';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import MyRecipesPage from './pages/MyRecipesPage/MyRecipesPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,8 +49,8 @@ function App() {
             <Route path="categories/:categoryName" element={<CategoriesPage />} />
             <Route path="recipes/:recipeId" element={<RecipeDatailsPage />} />
             <Route path="add" element={<AddRecipePage />} />
-            <Route path="my" element={<MainPage />} />
-            <Route path="favorite" element={<MainPage />} />
+            <Route path="my" element={<MyRecipesPage />} />
+            <Route path="favorite" element={<FavoritesPage />} />
             <Route path="search" element={<SearchPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>

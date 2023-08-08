@@ -27,6 +27,15 @@ body {
   line-height: 1.5;
   font-size: 1.6rem;
   position: relative;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-green-0);
+    border-radius: 18px;
+  }
 }
 
 input,
