@@ -1,8 +1,8 @@
-import Button from '../../../ui/Button/Button';
+import Button from '../../../../ui/Button/Button';
 import { LuClock4 } from 'react-icons/lu';
 import styles from './RecipePageHero.module.scss';
-import RecipeBgNotFound from './../../../assets/recipeBgNotFound.png';
-import Image from '../../../ui/Image/Image';
+import RecipeBgNotFound from './../../../../assets/recipeBgNotFound.png';
+import Image from '../../../../ui/Image/Image';
 
 function RecipePageHero({ title, description, favorite, time, fullImage }) {
   return (

@@ -1,9 +1,9 @@
 import { useRecipe } from '../useRecipe';
 import Loader from '../../../ui/Loaders/Loader';
 import RecipesNotFound from '../../../ui/RecipesNotFound/RecipesNotFound';
-import RecipePageHero from '../RecipePageHero/RecipePageHero';
-import RecipeIngredientsList from '../RecipeIngredientsList/RecipeIngredientsList';
-import RecipePreparation from '../RecipePreparation/RecipePreparation';
+import RecipePageHero from './RecipePageHero/RecipePageHero';
+import RecipeIngredientsList from './RecipeIngredientsList/RecipeIngredientsList';
+import RecipePreparation from './RecipePreparation/RecipePreparation';
 
 function RecipeDatailsContent() {
   const { recipe, isLoading } = useRecipe();

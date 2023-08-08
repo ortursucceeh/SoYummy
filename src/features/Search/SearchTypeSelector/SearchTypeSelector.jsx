@@ -24,14 +24,14 @@ function SearchTypeSelector({ searchType, setSearchType }) {
         </span>
         <RiArrowDownSLine />
         {isOpen && (
-          <div className={styles.optionList} ref={ref}>
-            <span className={styles.option} data-value="title" onClick={handleChangeType}>
+          <ul className={styles.optionList} ref={ref}>
+            <li className={styles.option} data-value="title" onClick={handleChangeType}>
               Title
-            </span>
-            <span className={styles.option} data-value="ingredients" onClick={handleChangeType}>
+            </li>
+            <li className={styles.option} data-value="ingredients" onClick={handleChangeType}>
               Ingredients
-            </span>
-          </div>
+            </li>
+          </ul>
         )}
       </div>
     </div>

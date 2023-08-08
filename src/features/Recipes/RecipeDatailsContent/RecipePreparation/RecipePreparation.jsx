@@ -1,7 +1,7 @@
-import Image from '../../../ui/Image/Image';
-import { formatInstructions } from '../../../utils/recipes';
+import Image from '../../../../ui/Image/Image';
+import { formatInstructions } from '../../../../utils/recipes';
 import styles from './RecipePreparation.module.scss';
-import RecipeNotFound from './../../../assets/recipePreviewNotFound.png';
+import RecipeNotFound from './../../../../assets/recipePreviewNotFound.png';
 
 function RecipePreparation({ preparation, preview }) {
   const instructions = formatInstructions(preparation);

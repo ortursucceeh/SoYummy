@@ -1,0 +1,114 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  gap: 0 50px;
+  height: 344px;
+}
+
+.fileInput {
+  max-height: 100%;
+  max-width: 358px;
+  background-color: var(--color-green-0);
+  border-radius: 8px;
+}
+
+.fields {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  gap: 60px 0;
+}
+
+.label {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-grey-500);
+    z-index: -10;
+  }
+}
+
+.input {
+  position: relative;
+  outline: none;
+  border: none;
+  width: 275px;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.select {
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--color-green-0);
+  }
+}
+
+.value {
+  color: var(--color-black-0);
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.optionList {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  height: 160px;
+  overflow-y: scroll;
+  width: 132px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white-0);
+  border-radius: 6px;
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.03);
+  padding: 8px 18px;
+  gap: 4px 0;
+  z-index: 5;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-grey-500);
+    border-radius: 12px;
+  }
+}
+
+.option {
+  cursor: pointer;
+  display: block;
+  color: var(--color-black-0);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+  opacity: 0.5;
+}

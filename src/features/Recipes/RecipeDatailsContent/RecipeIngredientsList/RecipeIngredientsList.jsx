@@ -1,6 +1,6 @@
-import Image from '../../../ui/Image/Image';
+import Image from '../../../../ui/Image/Image';
 import styles from './RecipeIngredientsList.module.scss';
-import ingredientNotFound from './../../../assets/ingredientNotFound.png';
+import ingredientNotFound from './../../../../assets/ingredientNotFound.png';
 
 function RecipeIngredientsList({ ingredients }) {
   return (
