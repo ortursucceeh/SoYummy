@@ -110,3 +110,17 @@ export async function deleteOwnRecipeById(recipeId) {
 
   return res.json();
 }
+
+export async function toggleFavoriteRecipe(recipeId) {
+  const res = await fetch(`${API_URL}/recipes/favorite/${recipeId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getAccessToken()}`,
+    },
+  });
+
+  if (!res.ok) throw new Error("Failed to change recipe's favorite status🍕");
+
+  return res.json();
+}

@@ -1,0 +1,221 @@
+.recipe {
+  background-color: var(--color-white-0);
+  border-radius: 8px;
+  width: 100%;
+  height: 404px;
+  padding: 40px;
+  display: flex;
+  gap: 0 40px;
+}
+
+.preview {
+  width: 318px;
+  height: 324px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.recipeInfo {
+  width: 100%;
+  position: relative;
+}
+
+.deleteRecipe {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+  background-color: var(--color-lightgreen-0);
+  cursor: pointer;
+  right: 0;
+  top: 0;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    background-color: var(--color-green-0);
+    color: var(--color-white-200);
+  }
+}
+
+.recipeTitle {
+  max-width: 750px;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  color: var(--color-grey-400);
+}
+
+.recipeDescr {
+  margin-top: 50px;
+  max-width: 680px;
+  max-height: 150px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+  overflow: hidden;
+}
+
+.cookingTime {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: var(--color-grey-400);
+}
+
+.btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 160px;
+  height: 54px;
+}
+
+.own {
+  background-color: var(--color-green-0);
+  color: var(--color-white-200);
+
+  &:hover {
+    background-color: var(--color-dark-0);
+  }
+}
+
+@media (max-width: 932px) {
+  .recipe {
+    padding: 28px 24px;
+    height: 288px;
+    gap: 0 24px;
+  }
+
+  .preview {
+    width: 228px;
+    height: 232px;
+  }
+
+  .recipeTitle {
+    max-width: 350px;
+  }
+
+  .recipeDescr {
+    margin-top: 28px;
+    max-width: 300px;
+    max-height: 80px;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+  }
+
+  .deleteRecipe {
+    width: 38px;
+    height: 38px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .btn {
+    width: 138px;
+    height: 45px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 644px) {
+  .recipe {
+    padding: 14px 10px;
+    height: 152px;
+    gap: 0 14px;
+  }
+
+  .preview {
+    width: 124px;
+    height: 124px;
+  }
+
+  .recipeTitle {
+    max-width: 350px;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.24px;
+  }
+
+  .recipeDescr {
+    margin-top: 14px;
+    font-size: 8px;
+    line-height: 10px;
+    letter-spacing: -0.16px;
+    max-width: 155px;
+    max-height: 50px;
+  }
+
+  .deleteRecipe {
+    width: 24px;
+    height: 24px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .btn {
+    width: 87px;
+    height: 27px;
+    font-size: 10px;
+  }
+
+  .cookingTime {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .recipe {
+    padding: 8px 4px;
+    height: 140px;
+    gap: 0 10px;
+  }
+
+  .recipeTitle {
+    max-width: 80px;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.24px;
+  }
+
+  .deleteRecipe {
+    width: 18px;
+    height: 18px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .cookingTime {
+    display: none;
+  }
+  .recipeDescr {
+    display: none;
+  }
+
+  .btn {
+    width: 75px;
+    height: 25px;
+    font-size: 10px;
+  }
+}
