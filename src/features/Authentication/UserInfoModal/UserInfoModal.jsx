@@ -1,16 +1,17 @@
-import Input from '../../../../ui/Input/Input';
+import Input from '../../../ui/Input/Input';
 import styles from './UserInfoModal.module.scss';
 import { VscClose } from 'react-icons/vsc';
 import { FiUser } from 'react-icons/fi';
 import { RxPencil1 } from 'react-icons/rx';
-import Button from '../../../../ui/Button/Button';
+import Button from '../../../ui/Button/Button';
 import { AiFillPlusCircle } from 'react-icons/ai';
-import Modal from '../../../../ui/Modal/Modal';
-import { useUpdateUser } from '../../useUpdateUser';
+import Modal from '../../../ui/Modal/Modal';
+import { useUpdateUser } from '../useUpdateUser';
 import { useState } from 'react';
-import { useUser } from '../../useUser';
-import Image from '../../../../ui/Image/Image';
-import defaultImage from './../../../../assets/recipePreviewNotFound.png';
+import { useUser } from '../useUser';
+import Image from '../../../ui/Image/Image';
+import defaultImage from './../../../assets/recipePreviewNotFound.png';
+import LoaderMini from '../../../ui/Loaders/LoaderMini';
 
 function UserInfoModal({ isOpen, onClose }) {
   const {
@@ -19,13 +20,14 @@ function UserInfoModal({ isOpen, onClose }) {
   const { updateUser, isLoading } = useUpdateUser();
   const [selectedFile, setSelectedFile] = useState(null);
   const [inputName, setInputName] = useState(name);
+  const formData = new FormData();
 
   function handleSaveChanges(e) {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('name', inputName);
-    formData.append('avatar', selectedFile);
+    inputName && formData.append('name', inputName);
+    selectedFile && formData.append('avatar', selectedFile, selectedFile.name);
     updateUser(formData);
+    setSelectedFile(null);
   }
 
   function handleFileChange(e) {
@@ -70,7 +72,7 @@ function UserInfoModal({ isOpen, onClose }) {
           onChange={e => setInputName(e.target.value)}
         />
         <Button shape="rect" color="green" disabled={isLoading} onClick={handleSaveChanges}>
-          {isLoading ? 'Updating...' : 'Save changes'}
+          {isLoading ? <LoaderMini /> : 'Save changes'}
         </Button>
       </form>
     </Modal>

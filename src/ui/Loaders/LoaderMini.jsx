@@ -6,7 +6,7 @@ function LoaderMini() {
     <div className={styles.loader}>
       <ColorRing
         visible={true}
-        height="30%"
+        height="45px"
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
         wrapperClass="blocks-wrapper"

@@ -4,8 +4,8 @@ import { LuArrowRight } from 'react-icons/lu';
 import { useState } from 'react';
 import UserInfoModal from '../UserInfoModal/UserInfoModal';
 import LogoutModal from '../LogoutModal/LogoutModal';
-import Button from '../../../../ui/Button/Button';
-import { useOutsideClick } from '../../../../hooks/useOutsideClick';
+import Button from '../../../ui/Button/Button';
+import { useOutsideClick } from '../../../hooks/useOutsideClick';
 
 function UserLogoModal({ onClose }) {
   const [isShowInfoModal, setIsShowInfoModal] = useState(false);

@@ -68,6 +68,7 @@ export async function refreshTokens() {
 export async function getCurrentUser() {
   const isRefreshed = await refreshTokens();
   console.log('isRefreshed :>> ', isRefreshed);
+
   if (isRefreshed) {
     const newAccessToken = getAccessToken();
     const res = await fetch(`${API_URL}/users/current`, {
@@ -89,12 +90,10 @@ export async function getCurrentUser() {
 
 export async function updateUser(formData) {
   const token = getAccessToken();
-  // console.log(formData);
 
-  const res = await fetch(`${API_URL}/user-info/set-user-info`, {
-    method: 'POST',
+  const res = await fetch(`${API_URL}/users/update`, {
+    method: 'PUT',
     headers: {
-      // 'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${token}`,
     },
     body: formData,
