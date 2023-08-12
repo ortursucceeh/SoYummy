@@ -20,7 +20,7 @@ function WelcomePage() {
           Registration
         </Button>
 
-        <Button shape="curv" color="trans" id="signin" onClick={() => navigate('register')}>
+        <Button shape="curv" color="trans" id="signin" onClick={() => navigate('signin')}>
           Sign in
         </Button>
       </div>

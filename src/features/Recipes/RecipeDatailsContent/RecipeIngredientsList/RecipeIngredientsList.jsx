@@ -12,7 +12,7 @@ function RecipeIngredientsList({ ingredients }) {
 
       <div className={styles.ingredientList}>
         {ingredients.map(ingredient => (
-          <div className={styles.ingredient}>
+          <div className={styles.ingredient} key={ingredient._id}>
             <div className={styles.ingDetail}>
               <Image
                 src={ingredient.thumb}

@@ -22,7 +22,7 @@ function RecipeDatailsContent() {
         fullImage={recipe.fullImage}
       />
       <RecipeIngredientsList ingredients={recipe.ingredients} />
-      <RecipePreparation preparation={recipe.instructions} preview={recipe.previewImg} />
+      <RecipePreparation preparation={recipe.instructions} preview={recipe.preview} />
     </div>
   );
 }

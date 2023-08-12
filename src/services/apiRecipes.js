@@ -36,7 +36,7 @@ export async function searchRecipes({ query, queryType }) {
 
 export async function getRecipesByCategory(categoryName) {
   const res = await fetch(`${API_URL}/recipes/category/${categoryName}`, {
-    method: 'GET',
+    // method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getAccessToken()}`,
@@ -50,12 +50,13 @@ export async function getRecipesByCategory(categoryName) {
 
 export async function getRecipesById(recipeId) {
   const res = await fetch(`${API_URL}/recipes/id/${recipeId}`, {
-    method: 'GET',
+    // method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getAccessToken()}`,
     },
   });
+  console.log(res);
 
   if (!res.ok) throw new Error('Failed to get recipe🎇');
 

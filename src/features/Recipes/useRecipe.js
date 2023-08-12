@@ -11,5 +11,7 @@ export function useRecipe() {
     queryFn: () => getRecipesById(recipeId),
   });
 
+  // console.log(recipe);
+
   return { recipe, isLoading };
 }

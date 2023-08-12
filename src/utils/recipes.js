@@ -1,5 +1,10 @@
 export function formatInstructions(instructions) {
-  return instructions.split('\n').filter(str => str !== '\r');
+  return instructions
+    .slice(0, -1)
+    .replaceAll('\n', ' ')
+    .replaceAll('\r', '')
+    .split('. ')
+    .map(str => str + '.');
 }
 
 export const COOKING_TIMES = [
