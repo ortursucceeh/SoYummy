@@ -4,6 +4,7 @@ export function formatInstructions(instructions) {
     .replaceAll('\n', ' ')
     .replaceAll('\r', '')
     .split('. ')
+    .filter(str => str.length >= 10)
     .map(str => str + '.');
 }
 

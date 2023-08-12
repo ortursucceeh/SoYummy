@@ -3,7 +3,6 @@ import { getAccessToken } from '../utils/auth';
 
 export async function previewCategories() {
   const res = await fetch(`${API_URL}/recipes/main-page`, {
-    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getAccessToken()}`,
@@ -21,7 +20,6 @@ export async function searchRecipes({ query, queryType }) {
   const res = await fetch(
     `${API_URL}/recipes/${queryType === 'title' ? 'title' : 'ingredient'}/${query}`,
     {
-      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${getAccessToken()}`,
@@ -36,7 +34,6 @@ export async function searchRecipes({ query, queryType }) {
 
 export async function getRecipesByCategory(categoryName) {
   const res = await fetch(`${API_URL}/recipes/category/${categoryName}`, {
-    // method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getAccessToken()}`,
@@ -48,17 +45,68 @@ export async function getRecipesByCategory(categoryName) {
   return res.json();
 }
 
-export async function getRecipesById(recipeId) {
+export async function getRecipeById(recipeId) {
   const res = await fetch(`${API_URL}/recipes/id/${recipeId}`, {
-    // method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getAccessToken()}`,
     },
   });
-  console.log(res);
 
   if (!res.ok) throw new Error('Failed to get recipe🎇');
+
+  return res.json();
+}
+
+export async function getFavoritesRecipes() {
+  const res = await fetch(`${API_URL}/recipes/favorite`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getAccessToken()}`,
+    },
+  });
+
+  if (!res.ok) throw new Error('Failed to get favorites recipes🍕');
+
+  return res.json();
+}
+
+export async function getOwnRecipes() {
+  const res = await fetch(`${API_URL}/own-recipes`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getAccessToken()}`,
+    },
+  });
+
+  if (!res.ok) throw new Error('Failed to get own recipes🍕');
+
+  return res.json();
+}
+
+export async function getOwnRecipeById(recipeId) {
+  const res = await fetch(`${API_URL}/own-recipes/id/${recipeId}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getAccessToken()}`,
+    },
+  });
+
+  if (!res.ok) throw new Error('Failed to get own recipe🍕');
+
+  return res.json();
+}
+
+export async function deleteOwnRecipeById(recipeId) {
+  const res = await fetch(`${API_URL}/own-recipes/id/${recipeId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getAccessToken()}`,
+    },
+  });
+
+  if (!res.ok) throw new Error('Failed to delete own recipe🍕');
 
   return res.json();
 }

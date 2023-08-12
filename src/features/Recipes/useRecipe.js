@@ -1,17 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
-import { useParams } from 'react-router-dom';
-import { getRecipesById } from '../../services/apiRecipes';
+import { useLocation, useParams } from 'react-router-dom';
+import { getRecipeById, getOwnRecipeById } from '../../services/apiRecipes';
 
 export function useRecipe() {
   const { recipeId } = useParams();
-  console.log(recipeId);
+  const { search } = useLocation();
+
+  const getRecipe = search ? getOwnRecipeById : getRecipeById;
 
   const { isLoading, data: recipe } = useQuery({
     queryKey: ['recipeById', recipeId],
-    queryFn: () => getRecipesById(recipeId),
+    queryFn: () => getRecipe(recipeId),
   });
-
-  // console.log(recipe);
 
   return { recipe, isLoading };
 }

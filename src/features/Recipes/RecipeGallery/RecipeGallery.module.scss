@@ -45,6 +45,11 @@
     width: 24px;
     height: 24px;
   }
+
+  &:hover {
+    background-color: var(--color-green-0);
+    color: var(--color-white-200);
+  }
 }
 
 .recipeTitle {
@@ -83,6 +88,15 @@
   bottom: 0;
   width: 160px;
   height: 54px;
+}
+
+.own {
+  background-color: var(--color-green-0);
+  color: var(--color-white-200);
+
+  &:hover {
+    background-color: var(--color-dark-0);
+  }
 }
 
 @media (max-width: 932px) {
