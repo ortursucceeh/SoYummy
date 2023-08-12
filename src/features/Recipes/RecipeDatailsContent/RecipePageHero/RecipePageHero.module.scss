@@ -1,8 +1,6 @@
 .wrapper {
   height: 492px;
   width: 100%;
-  // position: relative;
-  // height: 500px;
   margin-top: -64px;
   padding-top: 164px;
   overflow-y: hidden;
@@ -16,11 +14,11 @@
   left: 0;
   top: 0;
   object-fit: cover;
+  object-position: center;
 }
 
 .title {
   margin: 0 auto;
-  // margin-top: 150px;
   color: var(--color-green-0);
   font-size: 44px;
   font-weight: 600;
@@ -35,7 +33,7 @@
   margin: 24px auto 0;
   font-size: 18px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.25;
   letter-spacing: -0.36px;
 }
 
@@ -61,5 +59,47 @@
   svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media (max-width: 932px) {
+  .wrapper {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 644px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .descr {
+    font-size: 16px;
+  }
+
+  .btn {
+    margin: 50px auto 0;
+    width: 240px;
+    height: 50px;
+  }
+
+  .time {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .descr {
+    font-size: 16px;
+  }
+
+  .btn {
+    margin: 60px auto 0;
+    width: 220px;
+    font-size: 14px;
   }
 }

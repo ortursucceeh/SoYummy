@@ -27,7 +27,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.2;
 
   letter-spacing: -0.28px;
   color: var(--color-grey-400);
@@ -58,4 +58,42 @@
   height: 350px;
   flex-shrink: 0;
   border-radius: 8px;
+  margin-left: 25px;
+}
+
+@media (max-width: 932px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 50px 0;
+  }
+
+  .preview {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 644px) {
+  .instructions {
+    width: 95%;
+    gap: 14px 0;
+  }
+
+  .step {
+    font-size: 14px;
+
+    &:before {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    padding: 50px 0 100px;
+  }
+
+  .preview {
+    max-width: 250px;
+    max-height: 250px;
+  }
 }
