@@ -15,9 +15,10 @@ function RecipeDatailsContent() {
   return (
     <div>
       <RecipePageHero
+        _id={recipe._id}
         title={recipe.title}
         description={recipe.description}
-        favorite={recipe.favorite}
+        favorites={recipe.favorites}
         time={recipe.time}
         fullImage={recipe.fullImage}
       />

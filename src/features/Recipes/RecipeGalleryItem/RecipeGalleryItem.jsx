@@ -12,7 +12,6 @@ function RecipeGalleryItem({ recipe, type }) {
   const { toggleFavoriteRecipe, isLoading: isLoadingToggle } = useToggleFavoriteRecipe();
 
   function handleDelete() {
-    console.log(`delete ${recipe._id}`);
     type === 'own' ? deleteOwnRecipeById(recipe._id) : toggleFavoriteRecipe(recipe._id);
   }
 

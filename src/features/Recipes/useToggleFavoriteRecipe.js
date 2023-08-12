@@ -7,8 +7,9 @@ export function useToggleFavoriteRecipe() {
 
   const { mutate: toggleFavoriteRecipe, isLoading } = useMutation({
     mutationFn: toggleFavoriteRecipeApi,
-    onSuccess: data => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['favoritesRecipes'] });
+      queryClient.invalidateQueries({ queryKey: ['recipeById'] });
       toast.success("Recipe's favorite status was changed!");
     },
     onError: err => {
