@@ -1,0 +1,115 @@
+.ingredientField {
+  width: 100%;
+  display: flex;
+  gap: 0 32px;
+  position: relative;
+}
+
+.inputWrapper {
+  width: 400px;
+  height: 60px;
+  position: relative;
+  background-color: var(--color-grey-100);
+  border-radius: 8px;
+}
+
+.input {
+  position: relative;
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  font-size: 16px;
+
+  &::placeholder {
+    font-size: 16px;
+    opacity: 0.7;
+  }
+}
+
+.select {
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--color-green-0);
+  }
+}
+
+.value {
+  color: var(--color-black-0);
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.optionList {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  height: 160px;
+  overflow-y: scroll;
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white-0);
+  border-radius: 6px;
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.03);
+  padding: 8px 18px;
+  gap: 4px 0;
+  z-index: 5;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-grey-500);
+    border-radius: 12px;
+  }
+}
+
+.option {
+  cursor: pointer;
+  display: block;
+  color: var(--color-black-0);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+  opacity: 0.5;
+}
+
+.measure {
+  width: 130px;
+  position: relative;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 16px 14px;
+  font-size: 16px;
+  background-color: var(--color-grey-100);
+  border-radius: 8px;
+
+  &::placeholder {
+    font-size: 16px;
+    opacity: 0.7;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

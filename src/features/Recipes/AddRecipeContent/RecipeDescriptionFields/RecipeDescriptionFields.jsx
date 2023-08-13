@@ -5,6 +5,7 @@ import { CATEGORIES_LIST } from '../../../../utils/categories';
 import { COOKING_TIMES } from '../../../../utils/recipes';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 import { TbCameraUp } from 'react-icons/tb';
+
 function RecipeDescriptionFields() {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenCooking, setIsOpenCooking] = useState(false);

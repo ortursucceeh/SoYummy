@@ -14,20 +14,12 @@
   width: 358px;
   background-color: var(--color-green-0);
   border-radius: 8px;
+
   svg {
     width: 48px;
     height: 48px;
     stroke: var(--color-white-200);
   }
-
-  // img {
-  //   height: 103px;
-  //   width: 103px;
-
-  //   &:hover {
-  //     opacity: 0.5;
-  //   }
-  // }
 
   input {
     display: none;
@@ -68,7 +60,7 @@
   position: relative;
   outline: none;
   border: none;
-  width: 275px;
+  width: 100%;
   background-color: transparent;
   font-size: 16px;
 
