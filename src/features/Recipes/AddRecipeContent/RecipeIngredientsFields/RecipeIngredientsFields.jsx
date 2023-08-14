@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast';
 import IngredientField from './IngredientField/IngredientField';
 import { randomId } from '../../../../utils/recipes';
 import React, { useContext } from 'react';
-import { RecipeContext } from '../AddRecipeForm';
+import { RecipeContext } from '../AddRecipeForm/AddRecipeForm';
 
 function RecipeIngredientsFields() {
   const { recipe, setRecipe } = useContext(RecipeContext);

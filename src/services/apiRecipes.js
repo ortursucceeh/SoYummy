@@ -138,3 +138,15 @@ export async function createOwnRecipe(formData) {
 
   return res.json();
 }
+
+export async function getPopularRecipes() {
+  const res = await fetch(`${API_URL}/recipes?page=1&limit=4&sort=popular`, {
+    headers: {
+      Authorization: `Bearer ${getAccessToken()}`,
+    },
+  });
+
+  if (!res.ok) throw new Error('Failed to create your recipe🍕');
+
+  return res.json();
+}

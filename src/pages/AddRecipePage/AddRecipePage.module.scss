@@ -1,3 +1,35 @@
 .container {
   min-height: 880px;
 }
+
+.pageWrapper {
+  display: flex;
+  gap: 100px;
+}
+
+.subheader {
+  color: var(--color-grey-400);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+
+  li svg {
+    width: 25px;
+    height: 25px;
+    &:hover {
+      fill: var(--color-dark-0);
+    }
+  }
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}

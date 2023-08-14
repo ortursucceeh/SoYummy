@@ -15,7 +15,7 @@ export function useCreateOwnRecipe() {
       navigate('/my');
     },
     onError: err => {
-      toast.error("Couldn't create your recipe🍎");
+      toast.error("Couldn't create your recipe🍎 Please fill all the required fields");
       console.log(err.message);
     },
   });

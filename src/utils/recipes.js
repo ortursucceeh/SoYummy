@@ -26,7 +26,7 @@ export const initialOwnRecipe = {
   category: 'Breakfast',
   description: '',
   instructions: '',
-  time: null,
+  time: 0,
   ingredients: [
     { _id: randomId(), id: null, title: '', measure: null },
     { _id: randomId(), id: null, title: '', measure: null },

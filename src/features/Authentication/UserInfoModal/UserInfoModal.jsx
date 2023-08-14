@@ -12,7 +12,7 @@ import { useUser } from '../useUser';
 import Image from '../../../ui/Image/Image';
 import defaultImage from './../../../assets/recipePreviewNotFound.png';
 import LoaderMini from '../../../ui/Loaders/LoaderMini';
-import { formatFileName } from '../../../utils/functions';
+import { formatWord } from '../../../utils/functions';
 
 function UserInfoModal({ isOpen, onClose }) {
   const {
@@ -57,7 +57,7 @@ function UserInfoModal({ isOpen, onClose }) {
           />
         </label>
         {selectedFile && (
-          <span className={styles.fileName}>New: {formatFileName(selectedFile.name)}</span>
+          <span className={styles.fileName}>New: {formatWord(35, selectedFile.name)}</span>
         )}
         <Input
           leftIcon={<FiUser />}

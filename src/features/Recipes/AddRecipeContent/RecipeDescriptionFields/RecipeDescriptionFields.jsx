@@ -5,8 +5,8 @@ import { CATEGORIES_LIST } from '../../../../utils/categories';
 import { COOKING_TIMES } from '../../../../utils/recipes';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 import { TbCameraUp } from 'react-icons/tb';
-import { RecipeContext } from '../AddRecipeForm';
-import { formatFileName } from '../../../../utils/functions';
+import { RecipeContext } from '../AddRecipeForm/AddRecipeForm';
+import { formatWord } from '../../../../utils/functions';
 
 function RecipeDescriptionFields() {
   const { recipe, setRecipe } = useContext(RecipeContext);
@@ -50,12 +50,10 @@ function RecipeDescriptionFields() {
         <input
           type="file"
           id="uploadBtn"
-          accept="images/*,.png,.jpg,.jpeg,.jfif"
+          accept="images/*,.png,.jpg,.jpeg"
           onChange={handleFileChange}
         />
-        {fullImage && (
-          <span className={styles.fileName}>New: {formatFileName(fullImage.name)}</span>
-        )}
+        {fullImage && <span className={styles.fileName}>{formatWord(30, fullImage.name)}</span>}
       </label>
 
       <div className={styles.fields}>
@@ -65,8 +63,6 @@ function RecipeDescriptionFields() {
             placeholder="Recipe title"
             value={title}
             onChange={e => changeTitle(e.target.value)}
-            min={5}
-            max={30}
           />
         </div>
 
@@ -76,8 +72,6 @@ function RecipeDescriptionFields() {
             placeholder="About recipe"
             value={description}
             onChange={e => changeDescription(e.target.value)}
-            min={15}
-            max={120}
           />
         </div>
 

@@ -3,6 +3,7 @@ import FooterForm from '../FooterForm/FooterForm';
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Logo from '../../Logo/Logo';
 import { Link } from 'react-router-dom';
+import Socials from '../../Socials/Socials';
 
 function FooterContent() {
   return (
@@ -32,20 +33,9 @@ function FooterContent() {
         <FooterForm />
       </div>
 
-      <ul className={styles.social}>
-        <li>
-          <FaFacebook />
-        </li>
-        <li>
-          <FaYoutube />
-        </li>
-        <li>
-          <FaTwitter />
-        </li>
-        <li>
-          <FaInstagram />
-        </li>
-      </ul>
+      <div className={styles.socials}>
+        <Socials />
+      </div>
     </div>
   );
 }

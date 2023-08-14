@@ -56,28 +56,10 @@
   }
 }
 
-.social {
+.socials {
   display: flex;
   justify-content: center;
-  gap: 18px;
   margin-top: 40px;
-
-  li {
-    width: 20px;
-    height: 20px;
-
-    svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--color-green-0);
-      transition: fill 0.3s;
-      cursor: pointer;
-
-      &:hover {
-        fill: var(--color-white-200);
-      }
-    }
-  }
 }
 
 @media (max-width: 1440px) {
