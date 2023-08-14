@@ -1,19 +1,33 @@
 import { RiArrowDownSLine } from 'react-icons/ri';
 import styles from './RecipeDescriptionFields.module.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { CATEGORIES_LIST } from '../../../../utils/categories';
 import { COOKING_TIMES } from '../../../../utils/recipes';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 import { TbCameraUp } from 'react-icons/tb';
 
-function RecipeDescriptionFields() {
+function RecipeDescriptionFields({
+  title,
+  setTitle,
+  description,
+  setDescription,
+  selectedFile,
+  setSelectedFile,
+  categoryValue,
+  setCategory,
+  cookingTime,
+  setCookingTime,
+}) {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenCooking, setIsOpenCooking] = useState(false);
-  const [categoryValue, setCategoryValue] = useState('Breakfast');
-  const [cookingTime, setCookingTimeValue] = useState(0);
 
   const refCategory = useOutsideClick(() => setIsOpenCategory(false));
   const refCooking = useOutsideClick(() => setIsOpenCooking(false));
+
+  function handleFileChange(e) {
+    console.log(e.target.files[0]);
+    setSelectedFile(e.target.files[0]);
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -22,19 +36,40 @@ function RecipeDescriptionFields() {
         <input
           type="file"
           id="uploadBtn"
-          // onChange={handleFileChange}
-          // disabled={isLoading}
           accept="images/*,.png,.jpg,.jpeg"
+          onChange={handleFileChange}
         />
+        {selectedFile && (
+          <span className={styles.fileName}>
+            New:{' '}
+            {selectedFile.name.length >= 30
+              ? selectedFile.name.slice(0, 30) + '...'
+              : selectedFile.name}
+          </span>
+        )}
       </label>
 
       <div className={styles.fields}>
         <div className={styles.inputWrapper}>
-          <input id="title" type="text" className={styles.input} placeholder="Recipe title" />
+          <input
+            id="title"
+            type="text"
+            className={styles.input}
+            placeholder="Recipe title"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
+          />
         </div>
 
         <div className={styles.inputWrapper}>
-          <input id="about" type="text" className={styles.input} placeholder="About recipe" />
+          <input
+            id="about"
+            type="text"
+            className={styles.input}
+            placeholder="About recipe"
+            value={description}
+            onChange={e => setDescription(e.target.value)}
+          />
         </div>
 
         <div className={styles.inputWrapper}>
@@ -52,7 +87,7 @@ function RecipeDescriptionFields() {
                   <li
                     className={styles.option}
                     data-value={category}
-                    onClick={e => setCategoryValue(e.target.dataset.value)}
+                    onClick={e => setCategory(e.target.dataset.value)}
                   >
                     {category}
                   </li>
@@ -77,7 +112,7 @@ function RecipeDescriptionFields() {
                   <li
                     className={styles.option}
                     data-value={time}
-                    onClick={e => setCookingTimeValue(e.target.dataset.value)}
+                    onClick={e => setCookingTime(e.target.dataset.value)}
                   >
                     {time} min
                   </li>
@@ -91,4 +126,4 @@ function RecipeDescriptionFields() {
   );
 }
 
-export default RecipeDescriptionFields;
+export default React.memo(RecipeDescriptionFields);

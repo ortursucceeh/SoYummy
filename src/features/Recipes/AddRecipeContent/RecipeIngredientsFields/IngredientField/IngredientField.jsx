@@ -1,12 +1,23 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './IngredientField.module.scss';
 import { GrClose } from 'react-icons/gr';
 import { RiArrowDownSLine } from 'react-icons/ri';
-import { CATEGORIES_LIST } from '../../../../../utils/categories';
+import { ingredientsList } from '../../../../../utils/ingredients';
+import { useOutsideClick } from '../../../../../hooks/useOutsideClick';
 
-function IngredientField({ onDelete }) {
-  const [value, setValue] = useState('');
+function IngredientField({ ingId, ingTitle, onDelete, changeIngredient, changeIngredientMeasure }) {
+  const [value, setValue] = useState(ingTitle);
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
+  const refIngredient = useOutsideClick(() => setIsOptionsOpen(false));
+
+  function hangleChangeName({ target }) {
+    setValue(target.innerText);
+    changeIngredient(ingId, target.dataset.value, target.innerText);
+  }
+
+  function hangleChangeMeasure({ target }) {
+    changeIngredientMeasure(ingId, target.value);
+  }
 
   return (
     <div className={styles.ingredientField}>
@@ -15,21 +26,28 @@ function IngredientField({ onDelete }) {
           <span className={styles.value}>{value.length ? value : 'Choose an ingredient'}</span>
           <RiArrowDownSLine />
           {isOptionsOpen && (
-            <ul className={styles.optionList}>
-              {CATEGORIES_LIST.map(category => (
+            <ul className={styles.optionList} ref={refIngredient}>
+              {ingredientsList.map(ing => (
                 <li
                   className={styles.option}
-                  data-value={category}
-                  onClick={e => setValue(e.target.dataset.value)}
+                  key={ing._id}
+                  data-value={ing._id}
+                  onClick={hangleChangeName}
                 >
-                  {category}
+                  {ing.ttl}
                 </li>
               ))}
             </ul>
           )}
         </div>
       </div>
-      <input name="measure" type="text" placeholder="Measure" className={styles.measure} />
+      <input
+        name="measure"
+        type="text"
+        placeholder="Measure"
+        className={styles.measure}
+        onChange={hangleChangeMeasure}
+      />
       <span onClick={onDelete} className={styles.close}>
         <GrClose />
       </span>
@@ -37,4 +55,4 @@ function IngredientField({ onDelete }) {
   );
 }
 
-export default IngredientField;
+export default React.memo(IngredientField);

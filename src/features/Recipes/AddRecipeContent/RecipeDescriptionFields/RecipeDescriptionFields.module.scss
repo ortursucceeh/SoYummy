@@ -7,6 +7,7 @@
 
 .fileInput {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -24,6 +25,12 @@
   input {
     display: none;
   }
+}
+
+.fileName {
+  position: absolute;
+  color: var(--color-white-200);
+  bottom: 20px;
 }
 
 .fields {
@@ -119,6 +126,7 @@
   &::-webkit-scrollbar-thumb {
     background: var(--color-grey-500);
     border-radius: 12px;
+    padding-right: 5px;
   }
 }
 

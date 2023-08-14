@@ -20,10 +20,10 @@ function UserInfoModal({ isOpen, onClose }) {
   const { updateUser, isLoading } = useUpdateUser();
   const [selectedFile, setSelectedFile] = useState(null);
   const [inputName, setInputName] = useState(name);
-  const formData = new FormData();
 
   function handleSaveChanges(e) {
     e.preventDefault();
+    const formData = new FormData();
     inputName && formData.append('name', inputName);
     selectedFile && formData.append('avatar', selectedFile, selectedFile.name);
     updateUser(formData);
@@ -57,7 +57,7 @@ function UserInfoModal({ isOpen, onClose }) {
         </label>
         {selectedFile && (
           <span className={styles.fileName}>
-            New:
+            New:{' '}
             {selectedFile.name.length >= 30
               ? selectedFile.name.slice(0, 30) + '...'
               : selectedFile.name}

@@ -14,3 +14,19 @@ export const COOKING_TIMES = [
 ];
 
 export const INGREDIENTS = [];
+
+export function randomId(length = 10) {
+  return Math.random()
+    .toString(36)
+    .substring(2, length + 2);
+}
+
+export const initialOwnRecipe = {
+  title: '',
+  category: null,
+  description: '',
+  instructions: '',
+  ingredients: [],
+  time: null,
+  fullImage: null,
+};
