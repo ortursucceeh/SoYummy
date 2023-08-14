@@ -2,9 +2,17 @@ import styles from './RecipeIngredientsFields.module.scss';
 import { toast } from 'react-hot-toast';
 import IngredientField from './IngredientField/IngredientField';
 import { randomId } from '../../../../utils/recipes';
-import React from 'react';
+import React, { useContext } from 'react';
+import { RecipeContext } from '../AddRecipeForm';
 
-function RecipeIngredientsFields({ ingredients, setIngredients }) {
+function RecipeIngredientsFields() {
+  const { recipe, setRecipe } = useContext(RecipeContext);
+  const { ingredients } = recipe;
+
+  function changeIngredients(newIngredients) {
+    setRecipe({ ...recipe, ingredients: newIngredients });
+  }
+
   function handleDeleteIngredient(id) {
     if (ingredients.length <= 3) {
       toast('At least 3 ingredients', {
@@ -12,7 +20,7 @@ function RecipeIngredientsFields({ ingredients, setIngredients }) {
       });
       return;
     }
-    setIngredients(ingredients.filter(ing => ing._id !== id));
+    changeIngredients(ingredients.filter(ing => ing._id !== id));
   }
 
   function handlePlus() {
@@ -22,7 +30,7 @@ function RecipeIngredientsFields({ ingredients, setIngredients }) {
       });
       return;
     }
-    setIngredients([...ingredients, { _id: randomId(), id: null, title: '', measure: null }]);
+    changeIngredients([...ingredients, { _id: randomId(), id: null, title: '', measure: null }]);
   }
 
   function handleMinus() {
@@ -32,17 +40,19 @@ function RecipeIngredientsFields({ ingredients, setIngredients }) {
       });
       return;
     }
-    setIngredients([...ingredients.slice(0, -1)]);
+    changeIngredients([...ingredients.slice(0, -1)]);
   }
 
   function changeIngredient(id, ingId, title) {
-    setIngredients(
+    changeIngredients(
       ingredients.map(ing => (ing._id === id ? { ...ing, id: ingId, title: title } : ing))
     );
   }
 
   function changeIngredientMeasure(id, measure) {
-    setIngredients(ingredients.map(ing => (ing._id === id ? { ...ing, measure: measure } : ing)));
+    changeIngredients(
+      ingredients.map(ing => (ing._id === id ? { ...ing, measure: measure } : ing))
+    );
   }
 
   return (

@@ -22,7 +22,7 @@ function IngredientField({ ingId, ingTitle, onDelete, changeIngredient, changeIn
   return (
     <div className={styles.ingredientField}>
       <div className={styles.inputWrapper} onClick={() => setIsOptionsOpen(!isOptionsOpen)}>
-        <div name="ingredientName" className={styles.select}>
+        <div className={styles.select}>
           <span className={styles.value}>{value.length ? value : 'Choose an ingredient'}</span>
           <RiArrowDownSLine />
           {isOptionsOpen && (
@@ -41,13 +41,7 @@ function IngredientField({ ingId, ingTitle, onDelete, changeIngredient, changeIn
           )}
         </div>
       </div>
-      <input
-        name="measure"
-        type="text"
-        placeholder="Measure"
-        className={styles.measure}
-        onChange={hangleChangeMeasure}
-      />
+      <input placeholder="Measure" className={styles.measure} onChange={hangleChangeMeasure} />
       <span onClick={onDelete} className={styles.close}>
         <GrClose />
       </span>

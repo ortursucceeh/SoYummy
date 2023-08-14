@@ -124,3 +124,17 @@ export async function toggleFavoriteRecipe(recipeId) {
 
   return res.json();
 }
+
+export async function createOwnRecipe(formData) {
+  const res = await fetch(`${API_URL}/own-recipes`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${getAccessToken()}`,
+    },
+    body: formData,
+  });
+
+  if (!res.ok) throw new Error('Failed to create your recipe🍕');
+
+  return res.json();
+}

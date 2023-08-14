@@ -4,7 +4,7 @@ export function formatInstructions(instructions) {
     .replaceAll('\n', ' ')
     .replaceAll('\r', '')
     .split('. ')
-    .filter(str => str.length >= 10)
+    .filter(str => str.length >= 5)
     .map(str => str + '.');
 }
 
@@ -23,10 +23,14 @@ export function randomId(length = 10) {
 
 export const initialOwnRecipe = {
   title: '',
-  category: null,
+  category: 'Breakfast',
   description: '',
   instructions: '',
-  ingredients: [],
   time: null,
+  ingredients: [
+    { _id: randomId(), id: null, title: '', measure: null },
+    { _id: randomId(), id: null, title: '', measure: null },
+    { _id: randomId(), id: null, title: '', measure: null },
+  ],
   fullImage: null,
 };

@@ -25,9 +25,15 @@ function RecipeGalleryItem({ recipe, type }) {
         <h4 className={styles.recipeTitle}>{recipe.title}</h4>
         <p className={styles.recipeDescr}>{recipe.description}</p>
         <span className={styles.cookingTime}>{recipe.time} min</span>
-        <Button shape="curv" color={`${type === 'own' ? 'green' : 'dark'}`} className={styles.btn}>
-          <Link to={`/recipes/${recipe._id}${type === 'own' ? '?type=own' : ''}`}>See recipe</Link>
-        </Button>
+        <Link to={`/recipes/${recipe._id}${type === 'own' ? '?type=own' : ''}`}>
+          <Button
+            shape="curv"
+            color={`${type === 'own' ? 'green' : 'dark'}`}
+            className={styles.btn}
+          >
+            See recipe
+          </Button>
+        </Link>
       </div>
     </div>
   );

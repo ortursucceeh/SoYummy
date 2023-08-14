@@ -3,58 +3,52 @@ import styles from './AddRecipeForm.module.scss';
 import RecipeIngredientsFields from './RecipeIngredientsFields/RecipeIngredientsFields';
 import RecipePreparationField from './RecipePreparationField/RecipePreparationField';
 import Button from '../../../ui/Button/Button';
-import { useState } from 'react';
-import { randomId } from '../../../utils/recipes';
+import { createContext, useState } from 'react';
+import { initialOwnRecipe } from '../../../utils/recipes';
+import { useCreateOwnRecipe } from '../useCreateOwnRecipe';
+
+export const RecipeContext = createContext();
 
 function AddRecipeForm() {
-  const [ingredients, setIngredients] = useState([
-    { _id: randomId(), id: null, title: '', measure: null },
-    { _id: randomId(), id: null, title: '', measure: null },
-    { _id: randomId(), id: null, title: '', measure: null },
-  ]);
-
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('Breakfast');
-  const [description, setDescription] = useState('');
-  const [preparation, setPreparation] = useState('');
-  const [cookingTime, setCookingTime] = useState(0);
+  const [recipe, setRecipe] = useState(initialOwnRecipe);
+  const { isLoading, createOwnRecipe } = useCreateOwnRecipe();
 
   function handleSubmit(e) {
     e.preventDefault();
-    // const formData = new FormData();
+    const formData = new FormData();
+
     const data = {
-      title,
-      category,
-      description,
-      instructions: preparation,
-      time: cookingTime,
-      ingredients: ingredients.map(ing => ({ id: ing.id, measure: ing.measure })),
-      fullImage: selectedFile,
+      ...recipe,
+      ingredients: recipe.ingredients.map(ing => ({ id: ing.id, measure: ing.measure })),
     };
+
+    // for (const key of Object.keys(data)) {
+    //   formData.append(key, JSON.stringify(data[key]));
+    // }
     console.log('data :>> ', data);
+    formData.append('title', data.title);
+    formData.append('description', data.description);
+    formData.append('category', data.category);
+    formData.append('instructions', data.instructions);
+    formData.append('time', data.time);
+    formData.append('ingredients', JSON.stringify(data.ingredients));
+    formData.append('fullImage', data.fullImage);
+    console.log('formData :>> ', formData);
+
+    createOwnRecipe(formData);
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <RecipeDescriptionFields
-        title={title}
-        setTitle={setTitle}
-        description={description}
-        setDescription={setDescription}
-        selectedFile={selectedFile}
-        setSelectedFile={setSelectedFile}
-        categoryValue={category}
-        setCategory={setCategory}
-        cookingTime={cookingTime}
-        setCookingTime={setCookingTime}
-      />
-      <RecipeIngredientsFields ingredients={ingredients} setIngredients={setIngredients} />
-      <RecipePreparationField preparation={preparation} setPreparation={setPreparation} />
-      <Button shape="curv" color="dark" type="submit" className={styles.addBtn}>
-        Add
-      </Button>
-    </form>
+    <RecipeContext.Provider value={{ recipe, setRecipe }}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <RecipeDescriptionFields />
+        <RecipeIngredientsFields />
+        <RecipePreparationField />
+        <Button shape="curv" color="dark" className={styles.addBtn} disabled={isLoading}>
+          Add
+        </Button>
+      </form>
+    </RecipeContext.Provider>
   );
 }
 

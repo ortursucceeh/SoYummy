@@ -24,21 +24,23 @@ function RecipePageHero({ _id, title, description, favorites, time, fullImage })
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.descr}>{description}</p>
 
-      <Button
-        shape="curv"
-        color="trans"
-        type="button"
-        className={styles.btn}
-        onClick={handleToggleFavorite}
-      >
-        {isLoading ? (
-          <LoaderMini />
-        ) : favorites.length ? (
-          'Remove from favorites'
-        ) : (
-          'Add to favorite recipes'
-        )}
-      </Button>
+      {favorites && (
+        <Button
+          shape="curv"
+          color="trans"
+          type="button"
+          className={styles.btn}
+          onClick={handleToggleFavorite}
+        >
+          {isLoading ? (
+            <LoaderMini />
+          ) : favorites.length ? (
+            'Remove from favorites'
+          ) : (
+            'Add to favorite recipes'
+          )}
+        </Button>
+      )}
 
       <span className={styles.time}>
         <LuClock4 />

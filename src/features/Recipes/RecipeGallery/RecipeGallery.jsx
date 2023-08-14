@@ -1,4 +1,4 @@
-import RecipesNotFound from '../../../ui/RecipesNotFound/RecipesNotFound';
+// import RecipesNotFound from '../../../ui/RecipesNotFound/RecipesNotFound';
 import RecipeGalleryItem from '../RecipeGalleryItem/RecipeGalleryItem';
 import styles from './RecipeGallery.module.scss';
 

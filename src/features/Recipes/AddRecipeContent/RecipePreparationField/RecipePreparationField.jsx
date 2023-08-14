@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './RecipePreparationField.module.scss';
+import { RecipeContext } from '../AddRecipeForm';
 
-function RecipePreparationField({ preparation, setPreparation }) {
+function RecipePreparationField() {
+  const { recipe, setRecipe } = useContext(RecipeContext);
+  function changeInstructions(newInstructions) {
+    setRecipe({ ...recipe, instructions: newInstructions });
+  }
+
   return (
     <div className={styles.wrapper}>
       <h3 className={styles.subheader}>Recipe Preparation</h3>
@@ -9,9 +15,9 @@ function RecipePreparationField({ preparation, setPreparation }) {
         className={styles.preparation}
         id="preparation"
         name="preparation"
-        placeholder="Enter recipe"
-        value={preparation}
-        onChange={e => setPreparation(e.target.value)}
+        placeholder="Enter recipe (steps should be separated by dot)"
+        value={recipe.instructions}
+        onChange={e => changeInstructions(e.target.value)}
       />
     </div>
   );
