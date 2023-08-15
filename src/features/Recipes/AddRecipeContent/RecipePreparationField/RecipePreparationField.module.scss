@@ -1,6 +1,7 @@
 .wrapper {
   margin-top: 100px;
 }
+
 .subheader {
   color: var(--color-grey-400);
   font-size: 24px;
@@ -14,7 +15,8 @@
   border-radius: 8px;
   border: none;
   outline: none;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   min-height: 224px;
   padding: 16px 22px;
   resize: none;
@@ -32,5 +34,22 @@
   &::-webkit-scrollbar-thumb {
     background: var(--color-grey-200);
     border-radius: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    margin-top: 50px;
+  }
+
+  .preparation {
+    margin-top: 20px;
+    min-height: 200px;
+    padding: 14px 16px;
+    font-size: 14px;
+    &::placeholder {
+      font-size: 14px;
+      letter-spacing: -0.36px;
+    }
   }
 }

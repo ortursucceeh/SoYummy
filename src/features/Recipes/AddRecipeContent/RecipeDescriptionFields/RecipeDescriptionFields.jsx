@@ -1,16 +1,13 @@
 import { RiArrowDownSLine } from 'react-icons/ri';
 import styles from './RecipeDescriptionFields.module.scss';
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { CATEGORIES_LIST } from '../../../../utils/categories';
 import { COOKING_TIMES } from '../../../../utils/recipes';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 import { TbCameraUp } from 'react-icons/tb';
-import { RecipeContext } from '../AddRecipeForm/AddRecipeForm';
 import { formatWord } from '../../../../utils/functions';
 
-function RecipeDescriptionFields() {
-  const { recipe, setRecipe } = useContext(RecipeContext);
-
+function RecipeDescriptionFields({ recipe, setRecipe }) {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenCooking, setIsOpenCooking] = useState(false);
 
@@ -44,7 +41,7 @@ function RecipeDescriptionFields() {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.recipeDescr}>
       <label htmlFor="uploadBtn" className={styles.fileInput}>
         <TbCameraUp />
         <input

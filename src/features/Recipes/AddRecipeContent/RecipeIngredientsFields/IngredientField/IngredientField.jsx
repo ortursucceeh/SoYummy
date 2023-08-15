@@ -20,8 +20,8 @@ function IngredientField({ ingId, ingTitle, onDelete, changeIngredient, changeIn
   }
 
   return (
-    <div className={styles.ingredientField} onClick={() => setIsOptionsOpen(!isOptionsOpen)}>
-      <div className={styles.inputWrapper}>
+    <div className={styles.ingredientField}>
+      <div className={styles.inputWrapper} onClick={() => setIsOptionsOpen(!isOptionsOpen)}>
         <div className={styles.select}>
           <span className={styles.value}>{value.length ? value : 'Choose an ingredient'}</span>
           <RiArrowDownSLine />

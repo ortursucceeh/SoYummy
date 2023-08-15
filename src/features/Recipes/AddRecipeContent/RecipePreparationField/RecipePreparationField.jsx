@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './RecipePreparationField.module.scss';
-import { RecipeContext } from '../AddRecipeForm/AddRecipeForm';
 
-function RecipePreparationField() {
-  const { recipe, setRecipe } = useContext(RecipeContext);
+function RecipePreparationField({ recipe, setRecipe }) {
   function changeInstructions(newInstructions) {
     setRecipe({ ...recipe, instructions: newInstructions });
   }

@@ -1,7 +1,7 @@
 .recipes {
   margin-top: 40px;
   width: 320px;
-  height: 530px;
+  min-height: 530px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -48,4 +48,22 @@
   letter-spacing: -0.24px;
   color: var(--color-grey-300);
   opacity: 0.8;
+}
+
+@media (max-width: 1240px) {
+  .recipes {
+    width: 100%;
+    height: 250px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .recipe {
+    width: 320px;
+
+    &::before {
+      bottom: -5px;
+    }
+  }
 }

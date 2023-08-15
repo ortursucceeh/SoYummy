@@ -8,7 +8,7 @@ import { initialOwnRecipe } from '../../../../utils/recipes';
 import { useCreateOwnRecipe } from '../../useCreateOwnRecipe';
 import LoaderMini from '../../../../ui/Loaders/LoaderMini';
 
-export const RecipeContext = createContext();
+export const OwnRecipeContext = createContext();
 
 function AddRecipeForm() {
   const [recipe, setRecipe] = useState(initialOwnRecipe);
@@ -30,16 +30,16 @@ function AddRecipeForm() {
   }
 
   return (
-    <RecipeContext.Provider value={{ recipe, setRecipe }}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <RecipeDescriptionFields />
-        <RecipeIngredientsFields />
-        <RecipePreparationField />
-        <Button shape="curv" color="dark" className={styles.addBtn} disabled={isLoading}>
-          {isLoading ? <LoaderMini /> : 'Add'}
-        </Button>
-      </form>
-    </RecipeContext.Provider>
+    // <OwnRecipeContext.Provider value={{ recipe, setRecipe }}>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <RecipeDescriptionFields recipe={recipe} setRecipe={setRecipe} />
+      <RecipeIngredientsFields recipe={recipe} setRecipe={setRecipe} />
+      <RecipePreparationField recipe={recipe} setRecipe={setRecipe} />
+      <Button shape="curv" color="dark" className={styles.addBtn} disabled={isLoading}>
+        {isLoading ? <LoaderMini /> : 'Add'}
+      </Button>
+    </form>
+    // </OwnRecipeContext.Provider>
   );
 }
 

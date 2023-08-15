@@ -41,7 +41,7 @@ function UserInfoModal({ isOpen, onClose }) {
         <span className={styles.closeBtn} onClick={onClose}>
           <VscClose />
         </span>
-        <label htmlFor="uploadBtn" className={styles.fileInput}>
+        <label htmlFor="avatarUpload" className={styles.fileInput}>
           {avatarURL ? (
             <Image src={avatarURL} defaultImage={defaultImage} alt="User avatar" />
           ) : (
@@ -50,7 +50,7 @@ function UserInfoModal({ isOpen, onClose }) {
           <AiFillPlusCircle id="plus" />
           <input
             type="file"
-            id="uploadBtn"
+            id="avatarUpload"
             onChange={handleFileChange}
             disabled={isLoading}
             accept="images/*,.png,.jpg,.jpeg"

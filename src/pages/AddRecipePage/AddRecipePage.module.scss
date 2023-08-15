@@ -1,5 +1,6 @@
 .container {
   min-height: 880px;
+  padding-bottom: 200px;
 }
 
 .pageWrapper {
@@ -31,5 +32,25 @@
 .aside {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 100px 0;
+}
+
+@media (max-width: 1440px) {
+  .pageWrapper {
+    gap: 75px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .pageWrapper {
+    flex-direction: column;
+  }
+
+  .socials {
+    display: none;
+  }
+
+  .aside {
+    gap: 100px;
+  }
 }

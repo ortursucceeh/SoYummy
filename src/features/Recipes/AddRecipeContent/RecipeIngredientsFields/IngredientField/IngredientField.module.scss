@@ -112,3 +112,68 @@
   transform: translateY(-50%);
   cursor: pointer;
 }
+
+@media (max-width: 640px) {
+  .inputWrapper {
+    width: 250px;
+  }
+
+  .value {
+    font-size: 14px;
+  }
+
+  .measure {
+    width: 100px;
+    font-size: 14px;
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .ingredientField {
+    gap: 0 10px;
+  }
+  .inputWrapper {
+    height: 45px;
+    width: 145px;
+  }
+
+  .select {
+    svg {
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      right: 4px;
+    }
+  }
+
+  .value {
+    left: 6px;
+    font-size: 12px;
+  }
+
+  .optionList {
+    top: 45px;
+    height: 150px;
+    overflow-y: scroll;
+    padding: 8px 14px;
+    gap: 4px 0;
+  }
+
+  .option {
+    font-size: 12px;
+  }
+
+  .measure {
+    width: 70px;
+    height: 45px;
+    font-size: 12px;
+    padding: 16px 8px;
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+}

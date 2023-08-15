@@ -2,11 +2,9 @@ import styles from './RecipeIngredientsFields.module.scss';
 import { toast } from 'react-hot-toast';
 import IngredientField from './IngredientField/IngredientField';
 import { randomId } from '../../../../utils/recipes';
-import React, { useContext } from 'react';
-import { RecipeContext } from '../AddRecipeForm/AddRecipeForm';
+import React from 'react';
 
-function RecipeIngredientsFields() {
-  const { recipe, setRecipe } = useContext(RecipeContext);
+function RecipeIngredientsFields({ recipe, setRecipe }) {
   const { ingredients } = recipe;
 
   function changeIngredients(newIngredients) {

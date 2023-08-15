@@ -1,20 +1,22 @@
-.wrapper {
+.recipeDescr {
   display: flex;
-  max-width: 100%;
-  gap: 0 50px;
-  height: 344px;
+  max-width: 800px;
+  gap: 50px;
+  min-height: 344px;
 }
 
 .fileInput {
+  margin: 0 auto;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  max-height: 357px;
+  height: 357px;
   width: 358px;
   background-color: var(--color-green-0);
   border-radius: 8px;
+  flex-shrink: 0;
 
   svg {
     width: 48px;
@@ -138,4 +140,65 @@
   font-weight: 400;
   letter-spacing: -0.28px;
   opacity: 0.5;
+}
+
+@media (max-width: 1440px) {
+  .recipeDescr {
+    display: flex;
+    max-width: 800px;
+    gap: 40px;
+    min-height: 300px;
+  }
+
+  .fileInput {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recipeDescr {
+    flex-direction: column;
+    height: 620px;
+    gap: 32px 0;
+  }
+
+  .fileInput {
+    width: 280px;
+    height: 280px;
+  }
+
+  .fields {
+    width: 100%;
+  }
+}
+
+@media (max-width: 644px) {
+  .fields {
+    gap: 45px 0;
+  }
+  .label {
+    font-size: 14px;
+  }
+
+  .input {
+    font-size: 14px;
+
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .fileInput {
+    width: 240px;
+    height: 240px;
+  }
+
+  .recipeDescr {
+    flex-direction: column;
+    height: 550px;
+    gap: 32px 0;
+  }
 }
