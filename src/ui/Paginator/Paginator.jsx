@@ -4,8 +4,11 @@ import styles from './Paginator.module.scss';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 function Paginator({ pages, prevData }) {
+  console.log('pages :>> ', pages);
   const [searchParams, setSearchParams] = useSearchParams();
   const page = +searchParams.get('page') || 1;
+
+  if (pages <= 1) return;
 
   const pagesArray = Array(pages)
     .fill()
@@ -19,7 +22,6 @@ function Paginator({ pages, prevData }) {
     setSearchParams({ page: page + 1 });
   };
 
-  if (pages <= 1) return;
   return (
     <div className={styles.paginator}>
       <button className={styles.arrow} disabled={page === 1} onClick={prevPage}>

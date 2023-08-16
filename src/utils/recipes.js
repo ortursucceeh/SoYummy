@@ -13,8 +13,6 @@ export const COOKING_TIMES = [
   120,
 ];
 
-export const INGREDIENTS = [];
-
 export function randomId(length = 10) {
   return Math.random()
     .toString(36)

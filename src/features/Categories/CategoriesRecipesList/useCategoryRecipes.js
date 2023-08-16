@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getRecipesByCategory } from '../../../services/apiRecipes';
 import { useParams, useSearchParams } from 'react-router-dom';
+import { getPages } from '../../../utils/functions';
 
 export function useCategoryRecipes() {
   let { categoryName } = useParams();
@@ -16,6 +17,7 @@ export function useCategoryRecipes() {
     queryFn: () => getRecipesByCategory(categoryName, page),
     keepPreviousData: true,
   });
+  const pages = getPages(data?.total, data?.limit);
 
-  return { data, isLoading, isPreviousData, isFetching };
+  return { data, pages, isLoading, isPreviousData, isFetching };
 }

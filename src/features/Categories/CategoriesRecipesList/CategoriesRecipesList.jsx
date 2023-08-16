@@ -7,14 +7,7 @@ import styles from './CategoriesRecipesList.module.scss';
 import { useCategoryRecipes } from './useCategoryRecipes';
 
 function CategoriesRecipesList() {
-  const { data, isLoading, isFetching, isPreviousData } = useCategoryRecipes();
-
-  // if (isLoading) return <Loader />;
-
-  // if (!isLoading && !data?.recipes?.length)
-  //   return <RecipesNotFound text="Try to choose another category..." />;
-
-  const pages = Math.ceil(data?.total / data?.limit);
+  const { data, isLoading, isFetching, isPreviousData, pages } = useCategoryRecipes();
 
   return (
     <>
@@ -28,7 +21,7 @@ function CategoriesRecipesList() {
         )}
         {isFetching ? <LoaderModal /> : null}
       </div>
-      <Paginator pages={pages || 0} prevData={isPreviousData} />
+      <Paginator pages={pages} prevData={isPreviousData} />
     </>
   );
 }

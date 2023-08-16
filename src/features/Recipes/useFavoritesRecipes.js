@@ -1,11 +1,19 @@
 import { useQuery } from '@tanstack/react-query';
 import { getFavoritesRecipes } from '../../services/apiRecipes';
+import { useSearchParams } from 'react-router-dom';
+import { getPages } from '../../utils/functions';
 
 export function useFavoritesRecipes() {
-  const { isLoading, data } = useQuery({
-    queryKey: ['favoritesRecipes'],
-    queryFn: getFavoritesRecipes,
+  const [searchParams] = useSearchParams();
+  const page = searchParams.get('page') ?? 1;
+
+  const { isLoading, data, isFetching, isPreviousData } = useQuery({
+    queryKey: ['favoritesRecipes', page],
+    queryFn: () => getFavoritesRecipes(page),
+    keepPreviousData: true,
   });
 
-  return { data, isLoading };
+  const pages = getPages(data?.total, data?.limit);
+
+  return { data, isLoading, pages, isFetching, isPreviousData };
 }

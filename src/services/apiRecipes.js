@@ -14,11 +14,11 @@ export async function previewCategories() {
   return res.json();
 }
 
-export async function searchRecipes({ query, queryType }) {
+export async function searchRecipes({ query, queryType }, page) {
   if (!query || !queryType) return [];
 
   const res = await fetch(
-    `${API_URL}/recipes/${queryType === 'title' ? 'title' : 'ingredient'}/${query}`,
+    `${API_URL}/recipes/${queryType === 'title' ? 'title' : 'ingredient'}/${query}?page=${page}`,
     {
       headers: {
         'Content-Type': 'application/json',
@@ -58,8 +58,8 @@ export async function getRecipeById(recipeId) {
   return res.json();
 }
 
-export async function getFavoritesRecipes() {
-  const res = await fetch(`${API_URL}/recipes/favorite`, {
+export async function getFavoritesRecipes(page) {
+  const res = await fetch(`${API_URL}/recipes/favorite?page=${page}&limit=4`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getAccessToken()}`,
@@ -71,8 +71,8 @@ export async function getFavoritesRecipes() {
   return res.json();
 }
 
-export async function getOwnRecipes() {
-  const res = await fetch(`${API_URL}/own-recipes`, {
+export async function getOwnRecipes(page) {
+  const res = await fetch(`${API_URL}/own-recipes?page=${page}&limit=4`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getAccessToken()}`,

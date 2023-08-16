@@ -5,22 +5,29 @@ import Loader from '../../../ui/Loaders/Loader';
 
 import { useSearchParams } from 'react-router-dom';
 import RecipesNotFound from '../../../ui/RecipesNotFound/RecipesNotFound';
+import LoaderModal from '../../../ui/Loaders/LoaderModal';
+import Paginator from '../../../ui/Paginator/Paginator';
 
 function SearchedRecipeList() {
-  const { data, isLoading } = useSearchRecipes();
+  const { data, isLoading, pages, isFetching, isPreviousData } = useSearchRecipes();
   const [searchParams] = useSearchParams();
 
   if (!searchParams.get('query')?.length) return;
 
-  if (isLoading) return <Loader />;
-
-  if (!data?.recipes?.length)
-    return <RecipesNotFound text="Try to looking for something else..." />;
-
   return (
-    <div className={styles.wrapper}>
-      <RecipeList recipes={data.recipes} />
-    </div>
+    <>
+      <div className={styles.wrapper}>
+        {isLoading ? (
+          <Loader />
+        ) : !data?.recipes?.length ? (
+          <RecipesNotFound text="Try to looking for something else..." />
+        ) : (
+          <RecipeList recipes={data.recipes} />
+        )}
+        {isFetching ? <LoaderModal /> : null}
+      </div>
+      <Paginator pages={pages} prevData={isPreviousData} />
+    </>
   );
 }
 

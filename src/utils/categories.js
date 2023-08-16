@@ -1,6 +1,7 @@
 export const CATEGORIES_LIST = [
   'Beef',
   'Chicken',
+  'Dessert',
   'Lamb',
   'Miscellaneous',
   'Pasta',
