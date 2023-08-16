@@ -1,0 +1,17 @@
+.btn {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-dark-0);
+  cursor: pointer;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.active {
+  background-color: var(--color-lightgreen-0);
+}

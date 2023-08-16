@@ -1,0 +1,33 @@
+.paginator {
+  margin: 0 auto;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  width: fit-content;
+  height: 55px;
+  background-color: var(--color-white-200);
+  border-radius: 26px;
+  box-shadow: 0px 4px 4px 0px rgba(135, 135, 135, 0.2);
+}
+
+.arrow {
+  height: 25px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--color-white-200);
+
+  svg {
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    stroke: var(--color-grey-0);
+  }
+}
+.pages {
+  display: flex;
+  width: 100%;
+  gap: 0 24px;
+}

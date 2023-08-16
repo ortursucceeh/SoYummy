@@ -68,7 +68,7 @@ function UserInfoModal({ isOpen, onClose }) {
           onChange={e => setInputName(e.target.value)}
         />
         <Button shape="rect" color="green" disabled={isLoading} onClick={handleSaveChanges}>
-          {isLoading ? <LoaderMini /> : 'Save changes'}
+          {isLoading ? <LoaderMini color="white" /> : 'Save changes'}
         </Button>
       </form>
     </Modal>

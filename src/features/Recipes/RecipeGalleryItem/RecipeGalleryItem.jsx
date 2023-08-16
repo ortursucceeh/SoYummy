@@ -20,7 +20,7 @@ function RecipeGalleryItem({ recipe, type }) {
       <Image src={recipe.preview} alt={`${recipe.title} img`} className={styles.preview} />
       <div className={styles.recipeInfo}>
         <span className={`${styles.deleteRecipe} ${styles[type]}`} onClick={handleDelete}>
-          {isLoadingDeleting || isLoadingToggle ? <LoaderMini /> : <FiTrash2 />}
+          {isLoadingDeleting || isLoadingToggle ? <LoaderMini color="white" /> : <FiTrash2 />}
         </span>
         <h4 className={styles.recipeTitle}>{recipe.title}</h4>
         <p className={styles.recipeDescr}>{recipe.description}</p>

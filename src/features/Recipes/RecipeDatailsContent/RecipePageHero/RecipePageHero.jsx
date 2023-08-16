@@ -33,7 +33,7 @@ function RecipePageHero({ _id, title, description, favorites, time, fullImage })
           onClick={handleToggleFavorite}
         >
           {isLoading ? (
-            <LoaderMini />
+            <LoaderMini color="white" />
           ) : favorites.length ? (
             'Remove from favorites'
           ) : (

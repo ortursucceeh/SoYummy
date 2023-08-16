@@ -10,7 +10,7 @@ function SearchedRecipeList() {
   const { data, isLoading } = useSearchRecipes();
   const [searchParams] = useSearchParams();
 
-  if (!searchParams.get('query')) return;
+  if (!searchParams.get('query')?.length) return;
 
   if (isLoading) return <Loader />;
 

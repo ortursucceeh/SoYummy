@@ -61,7 +61,7 @@ function SigninForm() {
         />
       </div>
       <Button shape="rect" color="green" disabled={isLoading}>
-        {isLoading ? <LoaderMini /> : 'Sign in'}
+        {isLoading ? <LoaderMini color="white" /> : 'Sign in'}
       </Button>
     </form>
   );

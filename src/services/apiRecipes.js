@@ -32,8 +32,8 @@ export async function searchRecipes({ query, queryType }) {
   return res.json();
 }
 
-export async function getRecipesByCategory(categoryName) {
-  const res = await fetch(`${API_URL}/recipes/category/${categoryName}`, {
+export async function getRecipesByCategory(categoryName, page) {
+  const res = await fetch(`${API_URL}/recipes/category/${categoryName}?page=${page}&limit=8`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${getAccessToken()}`,
@@ -140,7 +140,7 @@ export async function createOwnRecipe(formData) {
 }
 
 export async function getPopularRecipes() {
-  const res = await fetch(`${API_URL}/recipes?page=1&limit=4&sort=popular`, {
+  const res = await fetch(`${API_URL}/recipes?limit=4&sort=popular`, {
     headers: {
       Authorization: `Bearer ${getAccessToken()}`,
     },

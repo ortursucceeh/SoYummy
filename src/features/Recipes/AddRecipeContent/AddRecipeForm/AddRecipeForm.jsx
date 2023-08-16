@@ -30,16 +30,14 @@ function AddRecipeForm() {
   }
 
   return (
-    // <OwnRecipeContext.Provider value={{ recipe, setRecipe }}>
     <form className={styles.form} onSubmit={handleSubmit}>
       <RecipeDescriptionFields recipe={recipe} setRecipe={setRecipe} />
       <RecipeIngredientsFields recipe={recipe} setRecipe={setRecipe} />
       <RecipePreparationField recipe={recipe} setRecipe={setRecipe} />
       <Button shape="curv" color="dark" className={styles.addBtn} disabled={isLoading}>
-        {isLoading ? <LoaderMini /> : 'Add'}
+        {isLoading ? <LoaderMini color="white" /> : 'Add'}
       </Button>
     </form>
-    // </OwnRecipeContext.Provider>
   );
 }
 

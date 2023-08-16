@@ -1,7 +1,7 @@
 import { ColorRing } from 'react-loader-spinner';
 import styles from './Loader.module.scss';
 
-function LoaderMini() {
+function LoaderMini({ color = 'white' }) {
   return (
     <div className={styles.loader}>
       <ColorRing
@@ -10,7 +10,7 @@ function LoaderMini() {
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
         wrapperClass="blocks-wrapper"
-        colors={['white', 'white', 'white', 'white', 'white', 'white']}
+        colors={Array(6).fill(color)}
       />
     </div>
   );

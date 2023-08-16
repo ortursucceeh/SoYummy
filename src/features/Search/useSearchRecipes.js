@@ -11,7 +11,7 @@ export function useSearchRecipes() {
   const { isLoading, data } = useQuery({
     queryKey: ['searchedRecipes', query, queryType],
     queryFn: () => searchRecipes({ query, queryType }),
-    enabled: !!query,
+    enabled: !!query.length,
   });
 
   return { data, isLoading };
