@@ -19,7 +19,7 @@ function CategoriesRecipesList() {
         ) : (
           <RecipeList recipes={data.recipes} />
         )}
-        {isFetching ? <LoaderModal /> : null}
+        {isFetching & isPreviousData ? <LoaderModal /> : null}
       </div>
       <Paginator pages={pages} prevData={isPreviousData} />
     </>

@@ -3,11 +3,11 @@ import LoaderModal from '../../../ui/Loaders/LoaderModal';
 import Paginator from '../../../ui/Paginator/Paginator';
 import RecipesNotFound from '../../../ui/RecipesNotFound/RecipesNotFound';
 import RecipeGallery from '../RecipeGallery/RecipeGallery';
-import { useFavoritesRecipes } from '../useFavoritesRecipes';
+import { useMyRecipes } from '../useMyRecipes';
+import styles from './MyRecipes.module.scss';
 
-import styles from './FavoriteRecipes.module.scss';
-function FavoriteRecipes() {
-  const { data, isLoading, pages, isFetching, isPreviousData } = useFavoritesRecipes();
+function MyRecipes() {
+  const { data, isLoading, pages, isFetching, isPreviousData } = useMyRecipes();
 
   return (
     <>
@@ -15,9 +15,9 @@ function FavoriteRecipes() {
         {isLoading ? (
           <Loader />
         ) : !data?.recipes?.length ? (
-          <RecipesNotFound text="You don't have favorite recipes yet!" />
+          <RecipesNotFound text="You don't have any of your own recipes yet!" />
         ) : (
-          <RecipeGallery recipes={data?.recipes} type="favorite" />
+          <RecipeGallery recipes={data?.recipes} type="own" />
         )}
         {isFetching & isPreviousData ? <LoaderModal /> : null}
       </div>
@@ -26,4 +26,4 @@ function FavoriteRecipes() {
   );
 }
 
-export default FavoriteRecipes;
+export default MyRecipes;

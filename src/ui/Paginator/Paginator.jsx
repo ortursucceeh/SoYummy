@@ -9,17 +9,22 @@ function Paginator({ pages, prevData }) {
   const page = +searchParams.get('page') || 1;
 
   if (pages <= 1) return;
-
   const pagesArray = Array(pages)
     .fill()
     .map((_, indx) => indx + 1);
 
   const prevPage = () => {
-    setSearchParams({ page: page - 1 });
+    setSearchParams(prev => {
+      prev.set('page', page - 1);
+      return prev;
+    });
   };
 
   const nextPage = () => {
-    setSearchParams({ page: page + 1 });
+    setSearchParams(prev => {
+      prev.set('page', page + 1);
+      return prev;
+    });
   };
 
   return (

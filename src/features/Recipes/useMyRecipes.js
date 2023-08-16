@@ -3,7 +3,7 @@ import { getOwnRecipes } from '../../services/apiRecipes';
 import { useSearchParams } from 'react-router-dom';
 import { getPages } from '../../utils/functions';
 
-export function useOwnRecipes() {
+export function useMyRecipes() {
   const [searchParams] = useSearchParams();
   const page = searchParams.get('page') ?? 1;
 
