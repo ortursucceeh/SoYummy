@@ -59,6 +59,7 @@ function RecipeDescriptionFields({ recipe, setRecipe }) {
             className={styles.input}
             placeholder="Recipe title"
             value={title}
+            required
             onChange={e => changeTitle(e.target.value)}
           />
         </div>
@@ -67,6 +68,7 @@ function RecipeDescriptionFields({ recipe, setRecipe }) {
           <input
             className={styles.input}
             placeholder="About recipe"
+            required
             value={description}
             onChange={e => changeDescription(e.target.value)}
           />

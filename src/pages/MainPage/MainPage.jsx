@@ -1,8 +1,8 @@
 import leavesDecor1 from './../../assets/main-hero-decor-leaves.png';
 import leavesDishDecor from './../../assets/123.png';
 import mainDish from './../../assets/main-hero-dish.png';
-import ChooseBreakfast from '../../features/MainContent/ChooseBreakfast/ChooseBreakfast';
-import PreviewCategories from '../../features/MainContent/PreviewCategories/PreviewCategories';
+import ChooseBreakfast from '../../features/Recipes/ChooseBreakfast/ChooseBreakfast';
+import PreviewCategories from '../../features/Categories/PreviewCategories/PreviewCategories';
 
 import styles from './MainPage.module.scss';
 import SearchBar from '../../features/Search/SearchBar/SearchBar';

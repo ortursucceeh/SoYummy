@@ -5,6 +5,7 @@ import RecipeNotFound from './../../../assets/recipePreviewNotFound.png';
 import { useNavigate } from 'react-router-dom';
 import { formatWord } from '../../../utils/functions';
 import Loader from '../../../ui/Loaders/Loader';
+
 function PopularRecipes() {
   const { data, isLoading } = usePopularRecipes();
   const navigate = useNavigate();

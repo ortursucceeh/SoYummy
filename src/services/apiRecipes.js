@@ -71,7 +71,7 @@ export async function getFavoritesRecipes(page) {
   return res.json();
 }
 
-export async function getOwnRecipes(page) {
+export async function getMyRecipes(page) {
   const res = await fetch(`${API_URL}/own-recipes?page=${page}&limit=4`, {
     headers: {
       'Content-Type': 'application/json',

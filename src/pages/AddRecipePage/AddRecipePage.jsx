@@ -17,7 +17,7 @@ function AddRecipePage() {
           </div>
 
           <div className={styles.popular}>
-            <h2 className={styles.subheader}>Popular recipe</h2>
+            <h2 className={styles.subheader}>Popular recipes</h2>
             <PopularRecipes />
           </div>
         </aside>

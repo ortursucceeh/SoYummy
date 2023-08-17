@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getOwnRecipes } from '../../services/apiRecipes';
+import { getMyRecipes } from '../../services/apiRecipes';
 import { useSearchParams } from 'react-router-dom';
 import { getPages } from '../../utils/functions';
 
@@ -9,7 +9,7 @@ export function useMyRecipes() {
 
   const { isLoading, data, isFetching, isPreviousData } = useQuery({
     queryKey: ['ownRecipes', page],
-    queryFn: () => getOwnRecipes(page),
+    queryFn: () => getMyRecipes(page),
     keepPreviousData: true,
   });
 

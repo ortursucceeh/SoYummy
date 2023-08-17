@@ -1,19 +1,19 @@
-import React from 'react';
+import { memo, useCallback } from 'react';
 import styles from './RecipePreparationField.module.scss';
 
 function RecipePreparationField({ recipe, setRecipe }) {
-  function changeInstructions(newInstructions) {
-    setRecipe({ ...recipe, instructions: newInstructions });
-  }
+  const changeInstructions = useCallback(
+    newInstructions => setRecipe({ ...recipe, instructions: newInstructions }),
+    [setRecipe, recipe]
+  );
 
   return (
     <div className={styles.wrapper}>
       <h3 className={styles.subheader}>Recipe Preparation</h3>
       <textarea
         className={styles.preparation}
-        id="preparation"
-        name="preparation"
-        placeholder="Enter recipe (steps should be separated by dot)"
+        placeholder="Enter recipe"
+        required
         value={recipe.instructions}
         onChange={e => changeInstructions(e.target.value)}
       />
@@ -21,4 +21,4 @@ function RecipePreparationField({ recipe, setRecipe }) {
   );
 }
 
-export default React.memo(RecipePreparationField);
+export default memo(RecipePreparationField);

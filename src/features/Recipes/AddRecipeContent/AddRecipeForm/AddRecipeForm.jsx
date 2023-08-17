@@ -3,12 +3,10 @@ import styles from './AddRecipeForm.module.scss';
 import RecipeIngredientsFields from '../RecipeIngredientsFields/RecipeIngredientsFields';
 import RecipePreparationField from '../RecipePreparationField/RecipePreparationField';
 import Button from '../../../../ui/Button/Button';
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import { initialOwnRecipe } from '../../../../utils/recipes';
 import { useCreateOwnRecipe } from '../../useCreateOwnRecipe';
 import LoaderMini from '../../../../ui/Loaders/LoaderMini';
-
-export const OwnRecipeContext = createContext();
 
 function AddRecipeForm() {
   const [recipe, setRecipe] = useState(initialOwnRecipe);

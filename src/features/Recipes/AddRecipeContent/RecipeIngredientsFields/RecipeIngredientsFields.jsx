@@ -28,7 +28,7 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
       });
       return;
     }
-    changeIngredients([...ingredients, { _id: randomId(), id: null, title: '', measure: null }]);
+    changeIngredients([...ingredients, { _id: randomId(), id: null, measure: null }]);
   }
 
   function handleMinus() {
