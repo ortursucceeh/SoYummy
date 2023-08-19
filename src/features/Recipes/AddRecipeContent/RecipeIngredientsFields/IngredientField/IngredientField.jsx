@@ -4,29 +4,29 @@ import { GrClose } from 'react-icons/gr';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { ingredientsList } from '../../../../../utils/ingredients';
 import { useOutsideClick } from '../../../../../hooks/useOutsideClick';
+import useDebounce from '../../../../../hooks/useDebounce';
 
 function IngredientField({ ingId, onDelete, changeIngredient, changeIngredientMeasure }) {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const refIngredient = useOutsideClick(() => setIsOptionsOpen(false));
 
+  const debouncedInputValue = useDebounce(inputValue, 150);
+
   const ingredients = useMemo(
-    () => ingredientsList.filter(ing => ing.ttl.toLowerCase().includes(inputValue.toLowerCase())),
-    [inputValue]
+    () =>
+      ingredientsList.filter(ing =>
+        ing.ttl.toLowerCase().includes(debouncedInputValue.toLowerCase())
+      ),
+    [debouncedInputValue]
   );
 
-  const handleChangeName = useCallback(
-    ({ target }) => {
-      setInputValue(target.innerText);
-      changeIngredient(ingId, target.dataset.value, target.innerText);
-    },
-    [changeIngredient, ingId]
-  );
+  const handlePickName = ({ target }) => {
+    setInputValue(target.innerText);
+    changeIngredient(ingId, target.dataset.value, target.innerText);
+  };
 
-  const handleChangeMeasure = useCallback(
-    ({ target }) => changeIngredientMeasure(ingId, target.value),
-    [changeIngredientMeasure, ingId]
-  );
+  const handleChangeMeasure = ({ target }) => changeIngredientMeasure(ingId, target.value);
 
   return (
     <div className={styles.ingredientField}>
@@ -48,7 +48,7 @@ function IngredientField({ ingId, onDelete, changeIngredient, changeIngredientMe
                   className={styles.option}
                   key={ing._id}
                   data-value={ing._id}
-                  onClick={handleChangeName}
+                  onClick={handlePickName}
                 >
                   {ing.ttl}
                 </li>

@@ -1,5 +1,5 @@
 .wrapper {
-  padding-top: 90px;
+  margin-top: 90px;
   display: flex;
   justify-content: center;
 
@@ -8,6 +8,6 @@
 
 @media (max-width: 1024px) {
   .wrapper {
-    padding-top: 45px;
+    margin-top: 45px;
   }
 }

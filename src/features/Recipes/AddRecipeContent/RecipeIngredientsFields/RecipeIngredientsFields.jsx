@@ -2,26 +2,32 @@ import styles from './RecipeIngredientsFields.module.scss';
 import { toast } from 'react-hot-toast';
 import IngredientField from './IngredientField/IngredientField';
 import { randomId } from '../../../../utils/recipes';
-import React from 'react';
+import React, { useCallback } from 'react';
 
 function RecipeIngredientsFields({ recipe, setRecipe }) {
   const { ingredients } = recipe;
 
-  function changeIngredients(newIngredients) {
-    setRecipe({ ...recipe, ingredients: newIngredients });
-  }
+  const changeIngredients = useCallback(
+    newIngredients => {
+      setRecipe({ ...recipe, ingredients: newIngredients });
+    },
+    [recipe, setRecipe]
+  );
 
-  function handleDeleteIngredient(id) {
-    if (ingredients.length <= 3) {
-      toast('At least 3 ingredients', {
-        icon: '🍀',
-      });
-      return;
-    }
-    changeIngredients(ingredients.filter(ing => ing._id !== id));
-  }
+  const handleDeleteIngredient = useCallback(
+    id => {
+      if (ingredients.length <= 3) {
+        toast('At least 3 ingredients', {
+          icon: '🍀',
+        });
+        return;
+      }
+      changeIngredients(ingredients.filter(ing => ing._id !== id));
+    },
+    [changeIngredients, ingredients]
+  );
 
-  function handlePlus() {
+  const handlePlus = useCallback(() => {
     if (ingredients.length >= 25) {
       toast('Maximum 25 ingredients', {
         icon: '🍅',
@@ -29,9 +35,9 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
       return;
     }
     changeIngredients([...ingredients, { _id: randomId(), id: null, measure: null }]);
-  }
+  }, [ingredients, changeIngredients]);
 
-  function handleMinus() {
+  const handleMinus = useCallback(() => {
     if (ingredients.length <= 3) {
       toast('At least 3 ingredients', {
         icon: '🍀',
@@ -39,19 +45,25 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
       return;
     }
     changeIngredients([...ingredients.slice(0, -1)]);
-  }
+  }, [changeIngredients, ingredients]);
 
-  function changeIngredient(id, ingId, title) {
-    changeIngredients(
-      ingredients.map(ing => (ing._id === id ? { ...ing, id: ingId, title: title } : ing))
-    );
-  }
+  const changeIngredient = useCallback(
+    (id, ingId, title) => {
+      changeIngredients(
+        ingredients.map(ing => (ing._id === id ? { ...ing, id: ingId, title: title } : ing))
+      );
+    },
+    [changeIngredients, ingredients]
+  );
 
-  function changeIngredientMeasure(id, measure) {
-    changeIngredients(
-      ingredients.map(ing => (ing._id === id ? { ...ing, measure: measure } : ing))
-    );
-  }
+  const changeIngredientMeasure = useCallback(
+    (id, measure) => {
+      changeIngredients(
+        ingredients.map(ing => (ing._id === id ? { ...ing, measure: measure } : ing))
+      );
+    },
+    [changeIngredients, ingredients]
+  );
 
   return (
     <div className={styles.wrapper}>
