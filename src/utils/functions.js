@@ -3,7 +3,10 @@ export function formatWord(maxLength, word) {
 }
 
 export function getPages(total, limit) {
-  const pages = Math.ceil(total / limit);
-  if (Object.is(NaN, pages)) return 0;
-  return pages;
+  if (!Number.isInteger(total) || !Number.isInteger(limit)) return 0;
+  return Math.ceil(total / limit);
+}
+
+export function capitalizeWord(word) {
+  return word.slice(0, 1).toUpperCase() + word.slice(1);
 }

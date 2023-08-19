@@ -1,6 +1,5 @@
 import styles from './FooterContent.module.scss';
 import FooterForm from '../FooterForm/FooterForm';
-import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Logo from '../../Logo/Logo';
 import { Link } from 'react-router-dom';
 import Socials from '../../Socials/Socials';

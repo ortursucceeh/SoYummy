@@ -1,6 +1,5 @@
 .paginator {
-  margin: 0 auto;
-  margin-top: 70px;
+  margin: 70px auto 0;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -26,8 +25,44 @@
     stroke: var(--color-grey-0);
   }
 }
+
 .pages {
   display: flex;
   width: 100%;
   gap: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .paginator {
+    padding: 0 12px;
+    gap: 12px;
+  }
+  .pages {
+    gap: 0 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .paginator {
+    padding: 0 6px;
+    gap: 10px;
+    height: 50px;
+  }
+
+  .pages {
+    font-size: 12px;
+    gap: 0 6px;
+  }
+}
+
+@media (max-width: 375px) {
+  .paginator {
+    height: 40px;
+    margin-top: 35px;
+    gap: 0;
+  }
+
+  .pages {
+    gap: 0;
+  }
 }

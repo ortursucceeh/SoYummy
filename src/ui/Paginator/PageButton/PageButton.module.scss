@@ -15,3 +15,9 @@
 .active {
   background-color: var(--color-lightgreen-0);
 }
+
+@media (max-width: 375px) {
+  .btn {
+    font-size: 12px;
+  }
+}

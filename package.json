@@ -20,6 +20,8 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "react-loader-spinner": "^5.3.4",
+    "react-paginate": "^8.2.0",
+    "react-paginator": "^0.0.5",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.14.2",
     "styled-components": "^6.0.5"

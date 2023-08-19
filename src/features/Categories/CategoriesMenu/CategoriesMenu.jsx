@@ -14,7 +14,7 @@ function CategoriesMenu() {
   const navigate = useNavigate();
 
   function handleChangeCategory(e) {
-    navigate(`/categories/${e.target.innerText}`);
+    navigate(`/categories/${e.target.innerText.toLowerCase()}`);
   }
 
   return (

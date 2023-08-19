@@ -1,6 +1,8 @@
 import { PiForkKnifeBold } from 'react-icons/pi';
 import styles from './Logo.module.scss';
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
+
 function Logo({ type }) {
   return (
     <Link to="main">
@@ -11,4 +13,4 @@ function Logo({ type }) {
   );
 }
 
-export default Logo;
+export default memo(Logo);

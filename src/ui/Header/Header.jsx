@@ -4,7 +4,7 @@ import HeaderNav from './HeaderNav/HeaderNav';
 import Logo from '../Logo/Logo';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { useUser } from '../../features/Authentication/useUser';
 
 function Header() {
@@ -27,4 +27,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);
