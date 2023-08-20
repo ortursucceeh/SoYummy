@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getPopularRecipes } from '../../services/apiRecipes';
+import { getPopularRecipes } from 'src/services/apiRecipes';
 
 export function usePopularRecipes() {
   const { isLoading, data } = useQuery({

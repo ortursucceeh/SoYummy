@@ -1,7 +1,7 @@
-import AddRecipeForm from '../../features/Recipes/AddRecipeContent/AddRecipeForm/AddRecipeForm';
-import PopularRecipes from '../../features/Recipes/PopularRecipes/PopularRecipes';
-import PageTitle from '../../ui/PageTitle/PageTitle';
-import Socials from '../../ui/Socials/Socials';
+import AddRecipeForm from 'src/features/Recipes/AddRecipeContent/AddRecipeForm/AddRecipeForm';
+import PopularRecipes from 'src/features/Recipes/PopularRecipes/PopularRecipes';
+import PageTitle from 'src/ui/PageTitle/PageTitle';
+import Socials from 'src/ui/Socials/Socials';
 import styles from './AddRecipePage.module.scss';
 
 function AddRecipePage() {

@@ -1,7 +1,7 @@
 import styles from './RecipeIngredientsFields.module.scss';
 import { toast } from 'react-hot-toast';
 import IngredientField from './IngredientField/IngredientField';
-import { randomId } from '../../../../utils/functions';
+import { randomId } from 'src/utils/functions';
 
 function RecipeIngredientsFields({ recipe, setRecipe }) {
   const { ingredients } = recipe;

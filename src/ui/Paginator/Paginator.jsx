@@ -2,16 +2,20 @@ import { useSearchParams } from 'react-router-dom';
 import PageButton from './PageButton/PageButton';
 import styles from './Paginator.module.scss';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 function Paginator({ pages, prevData }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = +searchParams.get('page') || 1;
   const [currentButton, setCurrentButton] = useState(1);
 
-  const numberOfPages = Array(pages)
-    .fill()
-    .map((_, indx) => indx + 1);
+  const numberOfPages = useMemo(
+    () =>
+      Array(pages)
+        .fill()
+        .map((_, indx) => indx + 1),
+    [pages]
+  );
 
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([]);
 
@@ -55,7 +59,7 @@ function Paginator({ pages, prevData }) {
 
     setArrOfCurrButtons(tempNumberOfPages);
     // setCurrentPage(currentButton);
-  }, [currentButton, pages]);
+  }, [currentButton, numberOfPages]);
 
   if (pages <= 1) return;
 

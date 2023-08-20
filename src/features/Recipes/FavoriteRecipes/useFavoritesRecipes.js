@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { getFavoritesRecipes } from '../../services/apiRecipes';
+import { getFavoritesRecipes } from '../../../services/apiRecipes';
 import { useSearchParams } from 'react-router-dom';
-import { getPages } from '../../utils/functions';
+import { getPages } from '../../../utils/functions';
 
 export function useFavoritesRecipes() {
   const [searchParams] = useSearchParams();

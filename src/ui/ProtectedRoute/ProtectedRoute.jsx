@@ -1,5 +1,5 @@
 import styles from './ProtectedRoute.module.scss';
-import { useUser } from '../../features/Authentication/useUser';
+import { useUser } from 'src/features/Authentication/useUser';
 import Loader from '../Loaders/Loader';
 import { Navigate, useLocation } from 'react-router-dom';
 

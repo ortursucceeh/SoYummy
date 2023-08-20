@@ -1,11 +1,11 @@
-import leavesDecor1 from './../../assets/main-hero-decor-leaves.png';
-import leavesDishDecor from './../../assets/123.png';
-import mainDish from './../../assets/main-hero-dish.png';
-import ChooseBreakfast from '../../features/Recipes/ChooseBreakfast/ChooseBreakfast';
-import PreviewCategories from '../../features/Categories/PreviewCategories/PreviewCategories';
+import leavesDecor1 from 'src/assets/main-hero-decor-leaves.png';
+import leavesDishDecor from 'src/assets/123.png';
+import mainDish from 'src/assets/main-hero-dish.png';
+import ChooseBreakfast from 'src/features/Recipes/ChooseBreakfast/ChooseBreakfast';
+import PreviewCategories from 'src/features/Categories/PreviewCategories/PreviewCategories';
 
 import styles from './MainPage.module.scss';
-import SearchBar from '../../features/Search/SearchBar/SearchBar';
+import SearchBar from 'src/features/Search/SearchBar/SearchBar';
 
 function MainPage() {
   return (

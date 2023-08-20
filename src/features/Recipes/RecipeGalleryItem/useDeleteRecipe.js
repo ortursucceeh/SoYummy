@@ -1,12 +1,12 @@
-import { deleteOwnRecipeById as deleteOwnRecipeByIdApi } from '../../services/apiRecipes';
+import { deleteRecipe as deleteRecipeApi } from '../../../services/apiRecipes';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
 
-export function useDeleteOwnRecipe() {
+export function useDeleteRecipe() {
   const queryClient = useQueryClient();
 
-  const { mutate: deleteOwnRecipeById, isLoading } = useMutation({
-    mutationFn: deleteOwnRecipeByIdApi,
+  const { mutate: deleteRecipe, isLoading } = useMutation({
+    mutationFn: deleteRecipeApi,
     onSuccess: data => {
       queryClient.invalidateQueries({ queryKey: ['ownRecipes'] });
       toast.success(data.message);
@@ -16,5 +16,5 @@ export function useDeleteOwnRecipe() {
     },
   });
 
-  return { deleteOwnRecipeById, isLoading };
+  return { deleteRecipe, isLoading };
 }

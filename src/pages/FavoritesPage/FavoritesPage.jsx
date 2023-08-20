@@ -1,5 +1,5 @@
-import FavoriteRecipes from '../../features/Recipes/FavoriteRecipes/FavoriteRecipes';
-import PageTitle from '../../ui/PageTitle/PageTitle';
+import FavoriteRecipes from 'src/features/Recipes/FavoriteRecipes/FavoriteRecipes';
+import PageTitle from 'src/ui/PageTitle/PageTitle';
 import styles from './FavoritesPage.module.scss';
 
 function FavoritesPage() {

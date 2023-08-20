@@ -1,4 +1,4 @@
-import RecipeDatailsContent from '../../features/Recipes/RecipeDatailsContent/RecipeDatailsContent';
+import RecipeDatailsContent from 'src/features/Recipes/RecipeDatailsContent/RecipeDatailsContent';
 import styles from './RecipeDatailsPage.module.scss';
 
 function RecipeDatailsPage() {

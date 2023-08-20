@@ -2,9 +2,9 @@ import { memo, useMemo, useState } from 'react';
 import styles from './IngredientField.module.scss';
 import { GrClose } from 'react-icons/gr';
 import { RiArrowDownSLine } from 'react-icons/ri';
-import { ingredientsList } from '../../../../../utils/ingredients';
-import { useOutsideClick } from '../../../../../hooks/useOutsideClick';
-import useDebounce from '../../../../../hooks/useDebounce';
+import { ingredientsList } from 'src/utils/ingredients';
+import { useOutsideClick } from 'src/hooks/useOutsideClick';
+import useDebounce from 'src/hooks/useDebounce';
 
 function IngredientField({ ingId, onDelete, changeIngredient, changeIngredientMeasure }) {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);

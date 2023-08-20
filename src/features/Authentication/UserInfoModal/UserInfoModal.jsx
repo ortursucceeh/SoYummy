@@ -1,18 +1,18 @@
-import Input from '../../../ui/Input/Input';
+import Input from 'src/ui/Input/Input';
 import styles from './UserInfoModal.module.scss';
 import { VscClose } from 'react-icons/vsc';
 import { FiUser } from 'react-icons/fi';
 import { RxPencil1 } from 'react-icons/rx';
-import Button from '../../../ui/Button/Button';
+import Button from 'src/ui/Button/Button';
 import { AiFillPlusCircle } from 'react-icons/ai';
-import Modal from '../../../ui/Modal/Modal';
+import Modal from 'src/ui/Modal/Modal';
 import { useUpdateUser } from '../useUpdateUser';
 import { useState } from 'react';
 import { useUser } from '../useUser';
-import Image from '../../../ui/Image/Image';
-import defaultImage from './../../../assets/recipePreviewNotFound.png';
-import LoaderMini from '../../../ui/Loaders/LoaderMini';
-import { formatWord } from '../../../utils/functions';
+import Image from 'src/ui/Image/Image';
+import defaultImage from './src/assets/recipePreviewNotFound.png';
+import LoaderMini from 'src/ui/Loaders/LoaderMini';
+import { formatWord } from 'src/utils/functions';
 
 function UserInfoModal({ isOpen, onClose }) {
   const {

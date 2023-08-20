@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './SigninPage.module.scss';
 import girl from '/src/assets/shopping-girl.svg';
-import SigninForm from '../../features/Authentication/SigninForm/SigninForm';
+import SigninForm from 'src/features/Authentication/SigninForm/SigninForm';
 
 function SigninPage() {
   return (

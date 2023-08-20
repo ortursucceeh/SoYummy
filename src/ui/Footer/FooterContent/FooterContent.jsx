@@ -1,6 +1,6 @@
 import styles from './FooterContent.module.scss';
 import FooterForm from '../FooterForm/FooterForm';
-import Logo from '../../Logo/Logo';
+import Logo from 'src/Logo/Logo';
 import { Link } from 'react-router-dom';
 import Socials from '../../Socials/Socials';
 

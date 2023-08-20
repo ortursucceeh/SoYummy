@@ -1,5 +1,5 @@
 import styles from './PageNotFound.module.scss';
-import decor from './../../assets/404-decor.svg';
+import decor from 'src/assets/404-decor.svg';
 
 function PageNotFound() {
   return (

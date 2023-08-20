@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './PreviewCategories.module.scss';
-import Button from '../../../ui/Button/Button';
+import Button from 'src/ui/Button/Button';
 import RecipeList from '../../Recipes/RecipeList/RecipeList';
-import { useRecipesCountFromScreenSize } from '../../../hooks/useRecipesCountFromScreenSize';
+import { useRecipesCountFromScreenSize } from 'src/hooks/useRecipesCountFromScreenSize';
 import { usePreviewCategories } from '../usePreviewCategories';
-import Loader from '../../../ui/Loaders/Loader';
+import Loader from 'src/ui/Loaders/Loader';
 
 function PreviewCategories() {
   const { categories, isLoading } = usePreviewCategories();

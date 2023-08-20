@@ -1,6 +1,6 @@
 import styles from './Modal.module.scss';
 import { createPortal } from 'react-dom';
-import { useOutsideClick } from '../../hooks/useOutsideClick';
+import { useOutsideClick } from 'src/hooks/useOutsideClick';
 
 const Modal = ({ isOpen, onClose, children }) => {
   const modalRef = useOutsideClick(onClose);

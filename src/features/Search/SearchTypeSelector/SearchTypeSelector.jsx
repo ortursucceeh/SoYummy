@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './SearchTypeSelector.module.scss';
 import { RiArrowDownSLine } from 'react-icons/ri';
-import { useOutsideClick } from '../../../hooks/useOutsideClick';
+import { useOutsideClick } from 'src/hooks/useOutsideClick';
 import { useSearchParams } from 'react-router-dom';
 
 function SearchTypeSelector({ searchType, setSearchType }) {

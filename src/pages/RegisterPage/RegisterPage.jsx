@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import RegisterForm from '../../features/Authentication/RegisterForm/RegisterForm';
+import RegisterForm from 'src/features/Authentication/RegisterForm/RegisterForm';
 import styles from './RegisterPage.module.scss';
 import girl from '/src/assets/shopping-girl.svg';
 

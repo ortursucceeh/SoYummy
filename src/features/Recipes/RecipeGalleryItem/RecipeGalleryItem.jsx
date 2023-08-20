@@ -1,19 +1,19 @@
 import { FiTrash2 } from 'react-icons/fi';
-import Image from '../../../ui/Image/Image';
+import Image from 'src/ui/Image/Image';
 import styles from './RecipeGalleryItem.module.scss';
 import { Link } from 'react-router-dom';
-import Button from '../../../ui/Button/Button';
-import { useDeleteOwnRecipe } from '../useDeleteOwnRecipe';
-import LoaderMini from '../../../ui/Loaders/LoaderMini';
-import { useToggleFavoriteRecipe } from '../useToggleFavoriteRecipe';
-import { formatWord } from '../../../utils/functions';
+import Button from 'src/ui/Button/Button';
+import LoaderMini from 'src/ui/Loaders/LoaderMini';
+import { useToggleFavoriteRecipe } from './useToggleFavoriteRecipe';
+import { formatWord } from 'src/utils/functions';
+import { useDeleteRecipe } from './useDeleteRecipe';
 
 function RecipeGalleryItem({ recipe, type }) {
-  const { deleteOwnRecipeById, isLoading: isLoadingDeleting } = useDeleteOwnRecipe();
+  const { deleteRecipe, isLoading: isLoadingDeleting } = useDeleteRecipe();
   const { toggleFavoriteRecipe, isLoading: isLoadingToggle } = useToggleFavoriteRecipe();
 
   function handleDelete() {
-    type === 'own' ? deleteOwnRecipeById(recipe._id) : toggleFavoriteRecipe(recipe._id);
+    type === 'own' ? deleteRecipe(recipe._id) : toggleFavoriteRecipe(recipe._id);
   }
 
   return (

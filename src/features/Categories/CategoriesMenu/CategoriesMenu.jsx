@@ -1,5 +1,5 @@
 import styles from './CategoriesMenu.module.scss';
-import { CATEGORIES_LIST } from '../../../utils/constants';
+import { CATEGORIES_LIST } from 'src/utils/constants';
 import { useState } from 'react';
 import { useScrollable } from './useScrollable';
 import { useNavigate, useParams } from 'react-router-dom';

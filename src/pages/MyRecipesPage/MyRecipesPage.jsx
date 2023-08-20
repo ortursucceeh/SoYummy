@@ -1,5 +1,5 @@
-import MyRecipes from '../../features/Recipes/MyRecipes/MyRecipes';
-import PageTitle from '../../ui/PageTitle/PageTitle';
+import MyRecipes from 'src/features/Recipes/MyRecipes/MyRecipes';
+import PageTitle from 'src/ui/PageTitle/PageTitle';
 import styles from './MyRecipesPage.module.scss';
 
 function MyRecipesPage() {

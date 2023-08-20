@@ -97,7 +97,7 @@ export async function getOwnRecipeById(recipeId) {
   return res.json();
 }
 
-export async function deleteOwnRecipeById(recipeId) {
+export async function deleteRecipe(recipeId) {
   const res = await fetch(`${API_URL}/own-recipes/id/${recipeId}`, {
     method: 'DELETE',
     headers: {
@@ -125,7 +125,7 @@ export async function toggleFavoriteRecipe(recipeId) {
   return res.json();
 }
 
-export async function createOwnRecipe(formData) {
+export async function addRecipe(formData) {
   const res = await fetch(`${API_URL}/own-recipes`, {
     method: 'POST',
     headers: {

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Button from '../../../ui/Button/Button';
+import Button from 'src/ui/Button/Button';
 import styles from './SearchBar.module.scss';
 import { useState } from 'react';
 

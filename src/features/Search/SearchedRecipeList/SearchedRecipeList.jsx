@@ -1,12 +1,12 @@
 import styles from './SearchedRecipeList.module.scss';
 import { useSearchRecipes } from '../useSearchRecipes';
 import RecipeList from '../../Recipes/RecipeList/RecipeList';
-import Loader from '../../../ui/Loaders/Loader';
+import Loader from 'src/ui/Loaders/Loader';
 import { useSearchParams } from 'react-router-dom';
-import RecipesNotFound from '../../../ui/RecipesNotFound/RecipesNotFound';
-import LoaderModal from '../../../ui/Loaders/LoaderModal';
-import Paginator from '../../../ui/Paginator/Paginator';
-import { getPages } from '../../../utils/functions';
+import RecipesNotFound from 'src/ui/RecipesNotFound/RecipesNotFound';
+import LoaderModal from 'src/ui/Loaders/LoaderModal';
+import Paginator from 'src/ui/Paginator/Paginator';
+import { getPages } from 'src/utils/functions';
 
 function SearchedRecipeList() {
   const { data, isLoading, isFetching, isPreviousData } = useSearchRecipes();

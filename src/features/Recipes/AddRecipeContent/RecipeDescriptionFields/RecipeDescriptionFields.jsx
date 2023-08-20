@@ -1,11 +1,11 @@
 import { RiArrowDownSLine } from 'react-icons/ri';
 import styles from './RecipeDescriptionFields.module.scss';
 import { useState } from 'react';
-import { CATEGORIES_LIST } from '../../../../utils/constants';
-import { COOKING_TIMES } from '../../../../utils/constants';
-import { useOutsideClick } from '../../../../hooks/useOutsideClick';
+import { CATEGORIES_LIST } from 'src/utils/constants';
+import { COOKING_TIMES } from 'src/utils/constants';
+import { useOutsideClick } from 'src/hooks/useOutsideClick';
 import { TbCameraUp } from 'react-icons/tb';
-import { formatWord } from '../../../../utils/functions';
+import { formatWord } from 'src/utils/functions';
 
 function RecipeDescriptionFields({ recipe, setRecipe }) {
   const [isOpenCategory, setIsOpenCategory] = useState(false);

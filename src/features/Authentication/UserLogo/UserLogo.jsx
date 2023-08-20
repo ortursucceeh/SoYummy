@@ -1,9 +1,9 @@
-import Image from '../../../ui/Image/Image';
+import Image from 'src/ui/Image/Image';
 import styles from './UserLogo.module.scss';
 import UserLogoModal from './../UserLogoModal/UserLogoModal';
 import { memo, useState } from 'react';
 import React from 'react';
-import defaultImage from './../../../assets/recipePreviewNotFound.png';
+import defaultImage from './src/assets/recipePreviewNotFound.png';
 import { useUser } from '../useUser';
 
 function UserLogo() {

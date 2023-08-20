@@ -2,15 +2,15 @@ import RecipeDescriptionFields from '../RecipeDescriptionFields/RecipeDescriptio
 import styles from './AddRecipeForm.module.scss';
 import RecipeIngredientsFields from '../RecipeIngredientsFields/RecipeIngredientsFields';
 import RecipePreparationField from '../RecipePreparationField/RecipePreparationField';
-import Button from '../../../../ui/Button/Button';
+import Button from 'src/ui/Button/Button';
 import { useState } from 'react';
-import { initialOwnRecipe } from '../../../../utils/recipes';
-import { useCreateOwnRecipe } from '../../useCreateOwnRecipe';
-import LoaderMini from '../../../../ui/Loaders/LoaderMini';
+import { initialOwnRecipe } from 'src/utils/recipes';
+import LoaderMini from 'src/ui/Loaders/LoaderMini';
+import { useAddRecipe } from '../useAddRecipe';
 
 function AddRecipeForm() {
   const [recipe, setRecipe] = useState(initialOwnRecipe);
-  const { isLoading, createOwnRecipe } = useCreateOwnRecipe();
+  const { isLoading, addRecipe } = useAddRecipe();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,7 +24,7 @@ function AddRecipeForm() {
       JSON.stringify(recipe.ingredients.map(ing => ({ id: ing.id, measure: ing.measure })))
     );
 
-    createOwnRecipe(formData);
+    addRecipe(formData);
   }
 
   return (
