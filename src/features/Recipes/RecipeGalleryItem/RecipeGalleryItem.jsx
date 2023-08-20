@@ -6,6 +6,7 @@ import Button from '../../../ui/Button/Button';
 import { useDeleteOwnRecipe } from '../useDeleteOwnRecipe';
 import LoaderMini from '../../../ui/Loaders/LoaderMini';
 import { useToggleFavoriteRecipe } from '../useToggleFavoriteRecipe';
+import { formatWord } from '../../../utils/functions';
 
 function RecipeGalleryItem({ recipe, type }) {
   const { deleteOwnRecipeById, isLoading: isLoadingDeleting } = useDeleteOwnRecipe();
@@ -22,8 +23,8 @@ function RecipeGalleryItem({ recipe, type }) {
         <span className={`${styles.deleteRecipe} ${styles[type]}`} onClick={handleDelete}>
           {isLoadingDeleting || isLoadingToggle ? <LoaderMini color="white" /> : <FiTrash2 />}
         </span>
-        <h4 className={styles.recipeTitle}>{recipe.title}</h4>
-        <p className={styles.recipeDescr}>{recipe.description}</p>
+        <h4 className={styles.recipeTitle}>{formatWord(25, recipe.title)}</h4>
+        <p className={styles.recipeDescr}>{formatWord(120, recipe.description)}</p>
         <span className={styles.cookingTime}>{recipe.time} min</span>
         <Link to={`/recipes/${recipe._id}${type === 'own' ? '?type=own' : ''}`}>
           <Button

@@ -10,3 +10,9 @@ export function getPages(total, limit) {
 export function capitalizeWord(word) {
   return word.slice(0, 1).toUpperCase() + word.slice(1);
 }
+
+export function randomId(length = 10) {
+  return Math.random()
+    .toString(36)
+    .substring(2, length + 2);
+}

@@ -1,33 +1,26 @@
 import styles from './RecipeIngredientsFields.module.scss';
 import { toast } from 'react-hot-toast';
 import IngredientField from './IngredientField/IngredientField';
-import { randomId } from '../../../../utils/recipes';
-import React, { useCallback } from 'react';
+import { randomId } from '../../../../utils/functions';
 
 function RecipeIngredientsFields({ recipe, setRecipe }) {
   const { ingredients } = recipe;
 
-  const changeIngredients = useCallback(
-    newIngredients => {
-      setRecipe({ ...recipe, ingredients: newIngredients });
-    },
-    [recipe, setRecipe]
-  );
+  const changeIngredients = newIngredients => {
+    setRecipe({ ...recipe, ingredients: newIngredients });
+  };
 
-  const handleDeleteIngredient = useCallback(
-    id => {
-      if (ingredients.length <= 3) {
-        toast('At least 3 ingredients', {
-          icon: '🍀',
-        });
-        return;
-      }
-      changeIngredients(ingredients.filter(ing => ing._id !== id));
-    },
-    [changeIngredients, ingredients]
-  );
+  const handleDeleteIngredient = id => {
+    if (ingredients.length <= 3) {
+      toast('At least 3 ingredients', {
+        icon: '🍀',
+      });
+      return;
+    }
+    changeIngredients(ingredients.filter(ing => ing._id !== id));
+  };
 
-  const handlePlus = useCallback(() => {
+  const handlePlus = () => {
     if (ingredients.length >= 25) {
       toast('Maximum 25 ingredients', {
         icon: '🍅',
@@ -35,9 +28,9 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
       return;
     }
     changeIngredients([...ingredients, { _id: randomId(), id: null, measure: null }]);
-  }, [ingredients, changeIngredients]);
+  };
 
-  const handleMinus = useCallback(() => {
+  const handleMinus = () => {
     if (ingredients.length <= 3) {
       toast('At least 3 ingredients', {
         icon: '🍀',
@@ -45,25 +38,19 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
       return;
     }
     changeIngredients([...ingredients.slice(0, -1)]);
-  }, [changeIngredients, ingredients]);
+  };
 
-  const changeIngredient = useCallback(
-    (id, ingId, title) => {
-      changeIngredients(
-        ingredients.map(ing => (ing._id === id ? { ...ing, id: ingId, title: title } : ing))
-      );
-    },
-    [changeIngredients, ingredients]
-  );
+  const changeIngredient = (id, ingId, title) => {
+    changeIngredients(
+      ingredients.map(ing => (ing._id === id ? { ...ing, id: ingId, title: title } : ing))
+    );
+  };
 
-  const changeIngredientMeasure = useCallback(
-    (id, measure) => {
-      changeIngredients(
-        ingredients.map(ing => (ing._id === id ? { ...ing, measure: measure } : ing))
-      );
-    },
-    [changeIngredients, ingredients]
-  );
+  const changeIngredientMeasure = (id, measure) => {
+    changeIngredients(
+      ingredients.map(ing => (ing._id === id ? { ...ing, measure: measure } : ing))
+    );
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -91,4 +78,4 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
   );
 }
 
-export default React.memo(RecipeIngredientsFields);
+export default RecipeIngredientsFields;

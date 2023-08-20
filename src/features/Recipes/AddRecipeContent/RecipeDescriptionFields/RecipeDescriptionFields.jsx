@@ -1,8 +1,8 @@
 import { RiArrowDownSLine } from 'react-icons/ri';
 import styles from './RecipeDescriptionFields.module.scss';
-import React, { useState } from 'react';
-import { CATEGORIES_LIST } from '../../../../utils/categories';
-import { COOKING_TIMES } from '../../../../utils/recipes';
+import { useState } from 'react';
+import { CATEGORIES_LIST } from '../../../../utils/constants';
+import { COOKING_TIMES } from '../../../../utils/constants';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 import { TbCameraUp } from 'react-icons/tb';
 import { formatWord } from '../../../../utils/functions';
@@ -122,4 +122,4 @@ function RecipeDescriptionFields({ recipe, setRecipe }) {
   );
 }
 
-export default React.memo(RecipeDescriptionFields);
+export default RecipeDescriptionFields;

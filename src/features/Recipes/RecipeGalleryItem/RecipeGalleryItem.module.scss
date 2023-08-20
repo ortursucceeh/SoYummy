@@ -186,31 +186,39 @@
 @media (max-width: 375px) {
   .recipe {
     padding: 8px 4px;
-    height: 140px;
+    height: 120px;
     gap: 0 10px;
   }
 
+  .preview {
+    width: 104px;
+    height: 104px;
+  }
+
   .recipeTitle {
-    max-width: 80px;
+    max-width: 100px;
     font-size: 14px;
     line-height: 14px;
     letter-spacing: -0.24px;
   }
 
+  .cookingTime {
+    font-size: 10px;
+  }
+
   .deleteRecipe {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
 
     svg {
-      width: 10px;
-      height: 10px;
+      width: 14px;
+      height: 14px;
     }
   }
-  .cookingTime {
-    display: none;
-  }
   .recipeDescr {
-    display: none;
+    margin-top: 8px;
+    max-width: 140px;
+    max-height: 40px;
   }
 
   .btn {

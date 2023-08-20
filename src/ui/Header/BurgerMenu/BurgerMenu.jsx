@@ -11,7 +11,7 @@ function BurgerMenu({ isOpen, onClose }) {
   return createPortal(
     <div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
       <div className={styles.icons}>
-        <Logo type="header" />
+        <Logo />
         <VscClose onClick={onClose} />
       </div>
       <div className={styles.pages}>

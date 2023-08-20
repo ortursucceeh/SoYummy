@@ -1,11 +1,15 @@
 import Image from '../../../ui/Image/Image';
 import styles from './UserLogo.module.scss';
 import UserLogoModal from './../UserLogoModal/UserLogoModal';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import React from 'react';
 import defaultImage from './../../../assets/recipePreviewNotFound.png';
+import { useUser } from '../useUser';
 
-function UserLogo({ user: { name, avatarURL } }) {
+function UserLogo() {
+  const {
+    user: { name, avatarURL },
+  } = useUser();
   const [isShowUserModal, setIsShowUserModal] = useState();
 
   return (
@@ -22,4 +26,4 @@ function UserLogo({ user: { name, avatarURL } }) {
   );
 }
 
-export default React.memo(UserLogo);
+export default memo(UserLogo);

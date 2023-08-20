@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import styles from './IngredientField.module.scss';
 import { GrClose } from 'react-icons/gr';
 import { RiArrowDownSLine } from 'react-icons/ri';

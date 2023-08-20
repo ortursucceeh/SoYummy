@@ -1,4 +1,5 @@
 import styles from './PageTitle.module.scss';
+import { memo } from 'react';
 
 function PageTitle({ children }) {
   return (
@@ -8,4 +9,4 @@ function PageTitle({ children }) {
   );
 }
 
-export default PageTitle;
+export default memo(PageTitle);

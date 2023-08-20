@@ -1,11 +1,9 @@
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 import styles from './RecipePreparationField.module.scss';
 
 function RecipePreparationField({ recipe, setRecipe }) {
-  const changeInstructions = useCallback(
-    newInstructions => setRecipe({ ...recipe, instructions: newInstructions }),
-    [setRecipe, recipe]
-  );
+  const changeInstructions = newInstructions =>
+    setRecipe({ ...recipe, instructions: newInstructions });
 
   return (
     <div className={styles.wrapper}>
@@ -21,4 +19,7 @@ function RecipePreparationField({ recipe, setRecipe }) {
   );
 }
 
-export default memo(RecipePreparationField);
+const isEqual = (prevProps, newProps) =>
+  prevProps.recipe.instructions === newProps.recipe.instructions;
+
+export default memo(RecipePreparationField, isEqual);
