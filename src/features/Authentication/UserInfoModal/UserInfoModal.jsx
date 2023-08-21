@@ -10,7 +10,7 @@ import { useUpdateUser } from '../useUpdateUser';
 import { useState } from 'react';
 import { useUser } from '../useUser';
 import Image from 'src/ui/Image/Image';
-import defaultImage from './src/assets/recipePreviewNotFound.png';
+import defaultImage from 'src/assets/recipePreviewNotFound.png';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
 import { formatWord } from 'src/utils/functions';
 

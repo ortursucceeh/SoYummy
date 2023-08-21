@@ -2,6 +2,7 @@ import styles from './Footer.module.scss';
 import Container from '../Container/Container';
 import FooterCopyright from './FooterCopyright/FooterCopyright';
 import FooterContent from './FooterContent/FooterContent';
+import { memo } from 'react';
 
 function Footer() {
   return (
@@ -16,4 +17,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);

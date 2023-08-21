@@ -67,7 +67,6 @@ export async function refreshTokens() {
 
 export async function getCurrentUser() {
   const isRefreshed = await refreshTokens();
-  console.log('isRefreshed :>> ', isRefreshed);
 
   if (isRefreshed) {
     const res = await fetch(`${API_URL}/users/current`, {

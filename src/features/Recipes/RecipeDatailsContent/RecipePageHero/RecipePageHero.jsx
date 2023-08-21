@@ -3,7 +3,7 @@ import { LuClock4 } from 'react-icons/lu';
 import styles from './RecipePageHero.module.scss';
 import RecipeBgNotFound from 'src/assets/recipeBgNotFound.png';
 import Image from 'src/ui/Image/Image';
-import { useToggleFavoriteRecipe } from '../../useToggleFavoriteRecipe';
+import { useToggleFavoriteRecipe } from 'src/features/Recipes/RecipeGalleryItem/useToggleFavoriteRecipe';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
 
 function RecipePageHero({ _id, title, description, favorites, time, fullImage }) {

@@ -2,23 +2,25 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
+import { lazy, Suspense } from 'react';
 
 import './styles/global.scss';
 import AppLayout from './ui/AppLayout/AppLayout';
-
-import MainPage from './pages/MainPage/MainPage';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
-import WelcomePage from './pages/WelcomePage/WelcomePage';
-import SigninPage from './pages/SigninPage/SigninPage';
-import PageNotFound from './pages/PageNotFound/PageNotFound';
 import ProtectedRoute from './ui/ProtectedRoute/ProtectedRoute';
-import SearchPage from './pages/SearchPage/SearchPage';
-import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
-import RecipeDatailsPage from './pages/RecipeDatailsPage/RecipeDatailsPage';
 import ScrollToTop from './ui/ScrollToTop/ScrollToTop';
-import AddRecipePage from './pages/AddRecipePage/AddRecipePage';
-import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
-import MyRecipesPage from './pages/MyRecipesPage/MyRecipesPage';
+import Loader from './ui/Loaders/Loader';
+
+const MainPage = lazy(() => import('./pages/MainPage/MainPage'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
+const SigninPage = lazy(() => import('./pages/SigninPage/SigninPage'));
+const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage'));
+const PageNotFound = lazy(() => import('./pages/PageNotFound/PageNotFound'));
+const SearchPage = lazy(() => import('./pages/SearchPage/SearchPage'));
+const CategoriesPage = lazy(() => import('./pages/CategoriesPage/CategoriesPage'));
+const RecipeDatailsPage = lazy(() => import('./pages/RecipeDatailsPage/RecipeDatailsPage'));
+const AddRecipePage = lazy(() => import('./pages/AddRecipePage/AddRecipePage'));
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
+const MyRecipesPage = lazy(() => import('./pages/MyRecipesPage/MyRecipesPage'));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -59,7 +61,9 @@ function App() {
             path="/"
             element={
               <ProtectedRoute type="public">
-                <WelcomePage />
+                <Suspense fallback={<Loader type="suspense" />}>
+                  <WelcomePage />
+                </Suspense>
               </ProtectedRoute>
             }
           />
@@ -68,7 +72,9 @@ function App() {
             path="signin"
             element={
               <ProtectedRoute type="public">
-                <SigninPage />
+                <Suspense fallback={<Loader type="suspense" />}>
+                  <SigninPage />
+                </Suspense>
               </ProtectedRoute>
             }
           />
@@ -77,11 +83,20 @@ function App() {
             path="register"
             element={
               <ProtectedRoute type="public">
-                <RegisterPage />
+                <Suspense fallback={<Loader type="suspense" />}>
+                  <RegisterPage />
+                </Suspense>
               </ProtectedRoute>
             }
           />
-          <Route path="*" element={<PageNotFound />} />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<Loader type="suspense" />}>
+                <PageNotFound />
+              </Suspense>
+            }
+          />
         </Routes>
       </BrowserRouter>
 

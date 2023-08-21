@@ -10,8 +10,7 @@ function FooterForm() {
 
   function handleSubscribe(e) {
     e.preventDefault();
-    const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (inputValue.match(emailPattern)) {
+    if (inputValue.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
       toast.success('You have been successfully subscribed to SoYummy news!');
       setInputValue('');
     } else {

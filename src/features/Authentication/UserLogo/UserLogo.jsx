@@ -3,7 +3,7 @@ import styles from './UserLogo.module.scss';
 import UserLogoModal from './../UserLogoModal/UserLogoModal';
 import { memo, useState } from 'react';
 import React from 'react';
-import defaultImage from './src/assets/recipePreviewNotFound.png';
+import defaultImage from 'src/assets/recipePreviewNotFound.png';
 import { useUser } from '../useUser';
 
 function UserLogo() {

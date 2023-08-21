@@ -1,9 +1,11 @@
 import { ColorRing } from 'react-loader-spinner';
 import styles from './Loader.module.scss';
 
-function Loader() {
+function Loader({ type }) {
+  const classes = `${styles.loader} ${type === 'suspense' ? styles.suspense : ''} `;
+
   return (
-    <div className={styles.loader}>
+    <div className={classes}>
       <ColorRing
         visible={true}
         height="200px"
