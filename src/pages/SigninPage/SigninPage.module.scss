@@ -41,10 +41,10 @@
     }
   }
 
-  & > a {
+  a {
     position: absolute;
     bottom: -38px;
-    left: 250px;
+    left: 50%;
     transform: translateX(-50%);
     text-decoration: underline;
   }
@@ -103,17 +103,40 @@
       height: 45px;
       font-size: 14px;
     }
+
     button {
       margin-top: 28px;
       width: 270px;
       height: 45px;
     }
+  }
+}
 
-    a {
-      bottom: -38px;
-      left: 167px;
-      transform: translateX(-50%);
-      text-decoration: underline;
+@media (max-width: 375px) {
+  .img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .form {
+    width: 260px;
+    height: 240px;
+    padding: 18px 20px;
+    border-radius: 24px;
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    input {
+      height: 40px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 220px;
+      height: 40px;
     }
   }
 }
