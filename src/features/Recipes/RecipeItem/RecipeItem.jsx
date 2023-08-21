@@ -1,8 +1,8 @@
 import styles from './RecipeItem.module.scss';
-import RecipeNotFound from './../../../assets/recipePreviewNotFound.png';
+import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 import { useNavigate } from 'react-router-dom';
-import Image from '../../../ui/Image/Image';
-import { formatWord } from '../../../utils/functions';
+import Image from 'src/ui/Image/Image';
+import { formatWord } from 'src/utils/functions';
 
 function RecipeItem({ recipe: { title, _id, preview } }) {
   const navigate = useNavigate();

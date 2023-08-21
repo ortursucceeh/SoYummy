@@ -1,5 +1,5 @@
 import styles from './FooterCopyright.module.scss';
-import footerDecor from 'src/assets/footer-decoration.png';
+import footerDecor from 'src/assets/Decor/footer-decoration.png';
 
 function FooterCopyright() {
   return (

@@ -1,7 +1,7 @@
 import Image from 'src/ui/Image/Image';
 import { usePopularRecipes } from './usePopularRecipes';
 import styles from './PopularRecipes.module.scss';
-import RecipeNotFound from 'src/assets/recipePreviewNotFound.png';
+import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 import { useNavigate } from 'react-router-dom';
 import { formatWord } from 'src/utils/functions';
 import Loader from 'src/ui/Loaders/Loader';

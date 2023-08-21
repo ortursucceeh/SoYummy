@@ -1,6 +1,6 @@
-import leavesDecor1 from 'src/assets/main-hero-decor-leaves.png';
-import leavesDishDecor from 'src/assets/123.png';
-import mainDish from 'src/assets/main-hero-dish.png';
+import leavesDecor1 from 'src/assets/Main/main-hero-decor-leaves.png';
+import leavesDishDecor from 'src/assets/Decor/leavesDishesDecor.png';
+import mainDish from 'src/assets/Main/main-hero-dish.png';
 import ChooseBreakfast from 'src/features/Recipes/ChooseBreakfast/ChooseBreakfast';
 import PreviewCategories from 'src/features/Categories/PreviewCategories/PreviewCategories';
 

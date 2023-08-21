@@ -1,5 +1,5 @@
 import styles from './RecipesNotFound.module.scss';
-import searchNotFound from 'src/assets/searchNotFound.png';
+import searchNotFound from 'src/assets/NotFound/searchNotFound.png';
 
 function RecipesNotFound({ text }) {
   return (

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import RegisterForm from 'src/features/Authentication/RegisterForm/RegisterForm';
 import styles from './RegisterPage.module.scss';
-import girl from '/src/assets/shopping-girl.svg';
+import girl from '/src/assets/svg/shopping-girl.svg';
+import decor from 'src/assets/Decor/curved-rectangle-decor.svg';
 
 function RegisterPage() {
   return (
@@ -12,7 +13,7 @@ function RegisterPage() {
         <RegisterForm />
         <Link to="/signin">Sign in</Link>
       </div>
-      <img src="/src/assets/curved-rectangle-decor.svg" alt="dark-bg" className={styles.bgImg} />
+      <img src={decor} alt="dark-bg" className={styles.bgImg} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import decorBottomLeaves from 'src/assets/decor-under.png';
+import decorBottomLeaves from 'src/assets/Decor/decor-under.png';
 import styles from './DecorBottom.module.scss';
 
 function DecorBottom() {
