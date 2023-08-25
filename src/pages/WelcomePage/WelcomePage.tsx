@@ -3,7 +3,7 @@ import Logo from 'src/ui/Logo/Logo';
 import styles from './WelcomePage.module.scss';
 import { useNavigate } from 'react-router-dom';
 
-function WelcomePage() {
+const WelcomePage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
@@ -26,6 +26,6 @@ function WelcomePage() {
       </div>
     </section>
   );
-}
+};
 
 export default WelcomePage;

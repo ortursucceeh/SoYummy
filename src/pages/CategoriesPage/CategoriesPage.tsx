@@ -3,7 +3,7 @@ import CategoriesRecipesList from 'src/features/Categories/CategoriesRecipesList
 import PageTitle from 'src/ui/PageTitle/PageTitle';
 import styles from './CategoriesPage.module.scss';
 
-function CategoriesPage() {
+const CategoriesPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <PageTitle>Categories</PageTitle>
@@ -11,6 +11,6 @@ function CategoriesPage() {
       <CategoriesRecipesList />
     </div>
   );
-}
+};
 
 export default CategoriesPage;

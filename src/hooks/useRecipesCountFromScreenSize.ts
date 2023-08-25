@@ -6,29 +6,26 @@ const recipesFromScreenSize = {
   1440: 3,
 };
 
-function getRecipiesFromScreenSize() {
+const getRecipiesFromScreenSize = () => {
   const screenSize = +window.innerWidth;
   let recipesCount = 4;
 
   for (const [screenWidth, count] of Object.entries(recipesFromScreenSize)) {
-    if (screenSize <= screenWidth) {
-      // console.log(`${screenSize} <= ${screenWidth} it means ${count}`);
+    if (screenSize <= Number(screenWidth)) {
       recipesCount = count;
       break;
     }
   }
   return recipesCount;
-}
+};
 
 export function useRecipesCountFromScreenSize() {
-  const [recipesCount, setRecipesCount] = useState(4);
+  const [recipesCount, setRecipesCount] = useState<number>(4);
 
   useEffect(() => {
-    function handleEvent() {
-      setRecipesCount(getRecipiesFromScreenSize());
-    }
+    const handleEvent = () => setRecipesCount(getRecipiesFromScreenSize());
 
-    let timeoutId;
+    let timeoutId: number;
 
     const eventListener = () => {
       clearTimeout(timeoutId);

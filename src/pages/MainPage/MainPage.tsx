@@ -7,7 +7,7 @@ import PreviewCategories from 'src/features/Categories/PreviewCategories/Preview
 import styles from './MainPage.module.scss';
 import SearchBar from 'src/features/Search/SearchBar/SearchBar';
 
-function MainPage() {
+const MainPage: React.FC = () => {
   return (
     <section className={styles.container}>
       <img src={leavesDecor1} alt="leaves" className={styles.decor1} />
@@ -32,6 +32,6 @@ function MainPage() {
       <PreviewCategories />
     </section>
   );
-}
+};
 
 export default MainPage;

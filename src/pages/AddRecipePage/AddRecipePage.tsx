@@ -4,7 +4,7 @@ import PageTitle from 'src/ui/PageTitle/PageTitle';
 import Socials from 'src/ui/Socials/Socials';
 import styles from './AddRecipePage.module.scss';
 
-function AddRecipePage() {
+const AddRecipePage: React.FC = () => {
   return (
     <div className={styles.container}>
       <PageTitle>Add recipe</PageTitle>
@@ -24,6 +24,6 @@ function AddRecipePage() {
       </div>
     </div>
   );
-}
+};
 
 export default AddRecipePage;

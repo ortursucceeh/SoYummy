@@ -1,7 +1,7 @@
 import styles from './PageNotFound.module.scss';
 import decor from 'src/assets/NotFound/404-decor.svg';
 
-function PageNotFound() {
+const PageNotFound: React.FC = () => {
   return (
     <section className={styles.layout}>
       <img src={decor} alt="404img" className={styles.img} />
@@ -12,6 +12,6 @@ function PageNotFound() {
       </p>
     </section>
   );
-}
+};
 
 export default PageNotFound;

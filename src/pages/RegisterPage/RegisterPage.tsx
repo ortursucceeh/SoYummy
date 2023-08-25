@@ -4,7 +4,7 @@ import styles from './RegisterPage.module.scss';
 import girl from '/src/assets/svg/shopping-girl.svg';
 import decor from 'src/assets/Decor/curved-rectangle-decor.svg';
 
-function RegisterPage() {
+const RegisterPage: React.FC = () => {
   return (
     <div className={styles.layout}>
       <img src={girl} alt="shopping-girl" className={styles.img} />
@@ -16,6 +16,6 @@ function RegisterPage() {
       <img src={decor} alt="dark-bg" className={styles.bgImg} />
     </div>
   );
-}
+};
 
 export default RegisterPage;

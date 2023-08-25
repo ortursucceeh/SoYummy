@@ -3,7 +3,7 @@ import SearchedRecipeList from 'src/features/Search/SearchedRecipeList/SearchedR
 import PageTitle from 'src/ui/PageTitle/PageTitle';
 import styles from './SearchPage.module.scss';
 
-function SearchPage() {
+const SearchPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <PageTitle>Search</PageTitle>
@@ -14,6 +14,6 @@ function SearchPage() {
       <SearchedRecipeList />
     </div>
   );
-}
+};
 
 export default SearchPage;
