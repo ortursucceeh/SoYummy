@@ -4,7 +4,7 @@ import FooterCopyright from './FooterCopyright/FooterCopyright';
 import FooterContent from './FooterContent/FooterContent';
 import { memo } from 'react';
 
-function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <main className={styles.main}>
@@ -15,6 +15,6 @@ function Footer() {
       <FooterCopyright />
     </footer>
   );
-}
+};
 
 export default memo(Footer);

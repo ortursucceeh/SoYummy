@@ -1,7 +1,11 @@
 import { ColorRing } from 'react-loader-spinner';
 import styles from './Loader.module.scss';
 
-function Loader({ type }) {
+interface LoaderProps {
+  type: 'suspense' | undefined;
+}
+
+const Loader: React.FC<LoaderProps> = ({ type }) => {
   const classes = `${styles.loader} ${type === 'suspense' ? styles.suspense : ''} `;
 
   return (
@@ -9,7 +13,7 @@ function Loader({ type }) {
       <ColorRing
         visible={true}
         height="200px"
-        weight="200px"
+        width="200px"
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
         wrapperClass="blocks-wrapper"
@@ -17,6 +21,6 @@ function Loader({ type }) {
       />
     </div>
   );
-}
+};
 
 export default Loader;

@@ -5,7 +5,11 @@ import { VscClose } from 'react-icons/vsc';
 import BurgerDecor from 'src/assets/Decor/burger-decoration.png';
 import { createPortal } from 'react-dom';
 
-function BurgerMenu({ isOpen, onClose }) {
+interface BurgerMenuProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+const BurgerMenu: React.FC<BurgerMenuProps> = ({ isOpen, onClose }) => {
   document.body.style.overflowY = isOpen ? 'hidden' : 'auto';
 
   return createPortal(
@@ -21,6 +25,6 @@ function BurgerMenu({ isOpen, onClose }) {
     </div>,
     document.body
   );
-}
+};
 
 export default BurgerMenu;

@@ -1,7 +1,7 @@
 import styles from './FooterCopyright.module.scss';
 import footerDecor from 'src/assets/Decor/footer-decoration.png';
 
-function FooterCopyright() {
+const FooterCopyright: React.FC = () => {
   return (
     <div className={styles.copyright}>
       <span>&copy; 2023 All Rights Reserved.</span>
@@ -9,6 +9,6 @@ function FooterCopyright() {
       <img className={styles.decor} src={footerDecor} alt="decor" />
     </div>
   );
-}
+};
 
 export default FooterCopyright;

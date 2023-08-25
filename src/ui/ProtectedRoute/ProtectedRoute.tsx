@@ -2,9 +2,14 @@ import styles from './ProtectedRoute.module.scss';
 import { useUser } from 'src/features/Authentication/useUser';
 import Loader from '../Loaders/Loader';
 import { Navigate, useLocation } from 'react-router-dom';
+import { ReactNode } from 'react';
 
-function ProtectedRoute({ type, children }) {
-  // 1.Load the authenticated user
+interface ProtectedRouteProps {
+  type: 'private' | 'public';
+  children: ReactNode | ReactNode[];
+}
+
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ type, children }) => {
   const { isLoading, isAuthenticated } = useUser();
 
   const location = useLocation();
@@ -14,7 +19,6 @@ function ProtectedRoute({ type, children }) {
   if (type === 'public' && isAuthenticated && !isLoading)
     return <Navigate to="/main" state={location} />;
 
-  // 3. show spinner
   if (isLoading)
     return (
       <div className={styles.fullpage}>
@@ -22,8 +26,7 @@ function ProtectedRoute({ type, children }) {
       </div>
     );
 
-  // 4. if there is a user, render the app
   return children;
-}
+};
 
 export default ProtectedRoute;

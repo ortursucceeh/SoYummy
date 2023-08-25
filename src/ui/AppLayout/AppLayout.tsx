@@ -6,7 +6,7 @@ import DecorBottom from '../DecorBottom/DecorBottom';
 import Loader from '../Loaders/Loader';
 import { Suspense } from 'react';
 
-function AppLayout() {
+const AppLayout: React.FC = () => {
   return (
     <>
       <Container>
@@ -19,6 +19,6 @@ function AppLayout() {
       <Footer />
     </>
   );
-}
+};
 
 export default AppLayout;

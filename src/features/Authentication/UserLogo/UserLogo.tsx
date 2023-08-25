@@ -1,6 +1,6 @@
 import Image from 'src/ui/Image/Image';
 import styles from './UserLogo.module.scss';
-import UserLogoModal from './../UserLogoModal/UserLogoModal';
+import UserLogoModal from '../UserLogoModal/UserLogoModal';
 import { memo, useState } from 'react';
 import React from 'react';
 import defaultImage from 'src/assets/NotFound/recipePreviewNotFound.png';

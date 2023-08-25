@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
-export default function ScrollToTop() {
+const ScrollToTop = () => {
   const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
 
@@ -12,4 +12,6 @@ export default function ScrollToTop() {
   }, [currentPage, searchParams]);
 
   return null;
-}
+};
+
+export default ScrollToTop;

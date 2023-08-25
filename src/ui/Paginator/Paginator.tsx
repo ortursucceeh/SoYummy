@@ -4,29 +4,34 @@ import styles from './Paginator.module.scss';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-function Paginator({ pages, prevData }) {
+interface PaginatorProps {
+  pages: number;
+  prevData: boolean;
+}
+
+const Paginator: React.FC<PaginatorProps> = ({ pages, prevData }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const currentPage = +searchParams.get('page') || 1;
-  const [currentButton, setCurrentButton] = useState(1);
+  const currentPage = +(searchParams.get('page') as string) || 1;
+  const [currentButton, setCurrentButton] = useState<number>(1);
 
   const numberOfPages = useMemo(
     () =>
       Array(pages)
-        .fill()
+        .fill(null)
         .map((_, indx) => indx + 1),
     [pages]
   );
 
-  const [arrOfCurrButtons, setArrOfCurrButtons] = useState([]);
+  const [arrOfCurrButtons, setArrOfCurrButtons] = useState<Array<number | string>>([]);
 
   const setCurrentPage = useCallback(
-    page => {
-      if (parseInt(page)) {
+    (page: number | string) => {
+      if (parseInt(page as string)) {
         setSearchParams(prev => {
-          prev.set('page', page);
+          prev.set('page', page as string);
           return prev;
         });
-        setCurrentButton(page);
+        setCurrentButton(page as number);
       }
     },
     [setSearchParams]
@@ -34,7 +39,6 @@ function Paginator({ pages, prevData }) {
 
   useEffect(() => {
     let tempNumberOfPages = [...arrOfCurrButtons];
-
     let dotsInitial = '...';
     let dotsLeft = '... ';
     let dotsRight = ' ...';
@@ -95,6 +99,6 @@ function Paginator({ pages, prevData }) {
       </button>
     </div>
   );
-}
+};
 
 export default Paginator;

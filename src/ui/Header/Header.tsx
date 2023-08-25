@@ -7,8 +7,8 @@ import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { memo, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function Header() {
-  const [menuIsOpen, setMenuIsOpen] = useState();
+const Header: React.FC = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -29,6 +29,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default memo(Header);

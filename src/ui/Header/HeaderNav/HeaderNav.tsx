@@ -2,8 +2,8 @@ import styles from './HeaderNav.module.scss';
 import { LuSearch } from 'react-icons/lu';
 import { NavLink } from 'react-router-dom';
 
-function HeaderNav() {
-  function isActive(navData) {
+const HeaderNav: React.FC = () => {
+  function isActive(navData: { isActive: boolean }) {
     return navData.isActive ? styles.active : '';
   }
 
@@ -26,6 +26,6 @@ function HeaderNav() {
       </NavLink>
     </ul>
   );
-}
+};
 
 export default HeaderNav;

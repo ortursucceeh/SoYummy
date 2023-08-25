@@ -1,7 +1,7 @@
 import styles from './Socials.module.scss';
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 
-function Socials() {
+const Socials: React.FC = () => {
   return (
     <ul className={styles.social}>
       <li>
@@ -18,6 +18,6 @@ function Socials() {
       </li>
     </ul>
   );
-}
+};
 
 export default Socials;

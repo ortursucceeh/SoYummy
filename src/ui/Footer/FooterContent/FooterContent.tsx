@@ -4,7 +4,7 @@ import Logo from '../../Logo/Logo';
 import { Link } from 'react-router-dom';
 import Socials from '../../Socials/Socials';
 
-function FooterContent() {
+const FooterContent: React.FC = () => {
   return (
     <div>
       <div className={styles.content}>
@@ -37,6 +37,6 @@ function FooterContent() {
       </div>
     </div>
   );
-}
+};
 
 export default FooterContent;

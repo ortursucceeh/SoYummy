@@ -1,7 +1,11 @@
 import { ColorRing } from 'react-loader-spinner';
 import styles from './Loader.module.scss';
 
-function LoaderMini({ color = 'white' }) {
+interface LoaderMiniProps {
+  color: string;
+}
+
+const LoaderMini: React.FC<LoaderMiniProps> = ({ color = 'white' }) => {
   return (
     <div className={styles.loader}>
       <ColorRing
@@ -14,6 +18,6 @@ function LoaderMini({ color = 'white' }) {
       />
     </div>
   );
-}
+};
 
 export default LoaderMini;

@@ -5,18 +5,17 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
 
-function FooterForm() {
-  const [inputValue, setInputValue] = useState('');
+const FooterForm = () => {
+  const [inputValue, setInputValue] = useState<string>('');
 
-  function handleSubscribe(e) {
-    e.preventDefault();
+  const handleSubscribe = () => {
     if (inputValue.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
       toast.success('You have been successfully subscribed to SoYummy news!');
       setInputValue('');
     } else {
       toast.error('Please enter a valid email address!');
     }
-  }
+  };
 
   return (
     <form className={styles.form}>
@@ -25,15 +24,16 @@ function FooterForm() {
       <Input
         leftIcon={<HiOutlineMail />}
         placeholder="Enter your email address"
+        name="email"
         type="email"
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}
       />
-      <Button shape="rect" color="green" onClick={handleSubscribe}>
+      <Button shape="rect" color="green" type="button" onClick={handleSubscribe}>
         Subscribe
       </Button>
     </form>
   );
-}
+};
 
 export default FooterForm;
