@@ -1,4 +1,9 @@
-export const ingredientsList = [
+interface IngredientDB {
+  _id: string;
+  ttl: string;
+}
+
+export const ingredientsList: IngredientDB[] = [
   {
     _id: '640c2dd963a319ea671e365b',
     ttl: 'Chicken',
