@@ -6,7 +6,7 @@ interface ButtonProps {
   shape: 'rect' | 'curv';
   color: 'green' | 'dark' | 'trans';
   children: string | ReactNode | ReactNode[];
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   className?: string;
   type?: 'submit' | 'reset' | 'button' | undefined;
   props?: Omit<ComponentProps<'button'>, 'type'> & { type: string };

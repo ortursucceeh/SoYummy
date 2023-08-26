@@ -3,22 +3,34 @@ import styles from './SearchTypeSelector.module.scss';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { useOutsideClick } from 'src/hooks/useOutsideClick';
 import { useSearchParams } from 'react-router-dom';
+import { SearchType } from 'src/types/Recipe';
 
-function SearchTypeSelector({ searchType, setSearchType }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
+interface SearchTypeSelectorProps {
+  searchType: SearchType;
+  setSearchType: (str: SearchType) => void;
+}
+
+const SearchTypeSelector: React.FC<SearchTypeSelectorProps> = ({ searchType, setSearchType }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [_, setSearchParams] = useSearchParams();
 
   const ref = useOutsideClick(() => setIsOpen(false));
 
-  function handleChangeType(e) {
-    setSearchType(e.target.dataset.value);
-    setSearchParams({ query: searchParams.get('query'), queryType: e.target.dataset.value });
-  }
+  const handleChangeType = (e: React.MouseEvent<HTMLLIElement>) => {
+    if (e.target instanceof HTMLLIElement) {
+      const searhType = e.target.dataset.value as SearchType;
+      setSearchType(searhType);
+      setSearchParams(prev => {
+        prev.set('queryType', searhType);
+        return prev;
+      });
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
       <span className={styles.label}>Search by:</span>
-      <div name="searchType" className={styles.select} onClick={() => setIsOpen(!isOpen)}>
+      <div className={styles.select} onClick={() => setIsOpen(!isOpen)}>
         <span className={styles.value}>
           {searchType.slice(0, 1).toUpperCase() + searchType.slice(1)}
         </span>
@@ -28,7 +40,7 @@ function SearchTypeSelector({ searchType, setSearchType }) {
             <li className={styles.option} data-value="title" onClick={handleChangeType}>
               Title
             </li>
-            <li className={styles.option} data-value="ingredients" onClick={handleChangeType}>
+            <li className={styles.option} data-value="ingredient" onClick={handleChangeType}>
               Ingredients
             </li>
           </ul>
@@ -36,6 +48,6 @@ function SearchTypeSelector({ searchType, setSearchType }) {
       </div>
     </div>
   );
-}
+};
 
 export default SearchTypeSelector;

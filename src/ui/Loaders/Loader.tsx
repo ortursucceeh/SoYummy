@@ -2,7 +2,7 @@ import { ColorRing } from 'react-loader-spinner';
 import styles from './Loader.module.scss';
 
 interface LoaderProps {
-  type: 'suspense' | undefined;
+  type?: 'suspense';
 }
 
 const Loader: React.FC<LoaderProps> = ({ type }) => {

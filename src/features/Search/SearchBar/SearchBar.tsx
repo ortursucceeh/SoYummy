@@ -3,19 +3,31 @@ import Button from 'src/ui/Button/Button';
 import styles from './SearchBar.module.scss';
 import { useState } from 'react';
 
-function SearchBar({ btnColor, handleSubmit = null, searchText = null, setSearchText = null }) {
-  const [inputValue, setInputValue] = useState('');
+interface SearchBarProps {
+  btnColor: 'green' | 'dark' | 'trans';
+  handleSubmit?: (e: React.MouseEvent<HTMLElement>) => void;
+  searchText?: string;
+  setSearchText?: (str: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({
+  btnColor,
+  handleSubmit = null,
+  searchText = null,
+  setSearchText = null,
+}) => {
+  const [inputValue, setInputValue] = useState<string | null>(searchText);
   const navigate = useNavigate();
 
-  function handleRedirect(e) {
+  const handleRedirect = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     if (inputValue) navigate(`/search?query=${inputValue}&queryType=title`);
-  }
+  };
 
-  function handleSearch(e) {
+  const handleSearch = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     handleSubmit?.(e);
-  }
+  };
 
   return (
     <div className={styles.searchWrapper}>
@@ -24,13 +36,13 @@ function SearchBar({ btnColor, handleSubmit = null, searchText = null, setSearch
           type="text"
           className={styles.input}
           value={searchText}
-          onChange={e => setSearchText(e.target.value)}
+          onChange={e => setSearchText?.(e.target.value)}
         />
       ) : (
         <input
           type="text"
           className={styles.input}
-          value={inputValue}
+          value={inputValue ? inputValue : ''}
           onChange={e => setInputValue(e.target.value)}
         />
       )}
@@ -45,6 +57,6 @@ function SearchBar({ btnColor, handleSubmit = null, searchText = null, setSearch
       </Button>
     </div>
   );
-}
+};
 
 export default SearchBar;

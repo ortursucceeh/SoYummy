@@ -1,4 +1,10 @@
-import { AddRecipeType, MyRecipeType, RecipeFullType, RecipeType } from './../types/Recipe';
+import {
+  AddRecipeType,
+  MyRecipeType,
+  RecipeFullType,
+  RecipeType,
+  SearchType,
+} from './../types/Recipe';
 import { API_URL } from '../utils/constants';
 import { getAccessToken } from '../utils/auth';
 import { CategoriesType } from 'src/types/Category';
@@ -27,10 +33,10 @@ interface IRecipesResponse {
 }
 
 export async function searchRecipes(
-  { query, queryType }: { query: string; queryType: 'ingredient' | 'title' },
+  { query, queryType }: { query: string; queryType: SearchType },
   page: string
-): Promise<IRecipesResponse | []> {
-  if (!query || !queryType) return [];
+): Promise<IRecipesResponse> {
+  // if (!query || !queryType) return { recipes: [] };
 
   const res = await fetch(
     `${API_URL}/recipes/${queryType === 'title' ? 'title' : 'ingredient'}/${query}?page=${page}`,

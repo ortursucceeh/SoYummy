@@ -50,3 +50,5 @@ export type MyRecipeType = {
   preview: string;
   time: string;
 };
+
+export type SearchType = 'ingredient' | 'title';

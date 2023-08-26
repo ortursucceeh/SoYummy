@@ -8,7 +8,7 @@ import LoaderModal from 'src/ui/Loaders/LoaderModal';
 import Paginator from 'src/ui/Paginator/Paginator';
 import { getPages } from 'src/utils/functions';
 
-function SearchedRecipeList() {
+const SearchedRecipeList = () => {
   const { data, isLoading, isFetching, isPreviousData } = useSearchRecipes();
   const [searchParams] = useSearchParams();
 
@@ -30,6 +30,6 @@ function SearchedRecipeList() {
       <Paginator pages={pages} prevData={isPreviousData} />
     </>
   );
-}
+};
 
 export default SearchedRecipeList;

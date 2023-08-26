@@ -3,16 +3,17 @@ import SearchTypeSelector from '../SearchTypeSelector/SearchTypeSelector';
 import styles from './SearchForm.module.scss';
 import SearchBar from '../SearchBar/SearchBar';
 import { useSearchParams } from 'react-router-dom';
+import { SearchType } from 'src/types/Recipe';
 
-function SearchForm() {
+const SearchForm: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchType, setSearchType] = useState('title');
+  const [searchType, setSearchType] = useState<SearchType>('title');
   const [searchText, setSearchText] = useState(searchParams.get('query') ?? '');
 
-  function handleSubmit(e) {
+  const handleSubmit = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     setSearchParams({ query: searchText, queryType: searchType });
-  }
+  };
 
   return (
     <form className={styles.wrapper}>
@@ -25,6 +26,6 @@ function SearchForm() {
       <SearchTypeSelector searchType={searchType} setSearchType={setSearchType} />
     </form>
   );
-}
+};
 
 export default SearchForm;
