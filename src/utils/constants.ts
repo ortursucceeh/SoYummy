@@ -1,3 +1,5 @@
+import { CATEGORIES_ENUM } from 'src/types/Category';
+
 export const API_URL = 'https://so-yumi.p.goit.global/api';
 
 export const CATEGORIES_LIST: string[] = [
