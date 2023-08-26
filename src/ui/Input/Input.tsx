@@ -8,12 +8,14 @@ interface InputProps {
   placeholder?: string;
   type?: string;
   name: string;
+  disabled?: boolean;
+  autoComplete?: 'on' | 'off';
   register?: UseFormRegister<FieldValues>;
   errors?: FieldErrors<FieldValues>;
   validationSchema?: RegisterOptions;
   props?: Omit<ComponentProps<'input'>, 'name'> & { name: string };
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  value: string;
+  value?: string;
 }
 
 const Input: React.FC<InputProps> = ({

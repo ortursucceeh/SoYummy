@@ -7,9 +7,12 @@ import LogoutModal from '../LogoutModal/LogoutModal';
 import Button from 'src/ui/Button/Button';
 import { useOutsideClick } from 'src/hooks/useOutsideClick';
 
-function UserLogoModal({ onClose }) {
-  const [isShowInfoModal, setIsShowInfoModal] = useState(false);
-  const [isShowLogoutModal, setIsShowLogoutModal] = useState(false);
+interface UserLogoModalProps {
+  onClose: () => void;
+}
+const UserLogoModal: React.FC<UserLogoModalProps> = ({ onClose }) => {
+  const [isShowInfoModal, setIsShowInfoModal] = useState<boolean>(false);
+  const [isShowLogoutModal, setIsShowLogoutModal] = useState<boolean>(false);
 
   document.body.style.overflowY = isShowInfoModal || isShowLogoutModal ? 'hidden' : 'auto';
 
@@ -31,6 +34,6 @@ function UserLogoModal({ onClose }) {
       </Button>
     </div>
   );
-}
+};
 
 export default UserLogoModal;

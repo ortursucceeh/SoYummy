@@ -12,8 +12,8 @@ const Loader: React.FC<LoaderProps> = ({ type }) => {
     <div className={classes}>
       <ColorRing
         visible={true}
-        height="200px"
-        width="200px"
+        height="80px"
+        width="80px"
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
         wrapperClass="blocks-wrapper"

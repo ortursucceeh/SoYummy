@@ -1,4 +1,4 @@
-const userLocalStorageKey = 'soyummy-user';
+export const userLocalStorageKey = 'soyummy-user';
 
 export const getAccessToken = (): string => {
   return JSON.parse(localStorage.getItem(userLocalStorageKey) as string)?.accessToken;

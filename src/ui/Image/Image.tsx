@@ -4,7 +4,8 @@ interface ImageProps {
   src: string;
   alt: string;
   defaultImage: string;
-  props: Omit<ComponentProps<'img'>, 'src' | 'alt'> & { src: string; alt: string };
+  onClick?: () => void;
+  props?: Omit<ComponentProps<'img'>, 'src' | 'alt'> & { src: string; alt: string };
 }
 
 const Image: React.FC<ImageProps> = ({ src, alt, defaultImage, ...props }) => {

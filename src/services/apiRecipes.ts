@@ -54,7 +54,7 @@ export async function searchRecipes(
 }
 
 export async function getRecipesByCategory(
-  categoryName: Lowercase<CategoriesType>,
+  categoryName: CategoriesType,
   page: string
 ): Promise<IRecipesResponse> {
   const res = await fetch(`${API_URL}/recipes/category/${categoryName}?page=${page}&limit=8`, {

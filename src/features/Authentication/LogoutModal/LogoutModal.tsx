@@ -4,13 +4,17 @@ import { useLogout } from './useLogout';
 import styles from './LogoutModal.module.scss';
 import { VscClose } from 'react-icons/vsc';
 
-function LogoutModal({ isOpen, onClose }) {
+interface LogoutModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onClose }) => {
   const { logout, isLoading } = useLogout();
 
-  function handleLogout(e) {
+  const handleLogout = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     logout();
-  }
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -30,6 +34,6 @@ function LogoutModal({ isOpen, onClose }) {
       </form>
     </Modal>
   );
-}
+};
 
 export default LogoutModal;

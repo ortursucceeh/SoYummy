@@ -5,12 +5,12 @@ import { memo, useState } from 'react';
 import React from 'react';
 import defaultImage from 'src/assets/NotFound/recipePreviewNotFound.png';
 import { useUser } from '../useUser';
+import { UserType } from 'src/types/User';
 
 function UserLogo() {
-  const {
-    user: { name, avatarURL },
-  } = useUser();
-  const [isShowUserModal, setIsShowUserModal] = useState();
+  const { user } = useUser();
+  const { name, avatarURL } = user as UserType;
+  const [isShowUserModal, setIsShowUserModal] = useState<boolean>(false);
 
   return (
     <div className={styles.user}>

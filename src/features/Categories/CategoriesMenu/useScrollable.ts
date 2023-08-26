@@ -1,17 +1,17 @@
 import { useRef, useState } from 'react';
 
-export function useScrollable() {
+export const useScrollable = () => {
   const [scrollData, setScrollData] = useState({
     isScrolling: false,
     clientX: 0,
     scrollX: 0,
   });
 
-  let ref = useRef();
+  let ref = useRef<any>();
   const element = ref.current;
 
-  function onMouseMove(e) {
-    if (!element?.contains(e.target)) {
+  const onMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!element?.contains(e.target as Node)) {
       return;
     }
     e.preventDefault();
@@ -29,10 +29,10 @@ export function useScrollable() {
         clientX: clntX,
       });
     }
-  }
+  };
 
-  function onMouseUp(e) {
-    if (!element?.contains(e.target)) {
+  const onMouseUp = (e: React.MouseEvent<HTMLElement>) => {
+    if (!element?.contains(e.target as Node)) {
       return;
     }
     e.preventDefault();
@@ -41,10 +41,10 @@ export function useScrollable() {
       ...scrollData,
       isScrolling: false,
     });
-  }
+  };
 
-  function onMouseDown(e) {
-    if (!element?.contains(e.target)) {
+  const onMouseDown = (e: React.MouseEvent<HTMLElement>) => {
+    if (!element?.contains(e.target as Node)) {
       return;
     }
 
@@ -55,7 +55,7 @@ export function useScrollable() {
       isScrolling: true,
       clientX: e.clientX,
     });
-  }
+  };
 
   return [
     ref,
@@ -66,4 +66,4 @@ export function useScrollable() {
       onMouseLeave: onMouseUp,
     },
   ];
-}
+};

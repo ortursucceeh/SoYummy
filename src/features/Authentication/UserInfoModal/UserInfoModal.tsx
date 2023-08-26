@@ -6,34 +6,39 @@ import { RxPencil1 } from 'react-icons/rx';
 import Button from 'src/ui/Button/Button';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import Modal from 'src/ui/Modal/Modal';
-import { useUpdateUser } from '../useUpdateUser';
+import { useUpdateUser } from './useUpdateUser';
 import { useState } from 'react';
 import { useUser } from '../useUser';
 import Image from 'src/ui/Image/Image';
 import defaultImage from 'src/assets/NotFound/recipePreviewNotFound.png';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
 import { formatWord } from 'src/utils/functions';
+import { UserType } from 'src/types/User';
 
-function UserInfoModal({ isOpen, onClose }) {
-  const {
-    user: { name, avatarURL },
-  } = useUser();
+interface UserInfoModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const UserInfoModal: React.FC<UserInfoModalProps> = ({ isOpen, onClose }) => {
+  const { user } = useUser();
+  const { name, avatarURL } = user as UserType;
   const { updateUser, isLoading } = useUpdateUser();
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [inputName, setInputName] = useState(name);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [inputName, setInputName] = useState<string>(name);
 
-  function handleSaveChanges(e) {
+  const handleSaveChanges = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const formData = new FormData();
     inputName && formData.append('name', inputName);
     selectedFile && formData.append('avatar', selectedFile, selectedFile.name);
     updateUser(formData);
     setSelectedFile(null);
-  }
+  };
 
-  function handleFileChange(e) {
-    setSelectedFile(e.target.files[0]);
-  }
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) setSelectedFile(e.target.files[0]);
+  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -60,11 +65,12 @@ function UserInfoModal({ isOpen, onClose }) {
           <span className={styles.fileName}>New: {formatWord(35, selectedFile.name)}</span>
         )}
         <Input
+          name="user"
           leftIcon={<FiUser />}
           rightIcon={<RxPencil1 />}
           type="text"
-          disabled={isLoading}
           value={inputName}
+          disabled={isLoading}
           onChange={e => setInputName(e.target.value)}
         />
         <Button shape="rect" color="green" disabled={isLoading} onClick={handleSaveChanges}>
@@ -73,6 +79,6 @@ function UserInfoModal({ isOpen, onClose }) {
       </form>
     </Modal>
   );
-}
+};
 
 export default UserInfoModal;

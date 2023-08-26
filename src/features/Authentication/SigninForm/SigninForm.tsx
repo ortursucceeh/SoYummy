@@ -1,17 +1,14 @@
-import { useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import Button from 'src/ui/Button/Button';
 import Input from 'src/ui/Input/Input';
-import styles from './RegisterForm.module.scss';
-import { FiUser, FiLock } from 'react-icons/fi';
+import styles from './SigninForm.module.scss';
+import { FiLock } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
-import { useSignup } from './useSignup';
+import { useLogin } from './useLogin';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
-import { useLogin } from '../SigninForm/useLogin';
 
-function RegisterForm() {
-  const { signup, isLoadingSignup } = useSignup();
-  const { login, isLoadingLogin } = useLogin();
-
+const SigninForm = () => {
+  const { login, isLoading } = useLogin();
   const {
     register,
     formState: { errors },
@@ -19,38 +16,13 @@ function RegisterForm() {
     reset,
   } = useForm();
 
-  function onSubmit({ name, email, password }) {
-    console.log('submit');
-    console.log(name, email, password);
-    signup(
-      { name, email, password },
-      {
-        onSettled: () => {
-          login({ email, password }, { onSettled: () => reset() });
-        },
-      }
-    );
-  }
+  const onSubmit: SubmitHandler<FieldValues> = ({ email, password }) => {
+    login({ email, password }, { onSettled: () => reset() });
+  };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.inputs}>
-        <Input
-          leftIcon={<FiUser />}
-          placeholder="Name"
-          register={register}
-          name={'name'}
-          validationSchema={{
-            required: 'Field is required',
-            minLength: {
-              value: 3,
-              message: 'Name should have at least 3 characters',
-            },
-          }}
-          errors={errors}
-          aria-invalid={errors.name ? 'true' : 'false'}
-          disabled={isLoadingSignup || isLoadingLogin}
-        />
         <Input
           leftIcon={<HiOutlineMail />}
           placeholder="Email"
@@ -67,7 +39,7 @@ function RegisterForm() {
           }}
           errors={errors}
           aria-invalid={errors.email ? 'true' : 'false'}
-          disabled={isLoadingSignup || isLoadingLogin}
+          disabled={isLoading}
         />
         <Input
           leftIcon={<FiLock />}
@@ -85,14 +57,14 @@ function RegisterForm() {
           }}
           errors={errors}
           aria-invalid={errors.password ? 'true' : 'false'}
-          disabled={isLoadingSignup || isLoadingLogin}
+          disabled={isLoading}
         />
       </div>
-      <Button shape="rect" color="green" disabled={isLoadingSignup || isLoadingLogin}>
-        {isLoadingSignup || isLoadingLogin ? <LoaderMini color="white" /> : 'Sign up'}
+      <Button shape="rect" color="green" disabled={isLoading}>
+        {isLoading ? <LoaderMini color="white" /> : 'Sign in'}
       </Button>
     </form>
   );
-}
+};
 
-export default RegisterForm;
+export default SigninForm;

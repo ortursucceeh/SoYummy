@@ -1,8 +1,8 @@
 import { useQueryClient, useMutation } from '@tanstack/react-query';
-import { updateUser as updateUserApi } from '../../services/apiAuth';
+import { updateUser as updateUserApi } from '../../../services/apiAuth';
 import { toast } from 'react-hot-toast';
 
-export function useUpdateUser() {
+export const useUpdateUser = () => {
   const queryClient = useQueryClient();
 
   const { mutate: updateUser, isLoading } = useMutation({
@@ -11,11 +11,11 @@ export function useUpdateUser() {
       toast.success('Profile was successfully updated!');
       queryClient.setQueryData(['user'], data);
     },
-    onError: err => {
+    onError: (err: Error) => {
       toast.error('Update user server error');
       console.log(err.message);
     },
   });
 
   return { updateUser, isLoading };
-}
+};

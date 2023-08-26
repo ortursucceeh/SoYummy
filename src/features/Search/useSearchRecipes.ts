@@ -3,7 +3,7 @@ import { searchRecipes } from '../../services/apiRecipes';
 import { useSearchParams } from 'react-router-dom';
 import { SearchType } from 'src/types/Recipe';
 
-export function useSearchRecipes() {
+export const useSearchRecipes = () => {
   const [searchParams] = useSearchParams();
 
   const query = searchParams.get('query') ?? '';
@@ -18,4 +18,4 @@ export function useSearchRecipes() {
   });
 
   return { data, isLoading, isFetching, isPreviousData };
-}
+};

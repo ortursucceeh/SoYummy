@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useScrollable } from './useScrollable';
 import { useNavigate, useParams } from 'react-router-dom';
 
-function CategoriesMenu() {
+const CategoriesMenu = () => {
   const { categoryName } = useParams();
   const activeTabIndex = categoryName
     ? CATEGORIES_LIST.findIndex(el => el.toLowerCase() === categoryName.toLowerCase())
@@ -13,13 +13,13 @@ function CategoriesMenu() {
   const [ref, scrollListeners] = useScrollable();
   const navigate = useNavigate();
 
-  function handleChangeCategory(e) {
-    navigate(`/categories/${e.target.innerText.toLowerCase()}`);
-  }
+  const handleChangeCategory = (e: React.MouseEvent<HTMLSpanElement>) => {
+    navigate(`/categories/${(e.target as HTMLSpanElement).innerText.toLowerCase()}`);
+  };
 
   return (
     <div className={styles.menu}>
-      <div ref={ref} {...scrollListeners} className={styles.categoriesList}>
+      <div ref={ref as any} {...scrollListeners} className={styles.categoriesList}>
         {CATEGORIES_LIST.map((category, indx) => (
           <span
             className={`${styles.categoryName} ${activeTab === indx ? styles.active : ''}`}
@@ -36,6 +36,6 @@ function CategoriesMenu() {
       <span className={styles.underline}></span>
     </div>
   );
-}
+};
 
 export default CategoriesMenu;

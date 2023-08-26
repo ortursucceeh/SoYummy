@@ -1,7 +1,7 @@
 import RecipeGalleryItem from '../RecipeGalleryItem/RecipeGalleryItem';
 import styles from './RecipeGallery.module.scss';
 
-function RecipeGallery({ recipes, interface }) {
+function RecipeGallery({ recipes, type }) {
   return (
     <div className={styles.wrapper}>
       {recipes.map(recipe => (

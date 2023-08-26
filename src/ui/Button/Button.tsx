@@ -4,10 +4,11 @@ import { ReactNode, ComponentProps } from 'react';
 
 interface ButtonProps {
   shape: 'rect' | 'curv';
-  color: 'green' | 'dark' | 'trans';
+  color: 'green' | 'dark' | 'trans' | 'grey';
   children: string | ReactNode | ReactNode[];
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   className?: string;
+  disabled?: boolean;
   type?: 'submit' | 'reset' | 'button' | undefined;
   props?: Omit<ComponentProps<'button'>, 'type'> & { type: string };
 }
