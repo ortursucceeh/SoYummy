@@ -1,10 +1,10 @@
 const userLocalStorageKey = 'soyummy-user';
 
-export const getAccessToken = (): void => {
+export const getAccessToken = (): string => {
   return JSON.parse(localStorage.getItem(userLocalStorageKey) as string)?.accessToken;
 };
 
-export const getRefreshToken = (): void => {
+export const getRefreshToken = (): string => {
   return JSON.parse(localStorage.getItem(userLocalStorageKey) as string)?.refreshToken;
 };
 
