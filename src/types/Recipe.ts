@@ -39,7 +39,7 @@ export type AddRecipeType = {
   instructions: string;
   ingredients: IngredientAddType[];
   time: string;
-  fullImage: string;
+  fullImage: File | null;
 };
 
 export type MyRecipeType = {

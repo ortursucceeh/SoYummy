@@ -1,20 +1,5 @@
+import { AddRecipeType } from 'src/types/Recipe';
 import { randomId } from './functions';
-
-interface Ingredient {
-  _id: string;
-  id: null | string;
-  measure: null | string;
-}
-
-interface InitialOwnRecipe {
-  title: string;
-  category: string;
-  description: string;
-  instructions: string;
-  time: number | null;
-  ingredients: Ingredient[];
-  fullImage: string | null;
-}
 
 export const formatInstructions = (instructions: string): string[] => {
   return instructions
@@ -24,12 +9,12 @@ export const formatInstructions = (instructions: string): string[] => {
     .filter(str => str.length >= 5);
 };
 
-export const initialOwnRecipe: InitialOwnRecipe = {
+export const initialOwnRecipe: AddRecipeType = {
   title: '',
   category: 'Breakfast',
   description: '',
   instructions: '',
-  time: 0,
+  time: '0',
   ingredients: [
     { _id: randomId(), id: null, measure: null },
     { _id: randomId(), id: null, measure: null },

@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import styles from './RecipePreparationField.module.scss';
 import { AddRecipeType } from 'src/types/Recipe';
 
@@ -25,7 +24,4 @@ const RecipePreparationField: React.FC<RecipePreparationFieldProps> = ({ recipe,
   );
 };
 
-const isEqual = (prevProps: RecipePreparationFieldProps, newProps: RecipePreparationFieldProps) =>
-  prevProps.recipe.instructions === newProps.recipe.instructions;
-
-export default memo(RecipePreparationField, isEqual);
+export default RecipePreparationField;

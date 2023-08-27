@@ -6,9 +6,13 @@ import { COOKING_TIMES } from 'src/utils/constants';
 import { useOutsideClick } from 'src/hooks/useOutsideClick';
 import { TbCameraUp } from 'react-icons/tb';
 import { formatWord } from 'src/utils/functions';
-import { CategoriesType } from 'src/types/Category';
+import { AddRecipeType } from 'src/types/Recipe';
 
-const RecipeDescriptionFields = ({ recipe, setRecipe }) => {
+interface RecipeDescriptionFieldsProps {
+  recipe: AddRecipeType;
+  setRecipe: (recipe: AddRecipeType) => void;
+}
+const RecipeDescriptionFields: React.FC<RecipeDescriptionFieldsProps> = ({ recipe, setRecipe }) => {
   const [isOpenCategory, setIsOpenCategory] = useState<boolean>(false);
   const [isOpenCooking, setIsOpenCooking] = useState<boolean>(false);
 
@@ -49,6 +53,7 @@ const RecipeDescriptionFields = ({ recipe, setRecipe }) => {
           type="file"
           id="uploadBtn"
           accept="images/*,.png,.jpg,.jpeg"
+          required
           onChange={handleFileChange}
         />
         {fullImage && <span className={styles.fileName}>{formatWord(30, fullImage.name)}</span>}
@@ -87,7 +92,7 @@ const RecipeDescriptionFields = ({ recipe, setRecipe }) => {
                     key={category}
                     className={styles.option}
                     data-value={category}
-                    onClick={e => changeCategory((e.target as HTMLElement).dataset.value)}
+                    onClick={e => changeCategory((e.target as HTMLElement).dataset.value as string)}
                   >
                     {category}
                   </li>
@@ -109,7 +114,9 @@ const RecipeDescriptionFields = ({ recipe, setRecipe }) => {
                     key={time}
                     className={styles.option}
                     data-value={time}
-                    onClick={e => changeCookingTime(e.target.dataset.value)}
+                    onClick={e =>
+                      changeCookingTime((e.target as HTMLElement).dataset.value as string)
+                    }
                   >
                     {time} min
                   </li>

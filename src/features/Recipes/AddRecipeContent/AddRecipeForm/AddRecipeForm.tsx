@@ -7,25 +7,28 @@ import { useState } from 'react';
 import { initialOwnRecipe } from 'src/utils/recipes';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
 import { useAddRecipe } from '../useAddRecipe';
+import { AddRecipeType } from 'src/types/Recipe';
 
-function AddRecipeForm() {
-  const [recipe, setRecipe] = useState(initialOwnRecipe);
+const AddRecipeForm = () => {
+  const [recipe, setRecipe] = useState<AddRecipeType>(initialOwnRecipe);
   const { isLoading, addRecipe } = useAddRecipe();
 
-  function handleSubmit(e) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData();
 
     for (const key of Object.keys(recipe)) {
+      // @ts-ignore
       formData.append(key, recipe[key]);
     }
+
     formData.set(
       'ingredients',
       JSON.stringify(recipe.ingredients.map(ing => ({ id: ing.id, measure: ing.measure })))
     );
 
     addRecipe(formData);
-  }
+  };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
@@ -37,6 +40,6 @@ function AddRecipeForm() {
       </Button>
     </form>
   );
-}
+};
 
 export default AddRecipeForm;
