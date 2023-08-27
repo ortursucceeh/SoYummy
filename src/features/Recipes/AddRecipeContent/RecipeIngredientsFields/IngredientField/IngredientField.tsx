@@ -6,7 +6,19 @@ import { ingredientsList } from 'src/utils/ingredients';
 import { useOutsideClick } from 'src/hooks/useOutsideClick';
 import useDebounce from 'src/hooks/useDebounce';
 
-function IngredientField({ ingId, onDelete, changeIngredient, changeIngredientMeasure }) {
+interface IngredientFieldProps {
+  ingId: string;
+  onDelete: (e: React.MouseEvent<HTMLSpanElement>) => void;
+  changeIngredient: (id: string, ingId: string, title: string) => void;
+  changeIngredientMeasure: (id: string, measure: string) => void;
+}
+
+const IngredientField: React.FC<IngredientFieldProps> = ({
+  ingId,
+  onDelete,
+  changeIngredient,
+  changeIngredientMeasure,
+}) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const refIngredient = useOutsideClick(() => setIsOptionsOpen(false));
@@ -21,12 +33,14 @@ function IngredientField({ ingId, onDelete, changeIngredient, changeIngredientMe
     [debouncedInputValue]
   );
 
-  const handlePickName = ({ target }) => {
+  const handlePickName = (e: React.MouseEvent<HTMLLIElement>) => {
+    const target = e.target as HTMLElement & { dataset: { value: string } };
     setInputValue(target.innerText);
     changeIngredient(ingId, target.dataset.value, target.innerText);
   };
 
-  const handleChangeMeasure = ({ target }) => changeIngredientMeasure(ingId, target.value);
+  const handleChangeMeasure = (e: React.ChangeEvent<HTMLInputElement>) =>
+    changeIngredientMeasure(ingId, e.target.value);
 
   return (
     <div className={styles.ingredientField}>
@@ -65,6 +79,6 @@ function IngredientField({ ingId, onDelete, changeIngredient, changeIngredientMe
       </span>
     </div>
   );
-}
+};
 
 export default memo(IngredientField);

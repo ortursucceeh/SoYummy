@@ -3,8 +3,13 @@ import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 import { useNavigate } from 'react-router-dom';
 import Image from 'src/ui/Image/Image';
 import { formatWord } from 'src/utils/functions';
+import { RecipeType } from 'src/types/Recipe';
 
-function RecipeItem({ recipe: { title, _id, preview } }) {
+interface RecipeItemProps {
+  recipe: RecipeType;
+}
+
+const RecipeItem: React.FC<RecipeItemProps> = ({ recipe: { title, _id, preview } }) => {
   const navigate = useNavigate();
 
   return (
@@ -19,6 +24,6 @@ function RecipeItem({ recipe: { title, _id, preview } }) {
       <span className={styles.recipeName}>{formatWord(35, title)}</span>
     </div>
   );
-}
+};
 
 export default RecipeItem;

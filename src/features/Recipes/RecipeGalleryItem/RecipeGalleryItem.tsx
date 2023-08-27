@@ -7,8 +7,14 @@ import LoaderMini from 'src/ui/Loaders/LoaderMini';
 import { useToggleFavoriteRecipe } from './useToggleFavoriteRecipe';
 import { formatWord } from 'src/utils/functions';
 import { useDeleteRecipe } from './useDeleteRecipe';
+import PreviewNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
+import { MyRecipeType, RecipeType } from 'src/types/Recipe';
 
-function RecipeGalleryItem({ recipe, type }) {
+interface RecipeGalleryItemProps {
+  recipe: RecipeType | MyRecipeType;
+  type: 'own' | 'favorite';
+}
+const RecipeGalleryItem: React.FC<RecipeGalleryItemProps> = ({ recipe, type }) => {
   const { deleteRecipe, isLoading: isLoadingDeleting } = useDeleteRecipe();
   const { toggleFavoriteRecipe, isLoading: isLoadingToggle } = useToggleFavoriteRecipe();
 
@@ -18,7 +24,12 @@ function RecipeGalleryItem({ recipe, type }) {
 
   return (
     <div className={styles.recipe} key={recipe._id}>
-      <Image src={recipe.preview} alt={`${recipe.title} img`} className={styles.preview} />
+      <Image
+        src={recipe.preview}
+        defaultImage={PreviewNotFound}
+        alt={`${recipe.title} img`}
+        className={styles.preview}
+      />
       <div className={styles.recipeInfo}>
         <span className={`${styles.deleteRecipe} ${styles[type]}`} onClick={handleDelete}>
           {isLoadingDeleting || isLoadingToggle ? <LoaderMini color="white" /> : <FiTrash2 />}
@@ -38,6 +49,6 @@ function RecipeGalleryItem({ recipe, type }) {
       </div>
     </div>
   );
-}
+};
 
 export default RecipeGalleryItem;

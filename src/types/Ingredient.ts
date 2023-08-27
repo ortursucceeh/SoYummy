@@ -1,4 +1,8 @@
-export type IngredientAddType = { id: string; measure: string };
+export type IngredientAddType = {
+  _id: string;
+  id: string | null;
+  measure: string | null;
+};
 
 export type IngredientFullType = {
   title: string;

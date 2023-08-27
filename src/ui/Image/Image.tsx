@@ -4,6 +4,7 @@ interface ImageProps {
   src: string;
   alt: string;
   defaultImage: string;
+  className?: string;
   onClick?: () => void;
   props?: Omit<ComponentProps<'img'>, 'src' | 'alt'> & { src: string; alt: string };
 }

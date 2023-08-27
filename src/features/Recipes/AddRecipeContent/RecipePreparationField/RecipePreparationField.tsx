@@ -1,8 +1,14 @@
 import { memo } from 'react';
 import styles from './RecipePreparationField.module.scss';
+import { AddRecipeType } from 'src/types/Recipe';
 
-function RecipePreparationField({ recipe, setRecipe }) {
-  const changeInstructions = newInstructions =>
+interface RecipePreparationFieldProps {
+  recipe: AddRecipeType;
+  setRecipe: (recipe: AddRecipeType) => void;
+}
+
+const RecipePreparationField: React.FC<RecipePreparationFieldProps> = ({ recipe, setRecipe }) => {
+  const changeInstructions = (newInstructions: string) =>
     setRecipe({ ...recipe, instructions: newInstructions });
 
   return (
@@ -17,9 +23,9 @@ function RecipePreparationField({ recipe, setRecipe }) {
       />
     </div>
   );
-}
+};
 
-const isEqual = (prevProps, newProps) =>
+const isEqual = (prevProps: RecipePreparationFieldProps, newProps: RecipePreparationFieldProps) =>
   prevProps.recipe.instructions === newProps.recipe.instructions;
 
 export default memo(RecipePreparationField, isEqual);

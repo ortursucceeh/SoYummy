@@ -6,38 +6,39 @@ import { COOKING_TIMES } from 'src/utils/constants';
 import { useOutsideClick } from 'src/hooks/useOutsideClick';
 import { TbCameraUp } from 'react-icons/tb';
 import { formatWord } from 'src/utils/functions';
+import { CategoriesType } from 'src/types/Category';
 
-function RecipeDescriptionFields({ recipe, setRecipe }) {
-  const [isOpenCategory, setIsOpenCategory] = useState(false);
-  const [isOpenCooking, setIsOpenCooking] = useState(false);
+const RecipeDescriptionFields = ({ recipe, setRecipe }) => {
+  const [isOpenCategory, setIsOpenCategory] = useState<boolean>(false);
+  const [isOpenCooking, setIsOpenCooking] = useState<boolean>(false);
 
   const refCategory = useOutsideClick(() => setIsOpenCategory(false));
   const refCooking = useOutsideClick(() => setIsOpenCooking(false));
 
   const { title, description, category, time, fullImage } = recipe;
 
-  const changeTitle = newTitle => {
+  const changeTitle = (newTitle: string) => {
     setRecipe({ ...recipe, title: newTitle });
   };
 
-  const changeDescription = newDescr => {
+  const changeDescription = (newDescr: string) => {
     setRecipe({ ...recipe, description: newDescr });
   };
 
-  const changeCategory = newCategory => {
+  const changeCategory = (newCategory: string) => {
     setRecipe({ ...recipe, category: newCategory });
   };
 
-  const changeFullImage = newFile => {
+  const changeFullImage = (newFile: File) => {
     setRecipe({ ...recipe, fullImage: newFile });
   };
 
-  const changeCookingTime = newTime => {
+  const changeCookingTime = (newTime: string) => {
     setRecipe({ ...recipe, time: newTime });
   };
 
-  const handleFileChange = e => {
-    changeFullImage(e.target.files[0]);
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) changeFullImage(e.target.files[0]);
   };
 
   return (
@@ -86,7 +87,7 @@ function RecipeDescriptionFields({ recipe, setRecipe }) {
                     key={category}
                     className={styles.option}
                     data-value={category}
-                    onClick={e => changeCategory(e.target.dataset.value)}
+                    onClick={e => changeCategory((e.target as HTMLElement).dataset.value)}
                   >
                     {category}
                   </li>
@@ -120,6 +121,6 @@ function RecipeDescriptionFields({ recipe, setRecipe }) {
       </div>
     </div>
   );
-}
+};
 
 export default RecipeDescriptionFields;

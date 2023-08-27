@@ -1,8 +1,8 @@
+import { VscClose } from 'react-icons/vsc';
 import Button from 'src/ui/Button/Button';
 import Modal from 'src/ui/Modal/Modal';
-import { useLogout } from './useLogout';
 import styles from './LogoutModal.module.scss';
-import { VscClose } from 'react-icons/vsc';
+import { useLogout } from './useLogout';
 
 interface LogoutModalProps {
   isOpen: boolean;

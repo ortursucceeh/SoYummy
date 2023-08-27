@@ -6,7 +6,7 @@ import RecipeGallery from '../RecipeGallery/RecipeGallery';
 import { useFavoritesRecipes } from './useFavoritesRecipes';
 import styles from './FavoriteRecipes.module.scss';
 
-function FavoriteRecipes() {
+const FavoriteRecipes = () => {
   const { data, isLoading, pages, isFetching, isPreviousData } = useFavoritesRecipes();
 
   return (
@@ -19,11 +19,11 @@ function FavoriteRecipes() {
         ) : (
           <RecipeGallery recipes={data?.recipes} type="favorite" />
         )}
-        {isFetching & isPreviousData ? <LoaderModal /> : null}
+        {isFetching && isPreviousData ? <LoaderModal /> : null}
       </div>
       <Paginator pages={pages} prevData={isPreviousData} />
     </>
   );
-}
+};
 
 export default FavoriteRecipes;

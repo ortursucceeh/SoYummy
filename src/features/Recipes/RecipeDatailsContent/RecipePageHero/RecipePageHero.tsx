@@ -6,12 +6,27 @@ import Image from 'src/ui/Image/Image';
 import { useToggleFavoriteRecipe } from 'src/features/Recipes/RecipeGalleryItem/useToggleFavoriteRecipe';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
 
-function RecipePageHero({ _id, title, description, favorites, time, fullImage }) {
+interface RecipePageHeroProps {
+  _id: string;
+  title: string;
+  description: string;
+  favorites: number[];
+  time: string;
+  fullImage: string;
+}
+const RecipePageHero: React.FC<RecipePageHeroProps> = ({
+  _id,
+  title,
+  description,
+  favorites,
+  time,
+  fullImage,
+}) => {
   const { toggleFavoriteRecipe, isLoading } = useToggleFavoriteRecipe();
 
-  function handleToggleFavorite() {
+  const handleToggleFavorite = () => {
     toggleFavoriteRecipe(_id);
-  }
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -48,6 +63,6 @@ function RecipePageHero({ _id, title, description, favorites, time, fullImage })
       </span>
     </div>
   );
-}
+};
 
 export default RecipePageHero;

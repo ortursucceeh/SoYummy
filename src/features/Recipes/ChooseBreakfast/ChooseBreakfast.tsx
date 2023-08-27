@@ -3,7 +3,7 @@ import styles from './ChooseBreakfast.module.scss';
 import { LuArrowRight } from 'react-icons/lu';
 import mainArrow from 'src/assets/Main/main-hero-arrow.svg';
 
-function ChooseBreakfast() {
+const ChooseBreakfast = () => {
   return (
     <div className={styles.container}>
       <p className={styles.text}>
@@ -18,6 +18,6 @@ function ChooseBreakfast() {
       <img src={mainArrow} alt="arrow" className={styles.arrow} />
     </div>
   );
-}
+};
 
 export default ChooseBreakfast;

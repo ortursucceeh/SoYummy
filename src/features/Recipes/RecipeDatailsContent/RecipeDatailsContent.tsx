@@ -5,7 +5,7 @@ import RecipePageHero from './RecipePageHero/RecipePageHero';
 import RecipeIngredientsList from './RecipeIngredientsList/RecipeIngredientsList';
 import RecipePreparation from './RecipePreparation/RecipePreparation';
 
-function RecipeDatailsContent() {
+const RecipeDatailsContent = () => {
   const { recipe, isLoading } = useRecipe();
 
   if (isLoading) return <Loader />;
@@ -26,6 +26,6 @@ function RecipeDatailsContent() {
       <RecipePreparation preparation={recipe.instructions} preview={recipe.preview} />
     </div>
   );
-}
+};
 
 export default RecipeDatailsContent;

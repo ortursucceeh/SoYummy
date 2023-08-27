@@ -3,7 +3,11 @@ import { formatInstructions } from 'src/utils/recipes';
 import styles from './RecipePreparation.module.scss';
 import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 
-function RecipePreparation({ preparation, preview }) {
+interface RecipePreparationProps {
+  preparation: string;
+  preview: string;
+}
+const RecipePreparation: React.FC<RecipePreparationProps> = ({ preparation, preview }) => {
   const instructions = formatInstructions(preparation);
   return (
     <div className={styles.wrapper}>
@@ -25,6 +29,6 @@ function RecipePreparation({ preparation, preview }) {
       />
     </div>
   );
-}
+};
 
 export default RecipePreparation;

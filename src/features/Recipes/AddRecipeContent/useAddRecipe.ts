@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-export function useAddRecipe() {
+export const useAddRecipe = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -14,11 +14,11 @@ export function useAddRecipe() {
       toast.success('Recipe was successfully created!');
       navigate('/my');
     },
-    onError: err => {
+    onError: (err: Error) => {
       toast.error("Couldn't create your recipe🍎 Please fill all the required fields");
       console.log(err.message);
     },
   });
 
   return { addRecipe, isLoading };
-}
+};

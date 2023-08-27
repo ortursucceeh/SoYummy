@@ -6,7 +6,7 @@ import RecipeGallery from '../RecipeGallery/RecipeGallery';
 import { useMyRecipes } from './useMyRecipes';
 import styles from './MyRecipes.module.scss';
 
-function MyRecipes() {
+const MyRecipes = () => {
   const { data, isLoading, pages, isFetching, isPreviousData } = useMyRecipes();
 
   return (
@@ -19,11 +19,11 @@ function MyRecipes() {
         ) : (
           <RecipeGallery recipes={data?.recipes} type="own" />
         )}
-        {isFetching & isPreviousData ? <LoaderModal /> : null}
+        {isFetching && isPreviousData ? <LoaderModal /> : null}
       </div>
       <Paginator pages={pages} prevData={isPreviousData} />
     </>
   );
-}
+};
 
 export default MyRecipes;

@@ -1,8 +1,12 @@
 import Image from 'src/ui/Image/Image';
 import styles from './RecipeIngredientsList.module.scss';
 import ingredientNotFound from 'src/assets/NotFound/ingredientNotFound.png';
+import { IngredientFullType } from 'src/types/Ingredient';
 
-function RecipeIngredientsList({ ingredients }) {
+interface RecipeIngredientsListProps {
+  ingredients: (IngredientFullType & { _id: string })[];
+}
+const RecipeIngredientsList: React.FC<RecipeIngredientsListProps> = ({ ingredients }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.listHeader}>
@@ -28,6 +32,6 @@ function RecipeIngredientsList({ ingredients }) {
       </div>
     </div>
   );
-}
+};
 
 export default RecipeIngredientsList;

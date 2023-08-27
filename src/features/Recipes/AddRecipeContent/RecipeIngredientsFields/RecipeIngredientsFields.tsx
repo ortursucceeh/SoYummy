@@ -2,15 +2,22 @@ import styles from './RecipeIngredientsFields.module.scss';
 import { toast } from 'react-hot-toast';
 import IngredientField from './IngredientField/IngredientField';
 import { randomId } from 'src/utils/functions';
+import { AddRecipeType } from 'src/types/Recipe';
+import { IngredientAddType } from 'src/types/Ingredient';
 
-function RecipeIngredientsFields({ recipe, setRecipe }) {
+interface RecipeIngredientsFieldsProps {
+  recipe: AddRecipeType;
+  setRecipe: (recipe: AddRecipeType) => void;
+}
+
+const RecipeIngredientsFields: React.FC<RecipeIngredientsFieldsProps> = ({ recipe, setRecipe }) => {
   const { ingredients } = recipe;
 
-  const changeIngredients = newIngredients => {
+  const changeIngredients = (newIngredients: IngredientAddType[]) => {
     setRecipe({ ...recipe, ingredients: newIngredients });
   };
 
-  const handleDeleteIngredient = id => {
+  const handleDeleteIngredient = (id: string) => {
     if (ingredients.length <= 3) {
       toast('At least 3 ingredients', {
         icon: '🍀',
@@ -40,13 +47,13 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
     changeIngredients([...ingredients.slice(0, -1)]);
   };
 
-  const changeIngredient = (id, ingId, title) => {
+  const changeIngredient = (id: string, ingId: string, title: string) => {
     changeIngredients(
       ingredients.map(ing => (ing._id === id ? { ...ing, id: ingId, title: title } : ing))
     );
   };
 
-  const changeIngredientMeasure = (id, measure) => {
+  const changeIngredientMeasure = (id: string, measure: string) => {
     changeIngredients(
       ingredients.map(ing => (ing._id === id ? { ...ing, measure: measure } : ing))
     );
@@ -67,7 +74,6 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
           <IngredientField
             key={ing._id}
             ingId={ing._id}
-            ingTitle={ing.title}
             onDelete={() => handleDeleteIngredient(ing._id)}
             changeIngredient={changeIngredient}
             changeIngredientMeasure={changeIngredientMeasure}
@@ -76,6 +82,6 @@ function RecipeIngredientsFields({ recipe, setRecipe }) {
       </div>
     </div>
   );
-}
+};
 
 export default RecipeIngredientsFields;

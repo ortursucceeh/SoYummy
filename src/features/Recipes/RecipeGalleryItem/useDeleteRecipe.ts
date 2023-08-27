@@ -2,7 +2,7 @@ import { deleteRecipe as deleteRecipeApi } from '../../../services/apiRecipes';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
 
-export function useDeleteRecipe() {
+export const useDeleteRecipe = () => {
   const queryClient = useQueryClient();
 
   const { mutate: deleteRecipe, isLoading } = useMutation({
@@ -11,10 +11,10 @@ export function useDeleteRecipe() {
       queryClient.invalidateQueries({ queryKey: ['ownRecipes'] });
       toast.success(data.message);
     },
-    onError: err => {
+    onError: (err: Error) => {
       console.log(err.message);
     },
   });
 
   return { deleteRecipe, isLoading };
-}
+};

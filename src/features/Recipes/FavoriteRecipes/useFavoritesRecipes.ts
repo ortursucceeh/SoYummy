@@ -3,9 +3,9 @@ import { getFavoritesRecipes } from '../../../services/apiRecipes';
 import { useSearchParams } from 'react-router-dom';
 import { getPages } from '../../../utils/functions';
 
-export function useFavoritesRecipes() {
+export const useFavoritesRecipes = () => {
   const [searchParams] = useSearchParams();
-  const page = searchParams.get('page') ?? 1;
+  const page = searchParams.get('page') ?? '1';
 
   const { isLoading, data, isFetching, isPreviousData } = useQuery({
     queryKey: ['favoritesRecipes', page],
@@ -13,7 +13,7 @@ export function useFavoritesRecipes() {
     keepPreviousData: true,
   });
 
-  const pages = getPages(data?.total, data?.limit);
+  const pages = getPages(data?.total as number, data?.limit as number);
 
   return { data, isLoading, pages, isFetching, isPreviousData };
-}
+};

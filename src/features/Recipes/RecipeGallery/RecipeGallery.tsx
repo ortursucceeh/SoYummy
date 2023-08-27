@@ -1,7 +1,13 @@
+import { MyRecipeType, RecipeType } from 'src/types/Recipe';
 import RecipeGalleryItem from '../RecipeGalleryItem/RecipeGalleryItem';
 import styles from './RecipeGallery.module.scss';
 
-function RecipeGallery({ recipes, type }) {
+interface RecipeGalleryProps {
+  recipes: RecipeType[] | MyRecipeType[];
+  type: 'own' | 'favorite';
+}
+
+const RecipeGallery: React.FC<RecipeGalleryProps> = ({ recipes, type }) => {
   return (
     <div className={styles.wrapper}>
       {recipes.map(recipe => (
@@ -9,6 +15,6 @@ function RecipeGallery({ recipes, type }) {
       ))}
     </div>
   );
-}
+};
 
 export default RecipeGallery;
