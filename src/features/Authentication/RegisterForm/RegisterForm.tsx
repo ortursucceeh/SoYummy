@@ -20,8 +20,6 @@ function RegisterForm() {
   } = useForm();
 
   const onSubmit: SubmitHandler<FieldValues> = ({ name, email, password }) => {
-    console.log('submit');
-    console.log(name, email, password);
     signup(
       { name, email, password },
       {

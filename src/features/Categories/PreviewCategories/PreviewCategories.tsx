@@ -3,7 +3,7 @@ import styles from './PreviewCategories.module.scss';
 import Button from 'src/ui/Button/Button';
 import RecipeList from '../../Recipes/RecipeList/RecipeList';
 import { useRecipesCountFromScreenSize } from 'src/hooks/useRecipesCountFromScreenSize';
-import { usePreviewCategories } from '../usePreviewCategories';
+import { usePreviewCategories } from './usePreviewCategories';
 import Loader from 'src/ui/Loaders/Loader';
 
 function PreviewCategories() {
