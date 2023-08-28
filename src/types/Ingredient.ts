@@ -5,9 +5,9 @@ export type IngredientAddType = {
 };
 
 export type IngredientFullType = {
+  _id: string;
   title: string;
   desc: string;
-  type: string;
   thumb: string;
   measure: string;
 };

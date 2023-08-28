@@ -1,7 +1,7 @@
 import Button from 'src/ui/Button/Button';
 import { LuClock4 } from 'react-icons/lu';
 import styles from './RecipePageHero.module.scss';
-import RecipeBgNotFound from 'src/assets/NotFound/recipeBgNotFound.png';
+import RecipeBg from 'src/assets/NotFound/recipeBgNotFound.png';
 import Image from 'src/ui/Image/Image';
 import { useToggleFavoriteRecipe } from 'src/features/Recipes/RecipeGalleryItem/useToggleFavoriteRecipe';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
@@ -10,17 +10,16 @@ interface RecipePageHeroProps {
   _id: string;
   title: string;
   description: string;
-  favorites: number[];
+  favorites?: number[];
   time: string;
-  fullImage: string;
 }
+
 const RecipePageHero: React.FC<RecipePageHeroProps> = ({
   _id,
   title,
   description,
   favorites,
   time,
-  fullImage,
 }) => {
   const { toggleFavoriteRecipe, isLoading } = useToggleFavoriteRecipe();
 
@@ -30,12 +29,7 @@ const RecipePageHero: React.FC<RecipePageHeroProps> = ({
 
   return (
     <div className={styles.wrapper}>
-      <Image
-        src={fullImage}
-        alt="recipeImage"
-        defaultImage={RecipeBgNotFound}
-        className={styles.img}
-      />
+      <Image src={RecipeBg} alt="recipeImage" defaultImage={RecipeBg} className={styles.img} />
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.descr}>{description}</p>
 

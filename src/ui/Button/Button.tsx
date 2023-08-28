@@ -3,6 +3,7 @@ import styles from './Button.module.scss';
 import { ReactNode, ComponentProps } from 'react';
 
 interface ButtonProps {
+  id?: string;
   shape: 'rect' | 'curv';
   color: 'green' | 'dark' | 'trans' | 'grey';
   children: string | ReactNode | ReactNode[];

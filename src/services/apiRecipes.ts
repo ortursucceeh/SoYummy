@@ -1,6 +1,6 @@
 import {
-  AddRecipeType,
-  MyRecipeType,
+  MyRecipeFullType,
+  MyRecipeFromListType,
   RecipeFullType,
   RecipeType,
   SearchType,
@@ -24,7 +24,7 @@ export async function previewCategories(): Promise<PreviewCategoriesResponse> {
   return res.json();
 }
 
-interface IRecipesResponse {
+interface RecipesResponse {
   recipes: RecipeType[];
   total: number;
   page: number;
@@ -35,9 +35,7 @@ interface IRecipesResponse {
 export async function searchRecipes(
   { query, queryType }: { query: string; queryType: SearchType },
   page: string
-): Promise<IRecipesResponse> {
-  // if (!query || !queryType) return { recipes: [] };
-
+): Promise<RecipesResponse> {
   const res = await fetch(
     `${API_URL}/recipes/${queryType === 'title' ? 'title' : 'ingredient'}/${query}?page=${page}`,
     {
@@ -56,7 +54,7 @@ export async function searchRecipes(
 export async function getRecipesByCategory(
   categoryName: CategoriesType,
   page: string
-): Promise<IRecipesResponse> {
+): Promise<RecipesResponse> {
   const res = await fetch(`${API_URL}/recipes/category/${categoryName}?page=${page}&limit=8`, {
     headers: {
       'Content-Type': 'application/json',
@@ -82,7 +80,7 @@ export async function getRecipeById(recipeId: string): Promise<RecipeFullType> {
   return res.json();
 }
 
-export async function getFavoritesRecipes(page: string): Promise<IRecipesResponse> {
+export async function getFavoritesRecipes(page: string): Promise<RecipesResponse> {
   const res = await fetch(`${API_URL}/recipes/favorite?page=${page}&limit=4`, {
     headers: {
       'Content-Type': 'application/json',
@@ -95,15 +93,15 @@ export async function getFavoritesRecipes(page: string): Promise<IRecipesRespons
   return res.json();
 }
 
-interface IMyRecipesResponse {
-  recipes: MyRecipeType[];
+interface MyRecipesResponse {
+  recipes: MyRecipeFromListType[];
   total: number;
   page: number;
   limit: number;
   sort: 'title' | 'popular';
 }
 
-export async function getMyRecipes(page: string): Promise<IMyRecipesResponse> {
+export async function getMyRecipes(page: string): Promise<MyRecipesResponse> {
   const res = await fetch(`${API_URL}/own-recipes?page=${page}&limit=4`, {
     headers: {
       'Content-Type': 'application/json',
@@ -116,7 +114,7 @@ export async function getMyRecipes(page: string): Promise<IMyRecipesResponse> {
   return res.json();
 }
 
-export async function getOwnRecipeById(recipeId: string): Promise<AddRecipeType> {
+export async function getOwnRecipeById(recipeId: string): Promise<MyRecipeFullType> {
   const res = await fetch(`${API_URL}/own-recipes/id/${recipeId}`, {
     headers: {
       'Content-Type': 'application/json',
@@ -143,13 +141,13 @@ export async function deleteRecipe(recipeId: string): Promise<{ message: string 
   return res.json();
 }
 
-interface IToggleFavoriteResponse {
+interface ToggleFavoriteResponse {
   _id: string;
   favorite: boolean;
   popularity: number;
 }
 
-export async function toggleFavoriteRecipe(recipeId: string): Promise<IToggleFavoriteResponse> {
+export async function toggleFavoriteRecipe(recipeId: string): Promise<ToggleFavoriteResponse> {
   const res = await fetch(`${API_URL}/recipes/favorite/${recipeId}`, {
     method: 'PATCH',
     headers: {
@@ -177,7 +175,7 @@ export async function addRecipe(formData: FormData) {
   return res.json();
 }
 
-export async function getPopularRecipes(): Promise<IRecipesResponse> {
+export async function getPopularRecipes(): Promise<RecipesResponse> {
   const res = await fetch(`${API_URL}/recipes?limit=4&sort=popular`, {
     headers: {
       Authorization: `Bearer ${getAccessToken()}`,

@@ -1,9 +1,9 @@
-import { MyRecipeType, RecipeType } from 'src/types/Recipe';
+import { MyRecipeFromListType, RecipeType } from 'src/types/Recipe';
 import RecipeGalleryItem from '../RecipeGalleryItem/RecipeGalleryItem';
 import styles from './RecipeGallery.module.scss';
 
 interface RecipeGalleryProps {
-  recipes: RecipeType[] | MyRecipeType[];
+  recipes: RecipeType[] | MyRecipeFromListType[];
   type: 'own' | 'favorite';
 }
 

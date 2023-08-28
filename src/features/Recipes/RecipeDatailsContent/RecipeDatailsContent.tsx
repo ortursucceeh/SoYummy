@@ -18,9 +18,9 @@ const RecipeDatailsContent = () => {
         _id={recipe._id}
         title={recipe.title}
         description={recipe.description}
-        favorites={recipe.favorites}
+        // @ts-ignore
+        favorites={recipe?.favorites}
         time={recipe.time}
-        fullImage={recipe.fullImage}
       />
       <RecipeIngredientsList ingredients={recipe.ingredients} />
       <RecipePreparation preparation={recipe.instructions} preview={recipe.preview} />

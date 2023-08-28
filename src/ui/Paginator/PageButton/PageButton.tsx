@@ -1,7 +1,7 @@
 import styles from './PageButton.module.scss';
 
 interface PageButtonProps {
-  page: number;
+  page: number | string;
   onClick: () => void;
   isActive: boolean;
 }

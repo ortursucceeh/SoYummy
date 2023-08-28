@@ -7,6 +7,7 @@ interface RecipePreparationProps {
   preparation: string;
   preview: string;
 }
+
 const RecipePreparation: React.FC<RecipePreparationProps> = ({ preparation, preview }) => {
   const instructions = formatInstructions(preparation);
   return (

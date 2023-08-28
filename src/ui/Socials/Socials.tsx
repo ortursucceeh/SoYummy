@@ -5,16 +5,24 @@ const Socials: React.FC = () => {
   return (
     <ul className={styles.social}>
       <li>
-        <FaFacebook />
+        <a href="https://facebook.com/" target="_blank" rel="noreferrer">
+          <FaFacebook />
+        </a>
       </li>
       <li>
-        <FaYoutube />
+        <a href="https://youtube.com/" target="_blank" rel="noreferrer">
+          <FaYoutube />
+        </a>
       </li>
       <li>
-        <FaTwitter />
+        <a href="https://twitter.com/" target="_blank" rel="noreferrer">
+          <FaTwitter />
+        </a>
       </li>
       <li>
-        <FaInstagram />
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+          <FaInstagram />
+        </a>
       </li>
     </ul>
   );

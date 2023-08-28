@@ -42,10 +42,7 @@ const Input: React.FC<InputProps> = ({
         <input name={name} id={name} className={styles.input} {...props} />
       )}
       {rightIcon && <span className={styles.rightIcon}>{rightIcon}</span>}
-      {/* {errors.length &&
-        errors.map(error => (
-          <span className={styles.error}>{errors[name]?.message as ReactNode}</span>
-        ))} */}
+
       {errors && errors[name]?.type === 'required' && (
         <span className={styles.error}>{errors[name]?.message as ReactNode}</span>
       )}

@@ -14,6 +14,7 @@ export const useRecipe = () => {
   const getRecipe = search ? getOwnRecipeById : getRecipeById;
 
   const { isLoading, data: recipe } = useQuery({
+    // @ts-ignore
     queryKey: ['recipeById', recipeId],
     queryFn: () => getRecipe(recipeId as string),
   });

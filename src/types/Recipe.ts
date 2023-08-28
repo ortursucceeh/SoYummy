@@ -6,8 +6,6 @@ export type RecipeType = {
   title: string;
   category: CategoriesType;
   description: string;
-  // instructions: string[];
-  // ingridients: string[];
   preview: string;
   time: string;
   popularity: number;
@@ -21,15 +19,12 @@ export type RecipeFullType = {
   category: CategoriesType;
   description: string;
   instructions: string;
-  ingridients: IngredientFullType[];
+  ingredients: IngredientFullType[];
   time: string;
-  popularity: number;
-  favorite: boolean;
-  like: boolean;
-  previewImg: string;
-  fullImage: string;
+  favorites: number[];
   area: string;
   tags: string[];
+  preview: string;
 };
 
 export type AddRecipeType = {
@@ -42,13 +37,17 @@ export type AddRecipeType = {
   fullImage: File | null;
 };
 
-export type MyRecipeType = {
+export type MyRecipeFullType = {
   _id: string;
   title: string;
   category: CategoriesType;
   description: string;
+  instructions: string;
+  ingredients: IngredientFullType[];
   preview: string;
   time: string;
 };
+
+export type MyRecipeFromListType = Omit<MyRecipeFullType, 'instructions' | 'ingredients'>;
 
 export type SearchType = 'ingredient' | 'title';

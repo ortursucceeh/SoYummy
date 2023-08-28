@@ -5,6 +5,7 @@ import styles from './RecipeList.module.scss';
 interface RecipeListProps {
   recipes: RecipeType[];
 }
+
 const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
   return (
     <div className={styles.recipesList}>

@@ -4,8 +4,9 @@ import ingredientNotFound from 'src/assets/NotFound/ingredientNotFound.png';
 import { IngredientFullType } from 'src/types/Ingredient';
 
 interface RecipeIngredientsListProps {
-  ingredients: (IngredientFullType & { _id: string })[];
+  ingredients: IngredientFullType[];
 }
+
 const RecipeIngredientsList: React.FC<RecipeIngredientsListProps> = ({ ingredients }) => {
   return (
     <div className={styles.wrapper}>

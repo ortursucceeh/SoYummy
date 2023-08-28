@@ -8,10 +8,10 @@ import { useToggleFavoriteRecipe } from './useToggleFavoriteRecipe';
 import { formatWord } from 'src/utils/functions';
 import { useDeleteRecipe } from './useDeleteRecipe';
 import PreviewNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
-import { MyRecipeType, RecipeType } from 'src/types/Recipe';
+import { MyRecipeFromListType, MyRecipeFullType, RecipeType } from 'src/types/Recipe';
 
 interface RecipeGalleryItemProps {
-  recipe: RecipeType | MyRecipeType;
+  recipe: RecipeType | MyRecipeFullType | MyRecipeFromListType;
   type: 'own' | 'favorite';
 }
 const RecipeGalleryItem: React.FC<RecipeGalleryItemProps> = ({ recipe, type }) => {
