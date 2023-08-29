@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.32.0",
-    "@tanstack/react-query-devtools": "^4.32.0",
+    "@tanstack/react-query": "4.2",
+    "@tanstack/react-query-devtools": "4.2",
     "node-sass": "^9.0.0",
     "node-scss": "^7.0.3",
     "react": "^18.2.0",
