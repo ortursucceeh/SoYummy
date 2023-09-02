@@ -61,7 +61,7 @@ const SigninForm = () => {
         />
       </div>
       <Button shape="rect" color="green" disabled={isLoading}>
-        {isLoading ? <LoaderMini color="white" /> : 'Sign in'}
+        {isLoading ? <LoaderMini /> : 'Sign in'}
       </Button>
     </form>
   );

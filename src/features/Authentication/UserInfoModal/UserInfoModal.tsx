@@ -74,7 +74,7 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({ isOpen, onClose }) => {
           onChange={e => setInputName(e.target.value)}
         />
         <Button shape="rect" color="green" disabled={isLoading} onClick={handleSaveChanges}>
-          {isLoading ? <LoaderMini color="white" /> : 'Save changes'}
+          {isLoading ? <LoaderMini /> : 'Save changes'}
         </Button>
       </form>
     </Modal>

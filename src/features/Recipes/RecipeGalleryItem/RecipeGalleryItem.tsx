@@ -32,7 +32,7 @@ const RecipeGalleryItem: React.FC<RecipeGalleryItemProps> = ({ recipe, type }) =
       />
       <div className={styles.recipeInfo}>
         <span className={`${styles.deleteRecipe} ${styles[type]}`} onClick={handleDelete}>
-          {isLoadingDeleting || isLoadingToggle ? <LoaderMini color="white" /> : <FiTrash2 />}
+          {isLoadingDeleting || isLoadingToggle ? <LoaderMini /> : <FiTrash2 />}
         </span>
         <h4 className={styles.recipeTitle}>{formatWord(25, recipe.title)}</h4>
         <p className={styles.recipeDescr}>{formatWord(120, recipe.description)}</p>

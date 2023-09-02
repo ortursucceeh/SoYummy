@@ -1,4 +1,5 @@
-import { ColorRing } from 'react-loader-spinner';
+// import { ColorRing } from 'react-loader-spinner';
+import ClipLoader from 'react-spinners/ClipLoader';
 import styles from './Loader.module.scss';
 
 interface LoaderProps {
@@ -10,15 +11,7 @@ const Loader: React.FC<LoaderProps> = ({ type }) => {
 
   return (
     <div className={classes}>
-      <ColorRing
-        visible={true}
-        height="80px"
-        width="80px"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        colors={Array(6).fill('#8baa36')}
-      />
+      <ClipLoader size={70} aria-label="Loading" color={'#8baa36'} speedMultiplier={0.5} />
     </div>
   );
 };

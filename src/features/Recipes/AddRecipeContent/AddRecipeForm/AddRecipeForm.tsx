@@ -36,7 +36,7 @@ const AddRecipeForm = () => {
       <RecipeIngredientsFields recipe={recipe} setRecipe={setRecipe} />
       <RecipePreparationField recipe={recipe} setRecipe={setRecipe} />
       <Button shape="curv" color="dark" className={styles.addBtn} disabled={isLoading}>
-        {isLoading ? <LoaderMini color="white" /> : 'Add'}
+        {isLoading ? <LoaderMini /> : 'Add'}
       </Button>
     </form>
   );

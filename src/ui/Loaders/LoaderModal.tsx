@@ -4,7 +4,7 @@ import LoaderMini from './LoaderMini';
 const LoaderModal: React.FC = () => {
   return (
     <div className={styles.modalLoader}>
-      <LoaderMini color="white" />
+      <LoaderMini />
     </div>
   );
 };

@@ -42,7 +42,7 @@ const RecipePageHero: React.FC<RecipePageHeroProps> = ({
           onClick={handleToggleFavorite}
         >
           {isLoading ? (
-            <LoaderMini color="white" />
+            <LoaderMini />
           ) : favorites.length ? (
             'Remove from favorites'
           ) : (
