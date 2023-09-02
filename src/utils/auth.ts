@@ -13,6 +13,10 @@ export const updateTokens = (accessToken: string, refreshToken: string): void =>
 
   localStorage.setItem(
     userLocalStorageKey,
-    JSON.stringify({ ...data, accessToken: accessToken, refreshToken: refreshToken })
+    JSON.stringify({
+      ...data,
+      accessToken: accessToken,
+      refreshToken: refreshToken,
+    })
   );
 };
