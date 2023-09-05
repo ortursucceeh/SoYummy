@@ -1,7 +1,7 @@
 # Project "SoYummy" 📷
 
 <p align="center">
-      <img src="https://i.pinimg.com/originals/0b/ba/ef/0bbaeface0390e5a675f97a812deeb0f.png" width="1010">
+      <img src="https://i.pinimg.com/originals/86/5d/21/865d21c9cd8cf1805ee4bc83e1bac4fa.png" width="1010">
 </p>
 
 <p align="center">
