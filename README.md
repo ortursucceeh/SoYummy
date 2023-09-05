@@ -29,8 +29,5 @@ To run this project, follow these steps:
 2. Install the required packages by running ```npm install```
 3. Start the server by running ```npm run dev```
 
-## Usage 💠
-This project exposes 40+ endpoints through a REST API. To access these APIs, use any API client, such as Postman or cURL. The API documentation can be found at [documentation](https://ortursucceeh.github.io/Project-PhotoShare/).
-
 ## License 🔱
 Project "SoYummy" is distributed under the MIT license.
