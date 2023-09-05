@@ -1,11 +1,11 @@
-import leavesDecor1 from 'src/assets/Main/main-hero-decor-leaves.png';
 import leavesDishDecor from 'src/assets/Decor/leavesDishesDecor.png';
+import leavesDecor1 from 'src/assets/Main/main-hero-decor-leaves.png';
 import mainDish from 'src/assets/Main/main-hero-dish.png';
-import ChooseBreakfast from 'src/features/Recipes/ChooseBreakfast/ChooseBreakfast';
 import PreviewCategories from 'src/features/Categories/PreviewCategories/PreviewCategories';
+import ChooseBreakfast from 'src/features/Recipes/ChooseBreakfast/ChooseBreakfast';
 
-import styles from './MainPage.module.scss';
 import SearchBar from 'src/features/Search/SearchBar/SearchBar';
+import styles from './MainPage.module.scss';
 
 const MainPage: React.FC = () => {
   return (

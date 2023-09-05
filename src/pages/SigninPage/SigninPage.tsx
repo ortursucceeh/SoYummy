@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
+import decor from 'src/assets/Decor/curved-rectangle-decor.svg';
+import SigninForm from 'src/features/Authentication/SigninForm/SigninForm';
 import styles from './SigninPage.module.scss';
 import girl from '/src/assets/svg/shopping-girl.svg';
-import SigninForm from 'src/features/Authentication/SigninForm/SigninForm';
-import decor from 'src/assets/Decor/curved-rectangle-decor.svg';
 
 const SigninPage: React.FC = () => {
   return (

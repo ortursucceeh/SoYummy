@@ -1,11 +1,11 @@
+import { memo, useEffect, useState } from 'react';
+import { HiOutlineMenuAlt2 } from 'react-icons/hi';
+import { useLocation } from 'react-router-dom';
 import UserLogo from 'src/features/Authentication/UserLogo/UserLogo';
-import styles from './Header.module.scss';
-import HeaderNav from './HeaderNav/HeaderNav';
 import Logo from '../Logo/Logo';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
-import { HiOutlineMenuAlt2 } from 'react-icons/hi';
-import { memo, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import styles from './Header.module.scss';
+import HeaderNav from './HeaderNav/HeaderNav';
 
 const Header: React.FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);

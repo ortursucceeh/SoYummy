@@ -1,14 +1,14 @@
 import { FiTrash2 } from 'react-icons/fi';
-import Image from 'src/ui/Image/Image';
-import styles from './RecipeGalleryItem.module.scss';
 import { Link } from 'react-router-dom';
-import Button from 'src/ui/Button/Button';
-import LoaderMini from 'src/ui/Loaders/LoaderMini';
-import { useToggleFavoriteRecipe } from './useToggleFavoriteRecipe';
-import { formatWord } from 'src/utils/functions';
-import { useDeleteRecipe } from './useDeleteRecipe';
 import PreviewNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 import { MyRecipeFromListType, MyRecipeFullType, RecipeType } from 'src/types/Recipe';
+import Button from 'src/ui/Button/Button';
+import Image from 'src/ui/Image/Image';
+import LoaderMini from 'src/ui/Loaders/LoaderMini';
+import { formatWord } from 'src/utils/functions';
+import styles from './RecipeGalleryItem.module.scss';
+import { useDeleteRecipe } from './useDeleteRecipe';
+import { useToggleFavoriteRecipe } from './useToggleFavoriteRecipe';
 
 interface RecipeGalleryItemProps {
   recipe: RecipeType | MyRecipeFullType | MyRecipeFromListType;

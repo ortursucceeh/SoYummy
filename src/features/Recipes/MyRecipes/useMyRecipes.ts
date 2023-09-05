@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { getMyRecipes } from '../../../services/apiRecipes';
 import { useSearchParams } from 'react-router-dom';
+import { getMyRecipes } from '../../../services/apiRecipes';
 import { getPages } from '../../../utils/functions';
 
 export const useMyRecipes = () => {

@@ -1,8 +1,8 @@
-import styles from './CategoriesMenu.module.scss';
-import { CATEGORIES_LIST } from 'src/utils/constants';
 import { useState } from 'react';
-import { useScrollable } from './useScrollable';
 import { useNavigate, useParams } from 'react-router-dom';
+import { CATEGORIES_LIST } from 'src/utils/constants';
+import styles from './CategoriesMenu.module.scss';
+import { useScrollable } from './useScrollable';
 
 const CategoriesMenu = () => {
   const { categoryName } = useParams();

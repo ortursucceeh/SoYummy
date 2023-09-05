@@ -1,7 +1,7 @@
 import { ILoginCredentials, ILoginInfo, IRegisterCredentials } from 'src/types/Auth';
+import { UserType } from 'src/types/User';
 import { getAccessToken, getRefreshToken, updateTokens } from '../utils/auth';
 import { API_URL } from '../utils/constants';
-import { UserType } from 'src/types/User';
 
 export async function signup({ name, email, password }: IRegisterCredentials): Promise<UserType> {
   const res = await fetch(`${API_URL}/users/signup`, {

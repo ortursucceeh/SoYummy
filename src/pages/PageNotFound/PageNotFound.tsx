@@ -1,5 +1,5 @@
-import styles from './PageNotFound.module.scss';
 import decor from 'src/assets/NotFound/404-decor.svg';
+import styles from './PageNotFound.module.scss';
 
 const PageNotFound: React.FC = () => {
   return (

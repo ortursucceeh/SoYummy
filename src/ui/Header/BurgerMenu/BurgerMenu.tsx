@@ -1,9 +1,9 @@
+import { createPortal } from 'react-dom';
+import { VscClose } from 'react-icons/vsc';
+import BurgerDecor from 'src/assets/Decor/burger-decoration.png';
 import Logo from '../../Logo/Logo';
 import HeaderNav from '../HeaderNav/HeaderNav';
 import styles from './BurgerMenu.module.scss';
-import { VscClose } from 'react-icons/vsc';
-import BurgerDecor from 'src/assets/Decor/burger-decoration.png';
-import { createPortal } from 'react-dom';
 
 interface BurgerMenuProps {
   isOpen: boolean;

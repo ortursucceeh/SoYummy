@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import styles from './ChooseBreakfast.module.scss';
 import { LuArrowRight } from 'react-icons/lu';
+import { Link } from 'react-router-dom';
 import mainArrow from 'src/assets/Main/main-hero-arrow.svg';
+import styles from './ChooseBreakfast.module.scss';
 
 const ChooseBreakfast = () => {
   return (

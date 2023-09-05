@@ -1,12 +1,12 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { FiLock, FiUser } from 'react-icons/fi';
+import { HiOutlineMail } from 'react-icons/hi';
 import Button from 'src/ui/Button/Button';
 import Input from 'src/ui/Input/Input';
-import styles from './RegisterForm.module.scss';
-import { FiUser, FiLock } from 'react-icons/fi';
-import { HiOutlineMail } from 'react-icons/hi';
-import { useSignup } from './useSignup';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
 import { useLogin } from '../SigninForm/useLogin';
+import styles from './RegisterForm.module.scss';
+import { useSignup } from './useSignup';
 
 function RegisterForm() {
   const { signup, isLoading: isLoadingSignup } = useSignup();

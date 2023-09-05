@@ -1,5 +1,5 @@
-import styles from './RecipePreparationField.module.scss';
 import { AddRecipeType } from 'src/types/Recipe';
+import styles from './RecipePreparationField.module.scss';
 
 interface RecipePreparationFieldProps {
   recipe: AddRecipeType;

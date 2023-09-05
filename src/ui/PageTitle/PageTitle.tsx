@@ -1,5 +1,5 @@
-import styles from './PageTitle.module.scss';
 import { memo } from 'react';
+import styles from './PageTitle.module.scss';
 
 interface PageTitleProps {
   children: string;

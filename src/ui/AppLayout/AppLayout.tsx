@@ -1,10 +1,10 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import Container from '../Container/Container';
 import DecorBottom from '../DecorBottom/DecorBottom';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 import Loader from '../Loaders/Loader';
-import { Suspense } from 'react';
 
 const AppLayout: React.FC = () => {
   return (

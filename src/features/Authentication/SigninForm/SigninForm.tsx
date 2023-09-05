@@ -1,11 +1,11 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import Button from 'src/ui/Button/Button';
-import Input from 'src/ui/Input/Input';
-import styles from './SigninForm.module.scss';
 import { FiLock } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
-import { useLogin } from './useLogin';
+import Button from 'src/ui/Button/Button';
+import Input from 'src/ui/Input/Input';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
+import styles from './SigninForm.module.scss';
+import { useLogin } from './useLogin';
 
 const SigninForm = () => {
   const { login, isLoading } = useLogin();

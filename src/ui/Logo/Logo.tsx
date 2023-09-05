@@ -1,7 +1,7 @@
-import { PiForkKnifeBold } from 'react-icons/pi';
-import styles from './Logo.module.scss';
-import { Link } from 'react-router-dom';
 import { memo } from 'react';
+import { PiForkKnifeBold } from 'react-icons/pi';
+import { Link } from 'react-router-dom';
+import styles from './Logo.module.scss';
 
 interface LogoProps {
   type?: 'header' | 'footer';

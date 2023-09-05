@@ -1,14 +1,14 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { Suspense, lazy } from 'react';
 import { Toaster } from 'react-hot-toast';
-import { lazy, Suspense } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import './styles/global.scss';
 import AppLayout from './ui/AppLayout/AppLayout';
+import Loader from './ui/Loaders/Loader';
 import ProtectedRoute from './ui/ProtectedRoute/ProtectedRoute';
 import ScrollToTop from './ui/ScrollToTop/ScrollToTop';
-import Loader from './ui/Loaders/Loader';
 
 const MainPage = lazy(() => import('./pages/MainPage/MainPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));

@@ -1,7 +1,7 @@
-import Image from 'src/ui/Image/Image';
-import styles from './RecipeIngredientsList.module.scss';
 import ingredientNotFound from 'src/assets/NotFound/ingredientNotFound.png';
 import { IngredientFullType } from 'src/types/Ingredient';
+import Image from 'src/ui/Image/Image';
+import styles from './RecipeIngredientsList.module.scss';
 
 interface RecipeIngredientsListProps {
   ingredients: IngredientFullType[];

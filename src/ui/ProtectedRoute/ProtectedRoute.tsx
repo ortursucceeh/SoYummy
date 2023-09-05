@@ -1,8 +1,8 @@
-import styles from './ProtectedRoute.module.scss';
+import { ReactNode } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useUser } from 'src/features/Authentication/useUser';
 import Loader from '../Loaders/Loader';
-import { Navigate, useLocation } from 'react-router-dom';
-import { ReactNode } from 'react';
+import styles from './ProtectedRoute.module.scss';
 
 interface ProtectedRouteProps {
   type: 'private' | 'public';

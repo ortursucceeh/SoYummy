@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import SearchTypeSelector from '../SearchTypeSelector/SearchTypeSelector';
-import styles from './SearchForm.module.scss';
-import SearchBar from '../SearchBar/SearchBar';
 import { useSearchParams } from 'react-router-dom';
 import { SearchType } from 'src/types/Recipe';
+import SearchBar from '../SearchBar/SearchBar';
+import SearchTypeSelector from '../SearchTypeSelector/SearchTypeSelector';
+import styles from './SearchForm.module.scss';
 
 const SearchForm: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();

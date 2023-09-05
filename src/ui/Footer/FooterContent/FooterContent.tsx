@@ -1,8 +1,8 @@
-import styles from './FooterContent.module.scss';
-import FooterForm from '../FooterForm/FooterForm';
-import Logo from '../../Logo/Logo';
 import { Link } from 'react-router-dom';
+import Logo from '../../Logo/Logo';
 import Socials from '../../Socials/Socials';
+import FooterForm from '../FooterForm/FooterForm';
+import styles from './FooterContent.module.scss';
 
 const FooterContent: React.FC = () => {
   return (

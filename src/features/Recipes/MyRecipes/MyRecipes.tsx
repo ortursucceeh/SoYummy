@@ -3,8 +3,8 @@ import LoaderModal from 'src/ui/Loaders/LoaderModal';
 import Paginator from 'src/ui/Paginator/Paginator';
 import RecipesNotFound from 'src/ui/RecipesNotFound/RecipesNotFound';
 import RecipeGallery from '../RecipeGallery/RecipeGallery';
-import { useMyRecipes } from './useMyRecipes';
 import styles from './MyRecipes.module.scss';
+import { useMyRecipes } from './useMyRecipes';
 
 const MyRecipes = () => {
   const { data, isLoading, pages, isFetching, isPreviousData } = useMyRecipes();

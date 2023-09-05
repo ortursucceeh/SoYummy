@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'src/ui/Button/Button';
 import styles from './SearchBar.module.scss';
-import { useState } from 'react';
 
 interface SearchBarProps {
   btnColor: 'green' | 'dark' | 'trans';

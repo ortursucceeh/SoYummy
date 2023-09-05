@@ -1,12 +1,11 @@
-import { RiArrowDownSLine } from 'react-icons/ri';
-import styles from './RecipeDescriptionFields.module.scss';
 import { useState } from 'react';
-import { CATEGORIES_LIST } from 'src/utils/constants';
-import { COOKING_TIMES } from 'src/utils/constants';
-import { useOutsideClick } from 'src/hooks/useOutsideClick';
+import { RiArrowDownSLine } from 'react-icons/ri';
 import { TbCameraUp } from 'react-icons/tb';
-import { formatWord } from 'src/utils/functions';
+import { useOutsideClick } from 'src/hooks/useOutsideClick';
 import { AddRecipeType } from 'src/types/Recipe';
+import { CATEGORIES_LIST, COOKING_TIMES } from 'src/utils/constants';
+import { formatWord } from 'src/utils/functions';
+import styles from './RecipeDescriptionFields.module.scss';
 
 interface RecipeDescriptionFieldsProps {
   recipe: AddRecipeType;

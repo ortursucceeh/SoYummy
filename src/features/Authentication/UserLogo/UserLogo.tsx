@@ -1,11 +1,10 @@
-import Image from 'src/ui/Image/Image';
-import styles from './UserLogo.module.scss';
-import UserLogoModal from '../UserLogoModal/UserLogoModal';
 import { memo, useState } from 'react';
-import React from 'react';
 import defaultImage from 'src/assets/NotFound/recipePreviewNotFound.png';
-import { useUser } from '../useUser';
 import { UserType } from 'src/types/User';
+import Image from 'src/ui/Image/Image';
+import UserLogoModal from '../UserLogoModal/UserLogoModal';
+import { useUser } from '../useUser';
+import styles from './UserLogo.module.scss';
 
 function UserLogo() {
   const { user } = useUser();

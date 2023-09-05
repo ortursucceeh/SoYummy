@@ -1,10 +1,10 @@
-import Image from 'src/ui/Image/Image';
-import { usePopularRecipes } from './usePopularRecipes';
-import styles from './PopularRecipes.module.scss';
-import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 import { useNavigate } from 'react-router-dom';
-import { formatWord } from 'src/utils/functions';
+import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
+import Image from 'src/ui/Image/Image';
 import Loader from 'src/ui/Loaders/Loader';
+import { formatWord } from 'src/utils/functions';
+import styles from './PopularRecipes.module.scss';
+import { usePopularRecipes } from './usePopularRecipes';
 
 const PopularRecipes = () => {
   const { data, isLoading } = usePopularRecipes();

@@ -1,9 +1,9 @@
-import styles from './RecipeItem.module.scss';
-import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 import { useNavigate } from 'react-router-dom';
+import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
+import { RecipeType } from 'src/types/Recipe';
 import Image from 'src/ui/Image/Image';
 import { formatWord } from 'src/utils/functions';
-import { RecipeType } from 'src/types/Recipe';
+import styles from './RecipeItem.module.scss';
 
 interface RecipeItemProps {
   recipe: RecipeType;

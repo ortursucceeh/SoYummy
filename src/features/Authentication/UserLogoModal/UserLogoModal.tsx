@@ -1,11 +1,11 @@
-import styles from './UserLogoModal.module.scss';
-import { RxPencil1 } from 'react-icons/rx';
-import { LuArrowRight } from 'react-icons/lu';
 import { useState } from 'react';
-import UserInfoModal from '../UserInfoModal/UserInfoModal';
-import LogoutModal from '../LogoutModal/LogoutModal';
-import Button from 'src/ui/Button/Button';
+import { LuArrowRight } from 'react-icons/lu';
+import { RxPencil1 } from 'react-icons/rx';
 import { useOutsideClick } from 'src/hooks/useOutsideClick';
+import Button from 'src/ui/Button/Button';
+import LogoutModal from '../LogoutModal/LogoutModal';
+import UserInfoModal from '../UserInfoModal/UserInfoModal';
+import styles from './UserLogoModal.module.scss';
 
 interface UserLogoModalProps {
   onClose: () => void;

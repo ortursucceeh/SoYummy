@@ -1,13 +1,13 @@
+import { useState } from 'react';
+import { AddRecipeType } from 'src/types/Recipe';
+import Button from 'src/ui/Button/Button';
+import LoaderMini from 'src/ui/Loaders/LoaderMini';
+import { initialOwnRecipe } from 'src/utils/recipes';
 import RecipeDescriptionFields from '../RecipeDescriptionFields/RecipeDescriptionFields';
-import styles from './AddRecipeForm.module.scss';
 import RecipeIngredientsFields from '../RecipeIngredientsFields/RecipeIngredientsFields';
 import RecipePreparationField from '../RecipePreparationField/RecipePreparationField';
-import Button from 'src/ui/Button/Button';
-import { useState } from 'react';
-import { initialOwnRecipe } from 'src/utils/recipes';
-import LoaderMini from 'src/ui/Loaders/LoaderMini';
 import { useAddRecipe } from '../useAddRecipe';
-import { AddRecipeType } from 'src/types/Recipe';
+import styles from './AddRecipeForm.module.scss';
 
 const AddRecipeForm = () => {
   const [recipe, setRecipe] = useState<AddRecipeType>(initialOwnRecipe);

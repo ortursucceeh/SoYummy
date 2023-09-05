@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { searchRecipes } from '../../../services/apiRecipes';
 import { useSearchParams } from 'react-router-dom';
 import { SearchType } from 'src/types/Recipe';
+import { searchRecipes } from '../../../services/apiRecipes';
 
 export const useSearchRecipes = () => {
   const [searchParams] = useSearchParams();

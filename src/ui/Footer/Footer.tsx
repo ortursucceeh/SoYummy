@@ -1,8 +1,8 @@
-import styles from './Footer.module.scss';
-import Container from '../Container/Container';
-import FooterCopyright from './FooterCopyright/FooterCopyright';
-import FooterContent from './FooterContent/FooterContent';
 import { memo } from 'react';
+import Container from '../Container/Container';
+import styles from './Footer.module.scss';
+import FooterContent from './FooterContent/FooterContent';
+import FooterCopyright from './FooterCopyright/FooterCopyright';
 
 const Footer: React.FC = () => {
   return (

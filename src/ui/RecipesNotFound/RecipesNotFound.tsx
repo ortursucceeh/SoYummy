@@ -1,5 +1,5 @@
-import styles from './RecipesNotFound.module.scss';
 import searchNotFound from 'src/assets/NotFound/searchNotFound.png';
+import styles from './RecipesNotFound.module.scss';
 
 interface RecipesNotFoundProps {
   text: string;

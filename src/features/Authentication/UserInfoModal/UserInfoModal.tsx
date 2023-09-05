@@ -1,19 +1,19 @@
-import Input from 'src/ui/Input/Input';
-import styles from './UserInfoModal.module.scss';
-import { VscClose } from 'react-icons/vsc';
+import { useState } from 'react';
+import { AiFillPlusCircle } from 'react-icons/ai';
 import { FiUser } from 'react-icons/fi';
 import { RxPencil1 } from 'react-icons/rx';
-import Button from 'src/ui/Button/Button';
-import { AiFillPlusCircle } from 'react-icons/ai';
-import Modal from 'src/ui/Modal/Modal';
-import { useUpdateUser } from './useUpdateUser';
-import { useState } from 'react';
-import { useUser } from '../useUser';
-import Image from 'src/ui/Image/Image';
+import { VscClose } from 'react-icons/vsc';
 import defaultImage from 'src/assets/NotFound/recipePreviewNotFound.png';
-import LoaderMini from 'src/ui/Loaders/LoaderMini';
-import { formatWord } from 'src/utils/functions';
 import { UserType } from 'src/types/User';
+import Button from 'src/ui/Button/Button';
+import Image from 'src/ui/Image/Image';
+import Input from 'src/ui/Input/Input';
+import LoaderMini from 'src/ui/Loaders/LoaderMini';
+import Modal from 'src/ui/Modal/Modal';
+import { formatWord } from 'src/utils/functions';
+import { useUser } from '../useUser';
+import styles from './UserInfoModal.module.scss';
+import { useUpdateUser } from './useUpdateUser';
 
 interface UserInfoModalProps {
   isOpen: boolean;

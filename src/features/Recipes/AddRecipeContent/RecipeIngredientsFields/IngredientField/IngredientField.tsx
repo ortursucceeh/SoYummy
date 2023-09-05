@@ -1,10 +1,10 @@
 import { memo, useMemo, useState } from 'react';
-import styles from './IngredientField.module.scss';
 import { GrClose } from 'react-icons/gr';
 import { RiArrowDownSLine } from 'react-icons/ri';
-import { ingredientsList } from 'src/utils/ingredients';
-import { useOutsideClick } from 'src/hooks/useOutsideClick';
 import useDebounce from 'src/hooks/useDebounce';
+import { useOutsideClick } from 'src/hooks/useOutsideClick';
+import { ingredientsList } from 'src/utils/ingredients';
+import styles from './IngredientField.module.scss';
 
 interface IngredientFieldProps {
   ingId: string;

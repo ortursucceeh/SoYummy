@@ -1,7 +1,7 @@
+import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 import Image from 'src/ui/Image/Image';
 import { formatInstructions } from 'src/utils/recipes';
 import styles from './RecipePreparation.module.scss';
-import RecipeNotFound from 'src/assets/NotFound/recipePreviewNotFound.png';
 
 interface RecipePreparationProps {
   preparation: string;

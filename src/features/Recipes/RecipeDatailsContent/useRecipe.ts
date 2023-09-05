@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useLocation, useParams } from 'react-router-dom';
-import { getRecipeById, getOwnRecipeById } from '../../../services/apiRecipes';
+import { getOwnRecipeById, getRecipeById } from '../../../services/apiRecipes';
 
 export const useRecipe = () => {
   let { recipeId } = useParams<{ recipeId?: string }>();

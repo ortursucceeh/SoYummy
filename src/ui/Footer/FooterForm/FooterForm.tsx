@@ -1,9 +1,9 @@
+import { useState } from 'react';
+import { toast } from 'react-hot-toast';
+import { HiOutlineMail } from 'react-icons/hi';
 import Button from '../../Button/Button';
 import Input from '../../Input/Input';
 import styles from './FooterForm.module.scss';
-import { HiOutlineMail } from 'react-icons/hi';
-import { toast } from 'react-hot-toast';
-import { useState } from 'react';
 
 const FooterForm = () => {
   const [inputValue, setInputValue] = useState<string>('');

@@ -1,8 +1,8 @@
-import { useQueryClient, useMutation } from '@tanstack/react-query';
-import { getCurrentUser as logoutApi } from '../../../services/apiAuth';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { userLocalStorageKey } from 'src/utils/auth';
+import { getCurrentUser as logoutApi } from '../../../services/apiAuth';
 
 export const useLogout = () => {
   const queryClient = useQueryClient();

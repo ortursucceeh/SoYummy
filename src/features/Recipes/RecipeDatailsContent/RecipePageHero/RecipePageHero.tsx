@@ -1,10 +1,10 @@
-import Button from 'src/ui/Button/Button';
 import { LuClock4 } from 'react-icons/lu';
-import styles from './RecipePageHero.module.scss';
 import RecipeBg from 'src/assets/NotFound/recipeBgNotFound.png';
-import Image from 'src/ui/Image/Image';
 import { useToggleFavoriteRecipe } from 'src/features/Recipes/RecipeGalleryItem/useToggleFavoriteRecipe';
+import Button from 'src/ui/Button/Button';
+import Image from 'src/ui/Image/Image';
 import LoaderMini from 'src/ui/Loaders/LoaderMini';
+import styles from './RecipePageHero.module.scss';
 
 interface RecipePageHeroProps {
   _id: string;

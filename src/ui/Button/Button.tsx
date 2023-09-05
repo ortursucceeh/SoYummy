@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 import styles from './Button.module.scss';
-import { ReactNode, ComponentProps } from 'react';
 
 interface ButtonProps {
   id?: string;

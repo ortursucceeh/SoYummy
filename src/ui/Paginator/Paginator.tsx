@@ -1,8 +1,8 @@
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { useSearchParams } from 'react-router-dom';
 import PageButton from './PageButton/PageButton';
 import styles from './Paginator.module.scss';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { useCallback, useEffect, useMemo, useState } from 'react';
 
 interface PaginatorProps {
   pages: number;

@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { getRecipesByCategory } from '../../../services/apiRecipes';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { capitalizeWord } from '../../../utils/functions';
 import { CATEGORIES_ENUM, CategoriesType } from 'src/types/Category';
+import { getRecipesByCategory } from '../../../services/apiRecipes';
+import { capitalizeWord } from '../../../utils/functions';
 
 export function useCategoryRecipes() {
   let { categoryName } = useParams();

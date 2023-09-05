@@ -1,6 +1,6 @@
-import styles from './HeaderNav.module.scss';
 import { LuSearch } from 'react-icons/lu';
 import { NavLink } from 'react-router-dom';
+import styles from './HeaderNav.module.scss';
 
 const HeaderNav: React.FC = () => {
   function isActive(navData: { isActive: boolean }) {

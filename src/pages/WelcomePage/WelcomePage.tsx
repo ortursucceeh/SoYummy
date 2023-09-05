@@ -1,7 +1,7 @@
+import { useNavigate } from 'react-router-dom';
 import Button from 'src/ui/Button/Button';
 import Logo from 'src/ui/Logo/Logo';
 import styles from './WelcomePage.module.scss';
-import { useNavigate } from 'react-router-dom';
 
 const WelcomePage: React.FC = () => {
   const navigate = useNavigate();

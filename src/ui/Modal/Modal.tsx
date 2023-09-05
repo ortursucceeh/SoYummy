@@ -1,6 +1,6 @@
-import styles from './Modal.module.scss';
 import { createPortal } from 'react-dom';
 import { useOutsideClick } from 'src/hooks/useOutsideClick';
+import styles from './Modal.module.scss';
 
 import { ReactNode } from 'react';
 

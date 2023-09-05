@@ -1,5 +1,5 @@
-import styles from './FooterCopyright.module.scss';
 import footerDecor from 'src/assets/Decor/footer-decoration.png';
+import styles from './FooterCopyright.module.scss';
 
 const FooterCopyright: React.FC = () => {
   return (

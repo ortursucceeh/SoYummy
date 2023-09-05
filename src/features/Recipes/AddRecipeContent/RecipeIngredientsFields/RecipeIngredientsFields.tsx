@@ -1,9 +1,9 @@
-import styles from './RecipeIngredientsFields.module.scss';
 import { toast } from 'react-hot-toast';
-import IngredientField from './IngredientField/IngredientField';
-import { randomId } from 'src/utils/functions';
-import { AddRecipeType } from 'src/types/Recipe';
 import { IngredientAddType } from 'src/types/Ingredient';
+import { AddRecipeType } from 'src/types/Recipe';
+import { randomId } from 'src/utils/functions';
+import IngredientField from './IngredientField/IngredientField';
+import styles from './RecipeIngredientsFields.module.scss';
 
 interface RecipeIngredientsFieldsProps {
   recipe: AddRecipeType;

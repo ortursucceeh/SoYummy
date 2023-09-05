@@ -1,6 +1,6 @@
-import { FieldValues, UseFormRegister, FieldErrors, RegisterOptions } from 'react-hook-form';
+import { ComponentProps, ReactNode } from 'react';
+import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
 import styles from './Input.module.scss';
-import { ReactNode, ComponentProps } from 'react';
 
 interface InputProps {
   leftIcon?: ReactNode;

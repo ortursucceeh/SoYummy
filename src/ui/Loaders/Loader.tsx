@@ -1,4 +1,3 @@
-// import { ColorRing } from 'react-loader-spinner';
 import ClipLoader from 'react-spinners/ClipLoader';
 import styles from './Loader.module.scss';
 

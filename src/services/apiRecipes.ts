@@ -1,13 +1,13 @@
+import { CategoriesType } from 'src/types/Category';
+import { getAccessToken } from '../utils/auth';
+import { API_URL } from '../utils/constants';
 import {
-  MyRecipeFullType,
   MyRecipeFromListType,
+  MyRecipeFullType,
   RecipeFullType,
   RecipeType,
   SearchType,
 } from './../types/Recipe';
-import { API_URL } from '../utils/constants';
-import { getAccessToken } from '../utils/auth';
-import { CategoriesType } from 'src/types/Category';
 
 type PreviewCategoriesResponse = Record<Lowercase<CategoriesType>, RecipeType[]>;
 
