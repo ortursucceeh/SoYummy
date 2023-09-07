@@ -1,31 +1,25 @@
-import { ComponentProps, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { FieldErrors, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
 import styles from './Input.module.scss';
 
-interface InputProps {
+type InputProps1 = ComponentPropsWithoutRef<'input'> & {
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-  placeholder?: string;
-  type?: string;
   name: string;
-  disabled?: boolean;
-  autoComplete?: 'on' | 'off';
   register?: UseFormRegister<FieldValues>;
   errors?: FieldErrors<FieldValues>;
   validationSchema?: RegisterOptions;
-  props?: Omit<ComponentProps<'input'>, 'name'> & { name: string };
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
-}
+};
 
-const Input: React.FC<InputProps> = ({
+const Input: React.FC<InputProps1> = ({
   leftIcon,
   rightIcon,
   register,
   name,
   errors,
   validationSchema,
-  ...props
+  ...rest
 }) => {
   return (
     <div className={styles.container}>
@@ -34,12 +28,12 @@ const Input: React.FC<InputProps> = ({
         <input
           id={name}
           className={styles.input}
-          {...props}
+          {...rest}
           {...register(name, validationSchema)}
           name={name}
         />
       ) : (
-        <input name={name} id={name} className={styles.input} {...props} />
+        <input name={name} id={name} className={styles.input} {...rest} />
       )}
       {rightIcon && <span className={styles.rightIcon}>{rightIcon}</span>}
 

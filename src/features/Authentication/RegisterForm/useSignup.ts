@@ -9,7 +9,7 @@ export const useSignup = () => {
       toast.success('Account successfully created!');
     },
     onError: (err: Error) => {
-      toast.error('Password or email are incorrect!');
+      toast.error('Invalid credentials!');
       console.log(err.message);
     },
   });

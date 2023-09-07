@@ -5,7 +5,7 @@
   "singleQuote": true,
   "printWidth": 100,
   "arrowParens": "avoid",
-  "importOrder": ["^components/(.*)$", "^[./]" ],
+  "importOrder": ["^features/(.*)$", "^[./]" ],
   "importOrderSeparation": true, 
   "importOrderSortSpecifiers": true 
 }
